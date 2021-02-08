@@ -15,7 +15,7 @@ const feedback_right = `<span style="position: absolute; top: 55%; left: 0; righ
 const feedback_wrong = `<span style="position: absolute; top: 55%; left: 0; right: 0; color: red"> X </span>`
 
 const subID = jsPsych.randomization.randomID(8)
-//0、1随机分配被试组别
+//0、1随机分配被试组别，0为实验，1为控制
 const dors =  Math.round(Math.random())
 
 /* Blocks: HTML DOM Settings */
@@ -112,35 +112,33 @@ var instr_aftermrt = {
     button_label_previous: '返回',
     button_label_next: '继续'
 }
-//空间旋转测验刻板印象无效组
-/*var control_mrt = {
-    type: 'instructions',
-    pages: [
-        `<p style="text-align: left">
-        <b>例题说明：</b>在所给的五个图形中，分割线左侧的图形（题干）与分割线右侧四个图形（选项）中的两个是同一个图形，是第一个图形旋转一定角度得到的，如题干图形和选项图形中的第一个和第三个图形是同一个图形。请在下面的题目中选择与题干图形相同的<span style="color:#d15323de;">两个选项，多选或少选均不得分</span>。</p>
-        <img src="mrt/mrt_instr11.png"></img>
-        `,
-    ],
-    show_clickable_nav: true,
-    allow_backward: false,
-    button_label_previous: '返回',
-    button_label_next: '继续'
-}*/
-
 //空间旋转测验刻板印象唤起组
-/*var exp_mrt = {
+var exp_mrt = {
     type: 'instructions',
     pages: [
         `<p style="text-align: left">
-        <b>例题说明：</b>在所给的五个图形中，分割线左侧的图形（题干）与分割线右侧四个图形（选项）中的两个是同一个图形，是第一个图形旋转一定角度得到的，如题干图形和选项图形中的第一个和第三个图形是同一个图形。请在下面的题目中选择与题干图形相同的<span style="color:#d15323de;">两个选项，多选或少选均不得分</span>。</p>
-        <img src="mrt/mrt_instr11.png"></img>
+        空间能力是智能的基本成分之一。空间认知能力有广义和狭义之分。广义的空间能力指非言语信息加工中的个体差异，狭义的则指在完成空间测验中的个体差异。一些科学家认为，空间能力上的性别差异主要是在于右脑空间认知能力功能定位化程度的不同，而男性在此方面的功能强于女性，因此男性的空间认知能力强于女性。以往研究调查表明，接下来的任务能准确反映出个体的空间认知能力。且绝大部分研究结果显示，女性在此任务上的表现比男性逊色。
         `,
     ],
     show_clickable_nav: true,
     allow_backward: false,
     button_label_previous: '返回',
     button_label_next: '继续'
-}*/
+}
+
+//空间旋转测验刻板印象无效组
+var control_mrt = {
+    type: 'instructions',
+    pages: [
+        `<p style="text-align: left">
+        空间能力是智能的基本成分之一。空间认知能力有广义和狭义之分。广义的空间能力指非言语信息加工中的个体差异，狭义的则指在完成空间测验中的个体差异。一些科学家认为，空间能力上的性别差异主要是在于右脑空间认知能力功能定位化程度的不同，男性在此方面强于女性；而另一些科学家则认为是具体任务类型的不同，在特定任务上，男性优于女性，但在某些任务中，女性要优于男性。接下来的任务在绝大部分研究结果中显示男性与女性表现相近。
+        `,
+    ],
+    show_clickable_nav: true,
+    allow_backward: false,
+    button_label_previous: '返回',
+    button_label_next: '继续'
+}
 
 var instr_mrt = {
     type: 'instructions',
@@ -372,7 +370,7 @@ var STEX = {
     randomize_order: false
 }
 
-var multi_select_block = {
+var mrt_test = {
         type: 'test-multi-select',
         questions: [
           {
@@ -562,15 +560,28 @@ var demographics = {
     ]
 }
 
+//svs_mrt包括instr_mrt心理旋转测验指导语。mrt_test心理旋转测验。instr_aftermrt测验后问卷指导语，AE1-7问卷题项。0表示实验，1控制
+if (dors == 0) {
+    var svs_mrt = {
+    timeline: [
+        exp_mrt,instr_mrt,mrt_test,instr_aftermrt, AE1,AE2,AE3,AE4,AE5,AE6,AE7,
+    ]}
+}
+else {
+    var svs_mrt = {
+    timeline: [
+        control_mrt,instr_mrt,mrt_test,instr_aftermrt, AE1,AE2,AE3,AE4,AE5,AE6,AE7,
+    ]}
+}
+
+
 var surveys = {
     timeline: [
-        e_recall,instr_mrt,multi_select_block,instr_aftermrt,
-        AE1,AE2,AE3,AE4,AE5,AE6,AE7,
-        instr_stex, STEX,
+        e_recall,svs_mrt,instr_stex, STEX,
     ]
 }
-/*instr_stex刻板印象危险检验指导语，STEX问卷内容。e_recall实验组谦虚回忆任务。
-instr_mrt心理旋转测验指导语。multi_select_block心理旋转测验。instr_aftermrt测验后问卷指导语，AE1-7问卷题项。
+/*instr_stex刻板印象危险检验指导语，STEX问卷内容。e_recall谦逊唤起任务。
+
 */
 
 var main_timeline = [
