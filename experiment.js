@@ -112,6 +112,49 @@ var instr_aftermrt = {
     button_label_previous: '返回',
     button_label_next: '继续'
 }
+//空间旋转测验刻板印象无效组
+/*var control_mrt = {
+    type: 'instructions',
+    pages: [
+        `<p style="text-align: left">
+        <b>例题说明：</b>在所给的五个图形中，分割线左侧的图形（题干）与分割线右侧四个图形（选项）中的两个是同一个图形，是第一个图形旋转一定角度得到的，如题干图形和选项图形中的第一个和第三个图形是同一个图形。请在下面的题目中选择与题干图形相同的<span style="color:#d15323de;">两个选项，多选或少选均不得分</span>。</p>
+        <img src="mrt/mrt_instr11.png"></img>
+        `,
+    ],
+    show_clickable_nav: true,
+    allow_backward: false,
+    button_label_previous: '返回',
+    button_label_next: '继续'
+}*/
+
+//空间旋转测验刻板印象唤起组
+/*var exp_mrt = {
+    type: 'instructions',
+    pages: [
+        `<p style="text-align: left">
+        <b>例题说明：</b>在所给的五个图形中，分割线左侧的图形（题干）与分割线右侧四个图形（选项）中的两个是同一个图形，是第一个图形旋转一定角度得到的，如题干图形和选项图形中的第一个和第三个图形是同一个图形。请在下面的题目中选择与题干图形相同的<span style="color:#d15323de;">两个选项，多选或少选均不得分</span>。</p>
+        <img src="mrt/mrt_instr11.png"></img>
+        `,
+    ],
+    show_clickable_nav: true,
+    allow_backward: false,
+    button_label_previous: '返回',
+    button_label_next: '继续'
+}*/
+
+var instr_mrt = {
+    type: 'instructions',
+    pages: [
+        `<p style="text-align: left">
+        <b>例题说明：</b>在所给的五个图形中，分割线左侧的图形（题干）与分割线右侧四个图形（选项）中的两个是同一个图形，是第一个图形旋转一定角度得到的，如题干图形和选项图形中的第一个和第三个图形是同一个图形。请在下面的题目中选择与题干图形相同的<span style="color:#d15323de;">两个选项，多选或少选均不得分</span>。</p>
+        <img src="mrt/mrt_instr11.png"></img>
+        `,
+    ],
+    show_clickable_nav: true,
+    allow_backward: false,
+    button_label_previous: '返回',
+    button_label_next: '继续'
+}
 
 var instr_stex = {
     type: 'instructions',
@@ -147,7 +190,7 @@ var Sex = {
     type: 'html-button-response',
     data: { varname: 'Sex' },
     stimulus: '你的性别',
-    choices: ['男', '女', '其他'],
+    choices: ['男', '女'],
     on_finish: function(data) { addRespFromButton(data) }
 }
 
@@ -521,7 +564,7 @@ var demographics = {
 
 var surveys = {
     timeline: [
-        e_recall,/*instr_mrt,*/multi_select_block,instr_aftermrt,
+        e_recall,instr_mrt,multi_select_block,instr_aftermrt,
         AE1,AE2,AE3,AE4,AE5,AE6,AE7,
         instr_stex, STEX,
     ]
@@ -548,6 +591,6 @@ jsPsych.init({
     timeline: main_timeline,
     on_finish: function() {
         jsPsych.data.get().localSave('csv', `data_${dors+subID}.csv`) // download from browser
-        document.getElementById('jspsych-content').innerHTML += '实验结束，感谢您的参与！'
+        document.getElementById('jspsych-content').innerHTML += '实验结束，请将您浏览器下载的CSV文件发送至邮箱：linqi19951102@126.com，感谢您的参与！'
     }
 })

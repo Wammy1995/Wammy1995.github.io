@@ -152,7 +152,7 @@ jsPsych.plugins['test-multi-select'] = (function() {
       var question_selector = _join(plugin_id_selector, question_id);
 
       // add question text
-      display_element.querySelector(question_selector).innerHTML += '<p>第'+(i+1).toString()+'题</p><img id="test-question" class="' + plugin_id_name +'-img test-multi-select"'+'src="'+ question.prompt+'" style="padding-right:20px;border-right:black 1px solid;">' + '</img>';
+      display_element.querySelector(question_selector).innerHTML += '<p>第'+(i+1).toString()+'题</p><img id="test-question" class="' + plugin_id_name +'-img test-multi-select"'+'src="'+ question.prompt+'" style="padding-right:20px;border-right:black 3px solid;">' + '</img>';
 
       // create option check boxes
       for (var j = 0; j < question.options.length; j++) {
@@ -246,8 +246,6 @@ jsPsych.plugins['test-multi-select'] = (function() {
       // save data
       var trial_data = {
         "RightNumber": correct,
-        "responses": JSON.stringify(question_data),
-        "question_order": JSON.stringify(question_order)
       };
       display_element.innerHTML = '';
 

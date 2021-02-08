@@ -123,3 +123,6 @@
 #jspsych-data-display {
   text-align: left;
 }
+.jspsych-test-multi-select-option {
+  cursor: pointer;
+}
