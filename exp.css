@@ -40,6 +40,7 @@ option{
 #jspsych-html-button-response-stimulus p {
     text-align: left;
     font-weight: unset;
+    text-indent: 2em;
 }
 
 .jspsych-survey-text-question textarea {

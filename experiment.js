@@ -97,7 +97,7 @@ var warmup = {
     <p>每个人的行为或想法都不一样，所以问题的答案没有好与坏之分，您只需要按照内心的直觉作答即可。如果不是理解错误导致的错选，您无需反复修改您的答案。</p>
     <p>您的每一个回答对本研究都是非常重要的，请您务必根据您内心的真实感受诚实作答。您的回答不会被用于除研究以外的其他用途或透露给与研究无关的人员，本研究也不会记录任何事后能将您与本问卷回答进行联系或追溯的个人信息，请放心作答。</p>
     <p>在实验结束后，请不要同未参加过本研究的人讨论实验内容，非常感谢您的合作。</p>`,
-    choices: ['<span id="timer">15</span>秒后继续'],
+    choices: ['<span id="timer">10</span>秒后继续'],
     button_html: btn_html_timer
 }
 
@@ -114,44 +114,41 @@ var instr_aftermrt = {
 }
 //空间旋转测验刻板印象唤起组
 var exp_mrt = {
-    type: 'instructions',
-    pages: [
-        `<p style="text-align: left">
-        空间能力是智能的基本成分之一。空间认知能力有广义和狭义之分。广义的空间能力指非言语信息加工中的个体差异，狭义的则指在完成空间测验中的个体差异。一些科学家认为，空间能力上的性别差异主要是在于右脑空间认知能力功能定位化程度的不同，而男性在此方面的功能强于女性，因此男性的空间认知能力强于女性。以往研究调查表明，接下来的任务能准确反映出个体的空间认知能力。且绝大部分研究结果显示，女性在此任务上的表现比男性逊色。
+    type: 'html-button-response',
+    stimulus: `<p style="text-align: left;text-indent: 2em;">
+        请仔细阅读下面这段话：</p>
+        <p style="text-align: left;text-indent: 2em;">
+        空间能力是智能的基本成分之一。空间认知能力有广义和狭义之分。广义的空间能力指非言语信息加工中的个体差异，狭义的则指在完成空间测验中的个体差异。一些科学家认为，空间能力上的性别差异主要是在于右脑空间认知能力功能定位化程度的不同，而男性在此方面的功能强于女性，因此男性的空间认知能力强于女性。以往研究调查表明，接下来的任务能准确反映出个体的空间认知能力。且绝大部分研究结果显示，男性在此任务上的表现优于女性。
         `,
-    ],
-    show_clickable_nav: true,
-    allow_backward: false,
-    button_label_previous: '返回',
-    button_label_next: '继续'
+    choices: ['<span id="timer">10</span>秒后继续'],
+    button_html: btn_html_timer
 }
 
 //空间旋转测验刻板印象无效组
 var control_mrt = {
-    type: 'instructions',
-    pages: [
-        `<p style="text-align: left">
+    type: 'html-button-response',
+    timulus: `<p style="text-align: left;text-indent: 2em;">
+        请仔细阅读下面这段话：</p>
+        <p style="text-align: left;text-indent: 2em;">
         空间能力是智能的基本成分之一。空间认知能力有广义和狭义之分。广义的空间能力指非言语信息加工中的个体差异，狭义的则指在完成空间测验中的个体差异。一些科学家认为，空间能力上的性别差异主要是在于右脑空间认知能力功能定位化程度的不同，男性在此方面强于女性；而另一些科学家则认为是具体任务类型的不同，在特定任务上，男性优于女性，但在某些任务中，女性要优于男性。接下来的任务在绝大部分研究结果中显示男性与女性表现相近。
         `,
-    ],
-    show_clickable_nav: true,
-    allow_backward: false,
-    button_label_previous: '返回',
-    button_label_next: '继续'
+    choices: ['<span id="timer">10</span>秒后继续'],
+    button_html: btn_html_timer
 }
 
 var instr_mrt = {
     type: 'instructions',
     pages: [
-        `<p style="text-align: left">
-        <b>例题说明：</b>在所给的五个图形中，分割线左侧的图形（题干）与分割线右侧四个图形（选项）中的两个是同一个图形，是第一个图形旋转一定角度得到的，如题干图形和选项图形中的第一个和第三个图形是同一个图形。请在下面的题目中选择与题干图形相同的<span style="color:#d15323de;">两个选项，多选或少选均不得分</span>。</p>
+        `<p style="text-align: left;text-indent: 2em;">
+        <b>例题说明：</b>在所给的五个图形中，分割线左侧的图形（题干）与分割线右侧四个图形（选项）中的两个是同一个图形，由第一个图形旋转一定角度得到的，如题干图形和选项图形中的第一个和第三个图形是同一个图形。请在下面的题目中选择与题干图形相同的<span style="color:#d15323de;">两个选项，多选或少选均不得分</span>。</p>
+        <p style="text-align: left;text-indent: 2em;">此任务为限时测验，你只有7分钟来回答问题，请不要感到慌乱，尽力答题即可。</p>
         <img src="mrt/mrt_instr11.png"></img>
         `,
     ],
     show_clickable_nav: true,
     allow_backward: false,
     button_label_previous: '返回',
-    button_label_next: '继续'
+    button_label_next: '开始测验'
 }
 
 var instr_stex = {
@@ -217,7 +214,7 @@ var e_recall = {
    type: 'survey-text',
     data: { varname: 'recall' },
     questions: [{
-        prompt: `请回忆一个你本可以表现得很谦逊，但却没有那么做的经历。请尽量生动具体地在脑海里想象这个场景，当你能成功的回忆这段经历时，请在下一页中写下这段经历。<br>请尽量描述每一个细节，你不需要写成一段连贯的文字，任何与之相关的细节都可以被记录下来，例如，你做了什么，你本可以做的谦逊的部分是什么，如果你表现得谦逊结果会有什么改变，为什么你应该表现得更加谦逊，等等。`,
+        prompt: `请回忆一个你本可以表现得很谦逊，但却没有那么做的经历。请尽量生动具体地在脑海里想象这个场景，当你能成功的回忆这段经历时，请在下一页中写下这段经历。请尽量描述每一个细节，你不需要写成一段连贯的文字，任何与之相关的细节都可以被记录下来，例如，你做了什么，你本可以做的谦逊的部分是什么，如果你表现得谦逊结果会有什么改变，为什么你应该表现得更加谦逊，等等。`,
         placeholder: `请注意，在本研究中谦逊并不是指卑微或者受辱的事件。谦逊并不会让你感到羞耻、惭愧或者愚蠢。反而本研究所感兴趣的是那些能让你正确认识到你和他人之间关系的视角。就像一句名言所说的，谦逊并不是看轻自己，而是避免只想到自己。`,
         rows: 10,
         columns: 120,
@@ -253,18 +250,11 @@ var Speciality = {
     on_finish: function(data) { replaceComma(data) }
 }*/
 
-var AE1 = {
-    type: 'html-slider-response',
-    data: { varname: 'ae1' },
-    on_load: function() { setSliderAttr() },
-    stimulus: '总体而言，你在多大程度上喜欢自己的名字？<br/>（1 = 完全没有信心，7 = 很有信心）',
-    labels: ['完全没有信心', '比较没信心', '有点没信心', '不确定', '有点信心', '比较有信心', '很有信心'],
-    min: 1,
-    max: 7,
-    start: 4,
-    prompt: '<b id="slider-value">_</b><br/><br/>',
-    button_label: '继续',
-    require_movement: true
+var instr_firm = {
+    type: 'html-button-response',
+    data: { varname: 'instr_firm' },
+    stimulus: '最后一题：以往的研究显示，刚才的空间认知任务，男性的表现与女性的表现如何？',
+    choices: ['男性优于女性', '两者接近', '女性优于男性'],
 }
 
 var AE2 = {
@@ -560,24 +550,24 @@ var demographics = {
     ]
 }
 
-//svs_mrt包括instr_mrt心理旋转测验指导语。mrt_test心理旋转测验。instr_aftermrt测验后问卷指导语，AE1-7问卷题项。0表示实验，1控制
+//svs_mrt包括instr_mrt心理旋转测验指导语。mrt_test心理旋转测验。instr_aftermrt测验后问卷指导语，AE2-7问卷题项。0表示实验，1控制
 if (dors == 0) {
     var svs_mrt = {
     timeline: [
-        exp_mrt,instr_mrt,mrt_test,instr_aftermrt, AE1,AE2,AE3,AE4,AE5,AE6,AE7,
+        exp_mrt,instr_mrt,mrt_test,instr_aftermrt, AE2,AE3,AE4,AE5,AE6,AE7,
     ]}
 }
 else {
     var svs_mrt = {
     timeline: [
-        control_mrt,instr_mrt,mrt_test,instr_aftermrt, AE1,AE2,AE3,AE4,AE5,AE6,AE7,
+        control_mrt,instr_mrt,mrt_test,instr_aftermrt, AE2,AE3,AE4,AE5,AE6,AE7,
     ]}
 }
 
 
 var surveys = {
     timeline: [
-        e_recall,svs_mrt,instr_stex, STEX,
+        e_recall,svs_mrt,instr_stex, STEX,instr_firm,
     ]
 }
 /*instr_stex刻板印象危险检验指导语，STEX问卷内容。e_recall谦逊唤起任务。
