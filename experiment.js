@@ -202,7 +202,7 @@ var instr_employ = {
         指导语：<br/>
         假设你现在是江西银行南昌分行的人事负责人，你行正在招聘一名新员工，详细招聘公告见下图。<br/>
         之后你将依次看到3份简历，请仔细考虑后，评价每个求职者在这份工作上的胜任度。<br/><br/>
-        <img src="employ/招聘公告.png"></img>
+        <img src="employ/wanted.png"></img>
         `,
     ],
     show_clickable_nav: true,
