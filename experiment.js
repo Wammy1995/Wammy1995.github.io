@@ -203,7 +203,7 @@ var instr_employ = {
         指导语：<br/>
         假设你现在是江西银行南昌分行的人事负责人，你行正在招聘一名新员工，详细招聘公告见下图。<br/>
         之后你将依次看到3份简历，请仔细考虑后，评价每个求职者在这份工作上的胜任度。<br/><br/>
-        <img src="employ/wanted.png"></img>
+        <img src="https://s3.ax1x.com/2021/02/24/yO5sER.png"></img>
         `,
     ],
     show_clickable_nav: true,
@@ -216,7 +216,7 @@ var emp_211 = {
     type: 'html-slider-response',
     data: { varname: 'e211' },
     on_load: function() { setSliderAttr() },
-    stimulus: `<img src="employ/211.jpg"></img>
+    stimulus: `<img src="https://s3.ax1x.com/2021/02/24/yO5dvF.jpg"></img>
         <p style="text-align: left">请给这位求职者打分，1-7分，7分满分</p>`,
     labels: ['1', '2', '3', '4', '5', '6', '7'],
     min: 1,
@@ -231,7 +231,7 @@ var emp_00 = {
     type: 'html-slider-response',
     data: { varname: 'e00' },
     on_load: function() { setSliderAttr() },
-    stimulus: `<img src="employ/00.png"></img>
+    stimulus: `<img src="https://s3.ax1x.com/2021/02/24/yO5Db9.png"></img>
         <p style="text-align: left">请给这位求职者打分，1-7分，7分满分</p>`,
     labels: ['1', '2', '3', '4', '5', '6', '7'],
     min: 1,
@@ -246,7 +246,7 @@ var emp_985 = {
     type: 'html-slider-response',
     data: { varname: 'e985' },
     on_load: function() { setSliderAttr() },
-    stimulus: `<img src="employ/985.png"></img>
+    stimulus: `<img src="https://s3.ax1x.com/2021/02/24/yO50u4.png"></img>
         <p style="text-align: left">请给这位求职者打分，1-7分，7分满分</p>`,
     labels: ['1', '2', '3', '4', '5', '6', '7'],
     min: 1,
