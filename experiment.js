@@ -144,8 +144,9 @@ var instr_mrt = {
         `<p style="text-align: left;text-indent: 2em;">
         <b>指导语：</b>在所给的五个图形中，分割线左侧的图形（题干）与分割线右侧四个图形（选项）中的两个是同一个图形，由第一个图形旋转一定角度得到的，如题干图形和选项图形中的第一个和第三个图形是同一个图形。请在下面的题目中选择与题干图形相同的<span style="color:#d15323de;">两个选项，多选或少选均不得分</span>。</p>
         <p style="text-align: left;text-indent: 2em;">此任务为限时测验，你只有7分钟来回答问题，请不要感到慌乱，尽力答题即可。</p>
-        <img src="mrt/mrt_instr11.png"></img>
+        <img src="https://s3.ax1x.com/2021/02/24/yXJGes.png"></img>
         `,
+        /*mrt/mrt_instr11.png*/
     ],
     show_clickable_nav: true,
     allow_backward: false,
@@ -460,160 +461,160 @@ var mrt_test = {
         type: 'test-multi-select',
         questions: [
           {
-            prompt: "mrt/1.png", 
-            options: ["mrt/1A.png", "mrt/1-1.png", "mrt/1C.png", "mrt/1-2.png"], 
+            prompt: "https://s3.ax1x.com/2021/02/24/yO5agU.png", 
+            options: ["https://s3.ax1x.com/2021/02/24/yO564x.png", "https://s3.ax1x.com/2021/02/24/yO5BDJ.png", "https://s3.ax1x.com/2021/02/24/yO5gC6.png", "https://s3.ax1x.com/2021/02/24/yO5yU1.png"], 
             horizontal: true,
             required: false,
             name: 'n1',
             rof:"02"
           }, 
           {
-            prompt: "mrt/2.png", 
-            options: ["mrt/2A.png", "mrt/2-1.png", "mrt/2-2.png", "mrt/2D.png"], 
+            prompt: "https://s3.ax1x.com/2021/02/24/yO528K.png", 
+            options: ["https://s3.ax1x.com/2021/02/24/yO54DH.png", "https://s3.ax1x.com/2021/02/24/yO5RgO.png", "https://s3.ax1x.com/2021/02/24/yO5WvD.png", "https://s3.ax1x.com/2021/02/24/yO5oVA.png"], 
             horizontal: true,
             required: false,
             name: 'n2',
             rof:"03"
           }, 
           {
-            prompt: "mrt/3.png", 
-            options: ["mrt/3-1.png", "mrt/3B.png", "mrt/3-2.png", "mrt/3D.png"], 
+            prompt: "https://s3.ax1x.com/2021/02/24/yO575t.png", 
+            options: ["https://s3.ax1x.com/2021/02/24/yO5TUI.png", "https://s3.ax1x.com/2021/02/24/yO5q8f.png", "https://s3.ax1x.com/2021/02/24/yO5bPP.png", "https://s3.ax1x.com/2021/02/24/yO5L28.png"], 
             horizontal: true,
             required: false,
             name: 'n3',
             rof:"13"
           }, 
           {
-            prompt: "mrt/4.png", 
-            options: ["mrt/4-1.png", "mrt/4B.png", "mrt/4C.png", "mrt/4-2.png"], 
+            prompt: "https://s3.ax1x.com/2021/02/24/yO5OxS.png", 
+            options: ["https://s3.ax1x.com/2021/02/24/yO5jKg.png", "https://s3.ax1x.com/2021/02/24/yOISVs.png", "https://s3.ax1x.com/2021/02/24/yOIpan.png", "https://s3.ax1x.com/2021/02/24/yO5xbj.png"], 
             horizontal: true,
             required: false,
             name: 'n4',
             rof:"12"
           }, 
           {
-            prompt: "mrt/5.png", 
-            options: ["mrt/5A.png", "mrt/5-2.png", "mrt/5C.png", "mrt/5-3.png"], 
+            prompt: "https://s3.ax1x.com/2021/02/24/yOI95q.png", 
+            options: ["https://s3.ax1x.com/2021/02/24/yOIF2T.png", "https://s3.ax1x.com/2021/02/24/yOIPP0.png", "https://s3.ax1x.com/2021/02/24/yOIkxU.png", "https://s3.ax1x.com/2021/02/24/yOIiGV.png"], 
             horizontal: true,
             required: false,
             name: 'n5',
             rof:"02"
           }, 
           {
-            prompt: "mrt/6.png", 
-            options: ["mrt/6A.png", "mrt/6-1.png", "mrt/6-2.png", "mrt/6D.png"], 
+            prompt: "https://s3.ax1x.com/2021/02/24/yOIEMF.png", 
+            options: ["https://s3.ax1x.com/2021/02/24/yOImZ9.png", "https://s3.ax1x.com/2021/02/24/yOIVr4.png", "https://s3.ax1x.com/2021/02/24/yOIZqJ.png", "https://s3.ax1x.com/2021/02/24/yOInaR.png"], 
             horizontal: true,
             required: false,
             name: 'n6',
             rof:"03"
           }, 
           {
-            prompt: "mrt/7.png", 
-            options: ["mrt/7-1.png", "mrt/7B.png", "mrt/7-2.png", "mrt/7D.png"], 
+            prompt: "https://s3.ax1x.com/2021/02/24/yOIuI1.png", 
+            options: ["https://s3.ax1x.com/2021/02/24/yOIMPx.png", "https://s3.ax1x.com/2021/02/24/yOIQG6.png", "https://s3.ax1x.com/2021/02/24/yOIlRK.png", "https://s3.ax1x.com/2021/02/24/yOI1xO.png"], 
             horizontal: true,
             required: false,
             name: 'n7',
             rof:"13"
           }, 
           {
-            prompt: "mrt/8.png", 
-            options: ["mrt/8-1.png", "mrt/8B.png", "mrt/8C.png", "mrt/8-2.png"], 
+            prompt: "https://s3.ax1x.com/2021/02/24/yOI8MD.png", 
+            options: ["https://s3.ax1x.com/2021/02/24/yOIJqH.png", "https://s3.ax1x.com/2021/02/24/yOItZd.png", "https://s3.ax1x.com/2021/02/24/yOIUII.png", "https://s3.ax1x.com/2021/02/24/yOIGse.png"], 
             horizontal: true,
             required: false,
             name: 'n8',
             rof:"12"
           }, 
           {
-            prompt: "mrt/9.png", 
-            options: ["mrt/9-1.png", "mrt/9B.png", "mrt/9-2.png", "mrt/9D.png"], 
+            prompt: "https://s3.ax1x.com/2021/02/24/yOIUII.png", 
+            options: ["https://s3.ax1x.com/2021/02/24/yOIdit.png", "https://s3.ax1x.com/2021/02/24/yOI0Rf.png", "https://s3.ax1x.com/2021/02/24/yOIwJP.png", "https://s3.ax1x.com/2021/02/24/yOIBz8.png"], 
             horizontal: true,
             required: false,
             name: 'n9',
             rof:"13"
           }, 
           {
-            prompt: "mrt/10.png", 
-            options: ["mrt/3-1.png", "mrt/3B.png", "mrt/10C.png", "mrt/10D.png"], 
+            prompt: "https://s3.ax1x.com/2021/02/24/yOIrQS.png", 
+            options: ["https://s3.ax1x.com/2021/02/24/yOIssg.png", "https://s3.ax1x.com/2021/02/24/yOIyLQ.png", "https://s3.ax1x.com/2021/02/24/yOIcZj.png", "https://s3.ax1x.com/2021/02/24/yOIgds.png"], 
             horizontal: true,
             required: false,
             name: 'n10',
             rof:"23"
           }, 
           {
-            prompt: "mrt/11.png", 
-            options: ["mrt/11-1.png", "mrt/11-2.png", "mrt/11C.png", "mrt/11D.png"], 
+            prompt: "https://s3.ax1x.com/2021/02/24/yOI2on.png", 
+            options: ["https://s3.ax1x.com/2021/02/24/yOIWiq.png", "https://s3.ax1x.com/2021/02/24/yOIfJ0.png", "https://s3.ax1x.com/2021/02/24/yOIhWV.png", "https://s3.ax1x.com/2021/02/24/yOI4zT.png"], 
             horizontal: true,
             required: false,
             name: 'n11',
             rof:"23"
           }, 
           {
-            prompt: "mrt/12.png", 
-            options: ["mrt/12-2.png", "mrt/12B.png", "mrt/12C.png", "mrt/12-1.png"], 
+            prompt: "https://s3.ax1x.com/2021/02/24/yOIIQU.png", 
+            options: ["https://s3.ax1x.com/2021/02/24/yOITL4.png", "https://s3.ax1x.com/2021/02/24/yXGwqA.png", "https://s3.ax1x.com/2021/02/24/yXGdrd.png", "https://s3.ax1x.com/2021/02/24/yOIoyF.png"], 
             horizontal: true,
             required: false,
             name: 'n12',
             rof:"12"
           }, 
           {
-            prompt: "mrt/13.png", 
-            options: ["mrt/13-2.png", "mrt/13B.png", "mrt/13-1.png", "mrt/13D.png"], 
+            prompt: "https://s3.ax1x.com/2021/02/24/yXGaKH.png", 
+            options: ["https://s3.ax1x.com/2021/02/24/yXGt2D.png", "https://s3.ax1x.com/2021/02/24/yXGBVI.png", "https://s3.ax1x.com/2021/02/24/yXGNxe.png", "https://s3.ax1x.com/2021/02/24/yXGDat.png"], 
             horizontal: true,
             required: false,
             name: 'n13',
             rof:"13"
           }, 
           {
-            prompt: "mrt/14.png", 
-            options: ["mrt/14-2.png", "mrt/14B.png", "mrt/14-1.png", "mrt/14D.png"], 
+            prompt: "https://s3.ax1x.com/2021/02/24/yXGrIP.png", 
+            options: ["https://s3.ax1x.com/2021/02/24/yXG6G8.png", "https://s3.ax1x.com/2021/02/24/yXGcRS.png", "https://s3.ax1x.com/2021/02/24/yXGyPf.png", "https://s3.ax1x.com/2021/02/24/yXGgxg.png"], 
             horizontal: true,
             required: false,
             name: 'n14',
             rof:"13"
           }, 
           {
-            prompt: "mrt/15.png", 
-            options: ["mrt/15-3.png", "mrt/15B.png", "mrt/15-1.png", "mrt/15D.png"], 
+            prompt: "https://s3.ax1x.com/2021/02/24/yXGRMQ.png", 
+            options: ["https://s3.ax1x.com/2021/02/24/yXGfqs.png", "https://s3.ax1x.com/2021/02/24/yXG4Zn.png", "https://s3.ax1x.com/2021/02/24/yXGWrj.png", "https://s3.ax1x.com/2021/02/24/yXG5aq.png"], 
             horizontal: true,
             required: false,
             name: 'n15',
             rof:"13"
           }, 
           {
-            prompt: "mrt/16.png", 
-            options: ["mrt/16A.png", "mrt/16-1.png", "mrt/16-2.png", "mrt/16D.png"], 
+            prompt: "https://s3.ax1x.com/2021/02/24/yXG5aq.png", 
+            options: ["https://s3.ax1x.com/2021/02/24/yXGHRU.png", "https://s3.ax1x.com/2021/02/24/yXGTiV.png", "https://s3.ax1x.com/2021/02/24/yXG7GT.png", "https://s3.ax1x.com/2021/02/24/yXGLM4.png"], 
             horizontal: true,
             required: false,
             name: 'n16',
             rof:"03"
           }, 
           {
-            prompt: "mrt/17.png", 
-            options: ["mrt/17-2.png", "mrt/17B.png", "mrt/17-1.png", "mrt/17D.png"], 
+            prompt: "https://s3.ax1x.com/2021/02/24/yXGLM4.png", 
+            options: ["https://s3.ax1x.com/2021/02/24/yXGXL9.png", "https://s3.ax1x.com/2021/02/24/yXGvZR.png", "https://s3.ax1x.com/2021/02/24/yXGOsJ.png", "https://s3.ax1x.com/2021/02/24/yXGxd1.png"], 
             horizontal: true,
             required: false,
             name: 'n17',
             rof:"13"
           }, 
           {
-            prompt: "mrt/18.png", 
-            options: ["mrt/18-1.png", "mrt/18B.png", "mrt/18C.png", "mrt/18-2.png"], 
+            prompt: "https://s3.ax1x.com/2021/02/24/yXJpi6.png", 
+            options: ["https://s3.ax1x.com/2021/02/24/yXJPzD.png", "https://s3.ax1x.com/2021/02/24/yXJFQe.png", "https://s3.ax1x.com/2021/02/24/yXJksH.png", "https://s3.ax1x.com/2021/02/24/yXJCRO.png"], 
             horizontal: true,
             required: false,
             name: 'n18',
             rof:"12"
           }, 
           {
-            prompt: "mrt/19.png", 
-            options: ["mrt/19A.png", "mrt/19-2.png", "mrt/19C.png", "mrt/19-1.png"], 
+            prompt: "https://s3.ax1x.com/2021/02/24/yXJALd.png", 
+            options: ["https://s3.ax1x.com/2021/02/24/yXJeot.png", "https://s3.ax1x.com/2021/02/24/yXJVeA.png", "https://s3.ax1x.com/2021/02/24/yXJnFP.png", "https://s3.ax1x.com/2021/02/24/yXJZdI.png"], 
             horizontal: true,
             required: false,
             name: 'n19',
             rof:"02"
           }, 
           {
-            prompt: "mrt/20.png", 
-            options: ["mrt/20A.png", "mrt/20-1.png", "mrt/20-2.png", "mrt/20D.png"], 
+            prompt: "https://s3.ax1x.com/2021/02/24/yXJuJf.png", 
+            options: ["https://s3.ax1x.com/2021/02/24/yXJlQg.png", "https://s3.ax1x.com/2021/02/24/yXJKW8.png", "https://s3.ax1x.com/2021/02/24/yXJQSS.png", "https://s3.ax1x.com/2021/02/24/yXJ1yQ.png"], 
             horizontal: true,
             required: false,
             name: 'n20',
