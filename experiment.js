@@ -101,6 +101,8 @@ var warmup = {
     button_html: btn_html_timer
 }
 
+
+//指导语合集
 var instr_aftermrt = {
     type: 'instructions',
     pages: [
@@ -116,7 +118,7 @@ var instr_aftermrt = {
 var exp_mrt = {
     type: 'html-button-response',
     stimulus: `<p style="text-align: left;text-indent: 2em;">
-        请仔细阅读下面这段话：</p>
+        指导语：请仔细阅读下面这段话，在这之后将有一个空间认知任务。</p>
         <p style="text-align: left;text-indent: 2em;">
         空间能力是智能的基本成分之一。空间认知能力有广义和狭义之分。广义的空间能力指非言语信息加工中的个体差异，狭义的则指在完成空间测验中的个体差异。一些科学家认为，空间能力上的性别差异主要是在于右脑空间认知能力功能定位化程度的不同，而男性在此方面的功能强于女性，因此男性的空间认知能力强于女性。以往研究调查表明，接下来的任务能准确反映出个体的空间认知能力。且绝大部分研究结果显示，男性在此任务上的表现优于女性。
         `,
@@ -128,7 +130,7 @@ var exp_mrt = {
 var control_mrt = {
     type: 'html-button-response',
     timulus: `<p style="text-align: left;text-indent: 2em;">
-        请仔细阅读下面这段话：</p>
+        指导语：请仔细阅读下面这段话，在这之后将有一个空间认知任务。</p>
         <p style="text-align: left;text-indent: 2em;">
         空间能力是智能的基本成分之一。空间认知能力有广义和狭义之分。广义的空间能力指非言语信息加工中的个体差异，狭义的则指在完成空间测验中的个体差异。一些科学家认为，空间能力上的性别差异主要是在于右脑空间认知能力功能定位化程度的不同，男性在此方面强于女性；而另一些科学家则认为是具体任务类型的不同，在特定任务上，男性优于女性，但在某些任务中，女性要优于男性。接下来的任务在绝大部分研究结果中显示男性与女性表现相近。
         `,
@@ -172,12 +174,93 @@ var instr_stex = {
     button_label_next: '继续'
 }
 
+var instr_humility = {
+    type: 'instructions',
+    pages: [
+        `<p style="text-align: left">
+        指导语：<br/>
+        请根据你此时此刻的感受回答之后的问题，<br/>
+        并选择你认为符合自己看法的按钮。<br/><br/>
+        1 = 非常不同意<br/>
+        2 = 比较不同意<br/>
+        3 = 有点不同意<br/>
+        4 = 既不同意也不反对<br/>
+        5 = 有点同意<br/>
+        6 = 比较同意<br/>
+        7 = 非常同意</p>`,
+    ],
+    show_clickable_nav: true,
+    allow_backward: false,
+    button_label_previous: '返回',
+    button_label_next: '继续'
+}
+
+var instr_employ = {
+    type: 'instructions',
+    pages: [
+        `<p style="text-align: left">
+        指导语：<br/>
+        假设你现在是江西银行南昌分行的人事负责人，你行正在招聘一名新员工，详细招聘公告见下图。<br/>
+        之后你将依次看到3份简历，请仔细考虑后，评价每个求职者在这份工作上的胜任度。<br/><br/>
+        <img src="employ/招聘公告.png"></img>
+        `,
+    ],
+    show_clickable_nav: true,
+    allow_backward: false,
+    button_label_previous: '返回',
+    button_label_next: '继续'
+}
+
+var emp_211 = {
+    type: 'html-slider-response',
+    data: { varname: 'e211' },
+    on_load: function() { setSliderAttr() },
+    stimulus: `<img src="employ/211.jpg"></img>
+        <p style="text-align: left">请给这位求职者打分，1-7分，7分满分</p>`,
+    labels: ['1', '2', '3', '4', '5', '6', '7'],
+    min: 1,
+    max: 7,
+    start: 4,
+    prompt: '<b id="slider-value">_</b><br/><br/>',
+    button_label: '继续',
+    require_movement: true
+}
+
+var emp_00 = {
+    type: 'html-slider-response',
+    data: { varname: 'e00' },
+    on_load: function() { setSliderAttr() },
+    stimulus: `<img src="employ/00.png"></img>
+        <p style="text-align: left">请给这位求职者打分，1-7分，7分满分</p>`,
+    labels: ['1', '2', '3', '4', '5', '6', '7'],
+    min: 1,
+    max: 7,
+    start: 4,
+    prompt: '<b id="slider-value">_</b><br/><br/>',
+    button_label: '继续',
+    require_movement: true
+}
+
+var emp_985 = {
+    type: 'html-slider-response',
+    data: { varname: 'e985' },
+    on_load: function() { setSliderAttr() },
+    stimulus: `<img src="employ/985.png"></img>
+        <p style="text-align: left">请给这位求职者打分，1-7分，7分满分</p>`,
+    labels: ['1', '2', '3', '4', '5', '6', '7'],
+    min: 1,
+    max: 7,
+    start: 4,
+    prompt: '<b id="slider-value">_</b><br/><br/>',
+    button_label: '继续',
+    require_movement: true
+}
+
 var close_fullscreen = {
     type: 'fullscreen',
     fullscreen_mode: false,
     delay_after: 0
 }
-
 
 /* Blocks: Surveys */
 
@@ -214,7 +297,7 @@ var e_recall = {
    type: 'survey-text',
     data: { varname: 'recall' },
     questions: [{
-        prompt: `请回忆一个你本可以表现得很谦逊，但却没有那么做的经历。请尽量生动具体地在脑海里想象这个场景，当你能成功的回忆这段经历时，请在下一页中写下这段经历。请尽量描述每一个细节，你不需要写成一段连贯的文字，任何与之相关的细节都可以被记录下来，例如，你做了什么，你本可以做的谦逊的部分是什么，如果你表现得谦逊结果会有什么改变，为什么你应该表现得更加谦逊，等等。`,
+        prompt: `指导语：</br>请回忆一个你本可以表现得很谦逊，但却没有那么做的经历。请尽量生动具体地在脑海里想象这个场景，当你能成功的回忆这段经历时，请在下一页中写下这段经历。请尽量描述每一个细节，你不需要写成一段连贯的文字，任何与之相关的细节都可以被记录下来，例如，你做了什么，你本可以做的谦逊的部分是什么，如果你表现得谦逊结果会有什么改变，为什么你应该表现得更加谦逊，等等。`,
         placeholder: `请注意，在本研究中谦逊并不是指卑微或者受辱的事件。谦逊并不会让你感到羞耻、惭愧或者愚蠢。反而本研究所感兴趣的是那些能让你正确认识到你和他人之间关系的视角。就像一句名言所说的，谦逊并不是看轻自己，而是避免只想到自己。`,
         rows: 10,
         columns: 120,
@@ -236,19 +319,6 @@ var Speciality = {
     button_label: '继续',
     on_finish: function(data) { addRespFromSurvey(data) }
 }
-
-/*var Language = {
-    type: 'survey-multi-select',
-    data: { varname: 'Language' },
-    questions: [{
-        prompt: '你会哪些语言？',
-        options: ['汉语', '英语', '日语', '韩语', '西班牙语', '其他'],
-        horizontal: false,
-        required: false
-    }],
-    button_label: '继续',
-    on_finish: function(data) { replaceComma(data) }
-}*/
 
 var instr_firm = {
     type: 'html-button-response',
@@ -356,6 +426,32 @@ var STEX = {
         { data: { i: 1 , varname: 'STEX1' }, s: '我担心我在测验中的表现会受到性别的影响。' },
         { data: { i: 2 , varname: 'STEX2' }, s: '我担心我表现得不好，别人会将我的表现不佳归咎于我的性别。' },
         { data: { i: 3 , varname: 'STEX3' }, s: '我总是担心自己的表现会验证人们的看法而感到焦虑，这可能会影响我的发挥。' },
+    ],
+    randomize_order: false
+}
+
+//谦虚测量
+var humility = {
+    timeline: [{
+        type: 'html-slider-response',
+        data: jsPsych.timelineVariable('data'),
+        on_load: function() { setSliderAttr() },
+        stimulus: jsPsych.timelineVariable('s'),
+        prompt: '<b id="slider-value">_</b><br/><br/>',
+        labels: ['非常不同意', '比较不同意', '有点不同意', '不同意也不反对', '有点同意', '比较同意', '非常同意'],
+        min: 1,
+        max: 7,
+        start: 4,
+        button_label: '继续',
+        require_movement: true
+    }],
+    timeline_variables: [
+        { data: { i: 1 , varname: 'hum1' }, s: '总的来说，我觉得和一般人相比，我并没有更优秀或更差劲。' },
+        { data: { i: 2 , varname: 'hum2' }, s: '我认为自己既有许多优点，也有很多缺点。' },
+        { data: { i: 3 , varname: 'hum3' }, s: '我觉得自己不值得获得比别人更多的尊重。' },
+        { data: { i: 4 , varname: 'hum4' }, s: '老实说，我觉得自己比大多数人优秀。' },
+        { data: { i: 5 , varname: 'hum5' }, s: '我觉得我应该获得比任何人都多的尊重。' },
+        { data: { i: 6 , varname: 'hum6' }, s: '我觉得自己没有太多的不足之处。' },
     ],
     randomize_order: false
 }
@@ -546,7 +642,7 @@ var OpenEnded = {
 
 var demographics = {
     timeline: [
-        AName, Sex, Age, Speciality, 
+        AName, Sex, /*Age, Speciality,*/ 
     ]
 }
 
@@ -564,10 +660,20 @@ else {
     ]}
 }
 
+var employ = {
+    timeline: [instr_employ,emp_211,emp_00,emp_985,
+    ]
+}
 
+/*var surveys = {
+    timeline: [
+        e_recall,svs_mrt,instr_stex, STEX,instr_firm,instr_humility, humility,employ,
+    ]
+}*/
+//预实验1阶段的测验内容，上面是正式实验的测验内容
 var surveys = {
     timeline: [
-        e_recall,svs_mrt,instr_stex, STEX,instr_firm,
+        instr_mrt,mrt_test,instr_humility, humility,employ,
     ]
 }
 /*instr_stex刻板印象危险检验指导语，STEX问卷内容。e_recall谦逊唤起任务。
