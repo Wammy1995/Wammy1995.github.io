@@ -25,7 +25,7 @@ function countdown(){
     a.innerHTML=str;
     --mt;
     if (mt<=0) {
-        alert("时间到，结束！")
+        alert("时间到，当前测验已结束！确定以继续实验流程，谢谢。")
         document.getElementById('jspsych-test-multi-select-next').click();
     }
 }
