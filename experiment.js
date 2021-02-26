@@ -674,7 +674,7 @@ var employ = {
 //预实验1阶段的测验内容，上面是正式实验的测验内容
 var surveys = {
     timeline: [
-        instr_mrt,mrt_test,instr_humility, humility,employ,
+        instr_mrt,mrt_test,e_recall,instr_humility, humility,employ,
     ]
 }
 /*instr_stex刻板印象危险检验指导语，STEX问卷内容。e_recall谦逊唤起任务。
