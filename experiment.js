@@ -518,7 +518,7 @@ var mrt_test = {
           }, 
           {
             prompt: "https://s3.ax1x.com/2021/02/24/yOI8MD.png", 
-            options: ["https://s3.ax1x.com/2021/02/24/yOIJqH.png", "https://s3.ax1x.com/2021/02/24/yOItZd.png", "https://s3.ax1x.com/2021/02/24/yOIUII.png", "https://s3.ax1x.com/2021/02/24/yOIGse.png"], 
+            options: ["https://s3.ax1x.com/2021/02/24/yOIJqH.png", "https://s3.ax1x.com/2021/02/24/yOItZd.png", "https://s3.ax1x.com/2021/02/24/yOINdA.png", "https://s3.ax1x.com/2021/02/24/yOIGse.png"], 
             horizontal: true,
             required: false,
             name: 'n8',
@@ -581,7 +581,7 @@ var mrt_test = {
             rof:"13"
           }, 
           {
-            prompt: "https://s3.ax1x.com/2021/02/24/yXG5aq.png", 
+            prompt: "https://s3.ax1x.com/2021/02/24/yXGII0.png", 
             options: ["https://s3.ax1x.com/2021/02/24/yXGHRU.png", "https://s3.ax1x.com/2021/02/24/yXGTiV.png", "https://s3.ax1x.com/2021/02/24/yXG7GT.png", "https://s3.ax1x.com/2021/02/24/yXGLM4.png"], 
             horizontal: true,
             required: false,
