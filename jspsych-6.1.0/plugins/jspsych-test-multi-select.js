@@ -111,7 +111,7 @@ jsPsych.plugins['test-multi-select'] = (function() {
       "label.jspsych-test-multi-select-text input[type='checkbox'] {margin-right: 1em;}"
     display_element.innerHTML = '<style id="jspsych-test-multi-select-css">' + cssstr + '</style>';
     if (trial.time_limit != 0) {
-      display_element.innerHTML += '<div id="timelimit" style="text-align:center;margin-top:50px;font-size:15px;"></div>';
+      display_element.innerHTML += '<div id="timelimit" style="text-align:center;font-size:15px;"></div>';
       mt = trial.time_limit*60;
       timelimit = setInterval("countdown()",1000);
     }
