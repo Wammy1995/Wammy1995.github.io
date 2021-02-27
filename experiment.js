@@ -78,17 +78,19 @@ var open_fullscreen = {
 }
 
 var welcome = {
-    type: 'html-keyboard-response',
-    stimulus: `
+    type: 'instructions',
+    pages: [ `
     <p style="font: bold 32pt 微软雅黑; color: #B22222">
     欢迎参与我们的实验</p>
     <p style="font: 20pt 微软雅黑; color: black"><br/>
     <按空格键继续><br/>
     <b>实验过程中请勿退出全屏</b><br/><br/></p>
     <p style="font: 20pt 华文中宋; color: grey">
-    江西师范大学<br/>2021年</p>`,
-    choices: [' '],
-    post_trial_gap: 100
+    江西师范大学<br/>2021年</p>`],
+    show_clickable_nav: true,
+    allow_backward: false,
+    button_label_previous: '返回',
+    button_label_next: '继续'
 }
 
 var warmup = {
