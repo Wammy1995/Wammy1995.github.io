@@ -16,7 +16,8 @@ const feedback_wrong = `<span style="position: absolute; top: 55%; left: 0; righ
 
 const subID = jsPsych.randomization.randomID(8)
 //0、1随机分配被试组别，0为实验，1为控制
-const dors =  Math.round(Math.random())
+const keban =  Math.round(Math.random())
+const qianxun =  Math.round(Math.random())
 
 /* Blocks: HTML DOM Settings */
 
@@ -266,11 +267,14 @@ var close_fullscreen = {
 
 /* Blocks: Surveys */
 
-var Sex = {
-    type: 'html-button-response',
-    data: { varname: 'Sex' },
-    stimulus: '你的性别',
-    choices: ['男', '女'],
+var Height = {
+    type: 'survey-html-form',
+    data: { varname: 'Height' },
+    preamble: '你的身高（cm）',
+    html: `
+    <p><input name="Q0" type="number" placeholder="150~200" min=150 max=200
+    oninput="if(value.length>3) value=value.slice(0,3)" required style="font-size: 20px;width:100px;" /></p>`,
+    button_label: '继续',
     on_finish: function(data) { addRespFromButton(data) }
 }
 
@@ -295,7 +299,23 @@ var AName = {
     on_finish: function(data) { addRespFromSurvey(data) }
 }
 
+//谦逊回忆任务
 var e_recall = {
+   type: 'survey-text',
+    data: { varname: 'recall' },
+    questions: [{
+        prompt: `指导语：</br>请回忆一个你本可以表现得很谦逊，但却没有那么做的经历。请尽量生动具体地在脑海里想象这个场景，当你能成功的回忆这段经历时，请在下下方写下这段经历。请尽量描述每一个细节，你不需要写成一段连贯的文字，任何与之相关的细节都可以被记录下来，例如，你做了什么，你本可以做的谦逊的部分是什么，如果你表现得谦逊结果会有什么改变，为什么你应该表现得更加谦逊，等等。`,
+        placeholder: `请注意，在本研究中谦逊并不是指卑微或者受辱的事件。谦逊并不会让你感到羞耻、惭愧或者愚蠢。反而本研究所感兴趣的是那些能让你正确认识到你和他人之间关系的视角。就像一句名言所说的，谦逊并不是看轻自己，而是避免只想到自己。`,
+        rows: 10,
+        columns: 120,
+        required: true
+    }],
+    button_label: '继续',
+    on_finish: function(data) { addRespFromSurvey(data) }
+}
+
+//中性回忆任务
+var c_recall = {
    type: 'survey-text',
     data: { varname: 'recall' },
     questions: [{
@@ -325,7 +345,7 @@ var Speciality = {
 var instr_firm = {
     type: 'html-button-response',
     data: { varname: 'instr_firm' },
-    stimulus: '最后一题：以往的研究显示，刚才的空间认知任务，男性的表现与女性的表现如何？',
+    stimulus: '以往的研究显示，刚才的空间认知任务，男性的表现与女性的表现如何？',
     choices: ['男性优于女性', '两者接近', '女性优于男性'],
 }
 
@@ -644,12 +664,12 @@ var OpenEnded = {
 
 var demographics = {
     timeline: [
-        AName, Sex, /*Age, Speciality,*/ 
+        AName, Height, /*Age, Speciality,*/ 
     ]
 }
 
 //svs_mrt包括instr_mrt心理旋转测验指导语。mrt_test心理旋转测验。instr_aftermrt测验后问卷指导语，AE2-7问卷题项。0表示实验，1控制
-if (dors == 0) {
+if (keban == 0) {
     var svs_mrt = {
     timeline: [
         exp_mrt,instr_mrt,mrt_test,instr_aftermrt, AE2,AE3,AE4,AE5,AE6,AE7,
@@ -673,11 +693,18 @@ var employ = {
     ]
 }*/
 //预实验1阶段的测验内容，上面是正式实验的测验内容
-var surveys = {
-    timeline: [
-        instr_mrt,mrt_test,e_recall,instr_humility, humility,employ,
-    ]
+if (qianxun == 0) {
+    var surveys = {
+        timeline: [
+            instr_mrt,mrt_test,e_recall,instr_humility, humility,employ,
+        ]}
+}else {
+    var surveys = {
+        timeline: [
+            instr_mrt,mrt_test,c_recall,instr_humility, humility,employ,
+        ]}
 }
+    
 /*instr_stex刻板印象危险检验指导语，STEX问卷内容。e_recall谦逊唤起任务。
 
 */
@@ -699,7 +726,7 @@ var main_timeline = [
 jsPsych.init({
     timeline: main_timeline,
     on_finish: function() {
-        jsPsych.data.get().localSave('csv', `data_${dors+subID}.csv`) // download from browser
+        jsPsych.data.get().localSave('csv', `data_${qianxun+keban+subID}.csv`) // download from browser
         document.getElementById('jspsych-content').innerHTML += '实验结束，请将您浏览器下载的CSV文件发送至邮箱：linqi19951102@126.com，感谢您的参与！'
     }
 })
