@@ -696,12 +696,12 @@ var employ = {
 if (qianxun == 0) {
     var surveys = {
         timeline: [
-            instr_mrt,mrt_test,e_recall,instr_humility, humility,employ,
+            e_recall,svs_mrt,instr_stex, STEX,instr_firm,instr_humility, humility,employ,
         ]}
 }else {
     var surveys = {
         timeline: [
-            instr_mrt,mrt_test,c_recall,instr_humility, humility,employ,
+            c_recall,svs_mrt,instr_stex, STEX,instr_firm,instr_humility, humility,employ,
         ]}
 }
     
