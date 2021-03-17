@@ -123,7 +123,7 @@ var exp_mrt = {
         指导语：请仔细阅读下面这段话，在这之后将有一个空间认知任务。</p>
         <p style="text-align: left;text-indent: 2em;">
         空间能力是智能的基本成分之一。空间认知能力有广义和狭义之分。广义的空间能力指非言语信息加工中的个体差异，狭义的则指在完成空间测验中的个体差异。一些科学家认为，空间能力上的性别差异主要是在于右脑空间认知能力功能定位化程度的不同，而男性在此方面的功能强于女性，因此男性的空间认知能力强于女性。以往研究调查表明，接下来的任务能准确反映出个体的空间认知能力。<b style="color:#a70b0bcf">且绝大部分研究结果显示，男性在此任务上的表现优于女性</b>。
-        `,
+        </p>`,
     choices: ['<span id="timer">20</span>秒后继续'],
     button_html: btn_html_timer
 }
@@ -131,19 +131,19 @@ var exp_mrt = {
 //空间旋转测验刻板印象无效组
 var control_mrt = {
     type: 'html-button-response',
-    timulus: `<p style="text-align: left;text-indent: 2em;">
+    stimulus: `<p style="text-align: left;text-indent: 2em;">
         指导语：请仔细阅读下面这段话，在这之后将有一个空间认知任务。</p>
         <p style="text-align: left;text-indent: 2em;">
         空间能力是智能的基本成分之一。空间认知能力有广义和狭义之分。广义的空间能力指非言语信息加工中的个体差异，狭义的则指在完成空间测验中的个体差异。一些科学家认为，空间能力上的性别差异主要是在于右脑空间认知能力功能定位化程度的不同，男性在此方面强于女性；而另一些科学家则认为是具体任务类型的不同，在特定任务上，男性优于女性，但在某些任务中，女性要优于男性。<b style="color:#a70b0bcf">接下来的任务在绝大部分研究结果中显示男性与女性表现相近</b>。
-        `,
+        </p>`,
     choices: ['<span id="timer">20</span>秒后继续'],
     button_html: btn_html_timer
 }
 
 var instr_mrt = {
     type: 'html-button-response',
-    timulus: `<p style="text-align: left;text-indent: 2em;">
-        <b>指导语：</b>在所给的五个图形中，分割线左侧的图形（题干）与分割线右侧四个图形（选项）中的两个是同一个图形，由第一个图形旋转一定角度得到的，如题干图形和选项图形中的第一个和第三个图形是同一个图形。请在下面的题目中选择与题干图形相同的<b style="color:#d15323de;">两个图片，多选或少选均不得分</b>。</p>
+    stimulus: `<p style="text-align: left;text-indent: 2em;">
+        <b>指导语：</b>在所给的五个图形中，分割线左侧的图形（题干）与分割线右侧四个图形（选项）中的两个是同一个图形，由第一个图形旋转一定角度得到的，如题干图形和选项图形中的第一个和第三个图形是同一个图形。请在下面的题目中选择与题干图形相同的<b style="color:#a70b0bcf;">两个图片，多选或少选均不得分</b>。</p>
         <p style="text-align: left;text-indent: 2em;">此任务为限时测验，你只有7分钟来回答问题，请不要感到慌乱，尽力答题即可。</p>
         <img src="https://s3.ax1x.com/2021/02/24/yXJGes.png"></img>
         `,
@@ -598,7 +598,7 @@ var mrt_test = {
           }, 
           {
             prompt: "https://s3.ax1x.com/2021/02/24/yXGII0.png", 
-            options: ["https://s3.ax1x.com/2021/02/24/yXGHRU.png", "https://s3.ax1x.com/2021/02/24/yXGTiV.png", "https://s3.ax1x.com/2021/02/24/yXG7GT.png", "https://s3.ax1x.com/2021/02/24/yXGLM4.png"], 
+            options: ["https://s3.ax1x.com/2021/02/24/yXGHRU.png", "https://s3.ax1x.com/2021/02/24/yXGTiV.png", "https://s3.ax1x.com/2021/02/24/yXG7GT.png", "https://s3.ax1x.com/2021/02/24/yXGbzF.png"], 
             horizontal: true,
             required: false,
             name: 'n16',
