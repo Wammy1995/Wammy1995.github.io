@@ -213,7 +213,7 @@ var emp_211 = {
     type: 'html-slider-response',
     data: { varname: 'e211' },
     on_load: function() { setSliderAttr() },
-    stimulus: `<img src="https://s3.ax1x.com/2021/02/24/yO5dvF.jpg"></img>
+    stimulus: `<img src="https://s3.ax1x.com/2021/03/17/6cBPpQ.png"></img>
         <p style="text-align: left">请给这位求职者打分，1-7分，7分满分</p>`,
     labels: ['1', '2', '3', '4', '5', '6', '7'],
     min: 1,
@@ -228,7 +228,7 @@ var emp_00 = {
     type: 'html-slider-response',
     data: { varname: 'e00' },
     on_load: function() { setSliderAttr() },
-    stimulus: `<img src="https://s3.ax1x.com/2021/02/24/yO5Db9.png"></img>
+    stimulus: `<img src="https://s3.ax1x.com/2021/03/17/6cBilj.png"></img>
         <p style="text-align: left">请给这位求职者打分，1-7分，7分满分</p>`,
     labels: ['1', '2', '3', '4', '5', '6', '7'],
     min: 1,
@@ -243,7 +243,7 @@ var emp_985 = {
     type: 'html-slider-response',
     data: { varname: 'e985' },
     on_load: function() { setSliderAttr() },
-    stimulus: `<img src="https://s3.ax1x.com/2021/02/24/yO50u4.png"></img>
+    stimulus: `<img src="https://s3.ax1x.com/2021/03/17/6cB9fg.png"></img>
         <p style="text-align: left">请给这位求职者打分，1-7分，7分满分</p>`,
     labels: ['1', '2', '3', '4', '5', '6', '7'],
     min: 1,
