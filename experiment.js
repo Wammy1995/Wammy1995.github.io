@@ -473,6 +473,29 @@ var humility = {
     randomize_order: false
 }
 
+var hindsight = {
+    timeline: [{
+        type: 'html-slider-response',
+        data: jsPsych.timelineVariable('data'),
+        on_load: function() { setSliderAttr() },
+        stimulus: jsPsych.timelineVariable('s'),
+        prompt: '<b id="slider-value">_</b><br/><br/>',
+        labels: ['非常不同意', '比较不同意', '不同意也不反对', '比较同意', '非常同意'],
+        min: 1,
+        max: 5,
+        start: 3,
+        button_label: '继续',
+        require_movement: true
+    }],
+    timeline_variables: [
+        { data: { i: 1 , varname: 'hds1' }, s: '我很难准确预测谁是最可能被录用的人。' },
+        { data: { i: 2 , varname: 'hds2' }, s: '我从他的简历信息能清楚地认识到他是最合适的人选' },
+        { data: { i: 3 , varname: 'hds3' }, s: '这个结果在我的预料之中' },
+        { data: { i: 4 , varname: 'hds4' }, s: '我早就知道这个人是最可能被录用的人' },
+    ],
+    randomize_order: false
+}
+
 var mrt_test = {
         type: 'test-multi-select',
         questions: [
@@ -645,7 +668,7 @@ var OpenEnded = {
     type: 'survey-text',
     data: { varname: 'OpenEnded' },
     questions: [{
-        prompt: '实验已全部完成，你可以分享任何疑问或想法：',
+        prompt: '实验已全部完成，你可以分享任何疑问、想法或是对实验目的的猜测：',
         placeholder: '非必答',
         rows: 5,
         columns: 50,
@@ -687,16 +710,16 @@ var employ = {
         e_recall,svs_mrt,instr_stex, STEX,instr_firm,instr_humility, humility,employ,
     ]
 }*/
-//预实验1阶段的测验内容，上面是正式实验的测验内容
+//recall回忆任务，svs_mrt刻板印象威胁全系列，instr_stex和STEX组成刻板印象威胁检验，instr_humility和humility构成谦逊量表，employ时招聘范式
 if (qianxun == 0) {
     var surveys = {
         timeline: [
-            e_recall,svs_mrt,instr_stex, STEX,instr_firm,instr_humility, humility,employ,
+            e_recall,svs_mrt,instr_stex, STEX,instr_firm,instr_humility, humility,employ,hindsight
         ]}
 }else {
     var surveys = {
         timeline: [
-            c_recall,svs_mrt,instr_stex, STEX,instr_firm,instr_humility, humility,employ,
+            c_recall,svs_mrt,instr_stex, STEX,instr_firm,instr_humility, humility,employ,hindsight
         ]}
 }
     
