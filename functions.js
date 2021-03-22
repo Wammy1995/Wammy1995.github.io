@@ -118,6 +118,11 @@ function MEAN(scale_name, rev = [0], likert = [1, 7], var_i = 'i', var_response 
     return sum / df.length
 }
 
+function changersm(n){
+    var imgs=["https://z3.ax1x.com/2021/03/22/6TAq81.png","https://z3.ax1x.com/2021/03/22/6TAbCR.png","https://z3.ax1x.com/2021/03/22/6TA759.png"];
+    document.getElementById("imgShow").src=imgs[n-1];
+}
+
 
 /* JS Functions from the R package 'jspsychr' */
 

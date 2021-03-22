@@ -199,7 +199,7 @@ var instr_employ = {
         `<p style="text-align: left">
         指导语：<br/>
         假设你现在是江西银行南昌分行的人事负责人，你行正在招聘一名新员工，详细招聘公告见下图。<br/>
-        之后你将依次看到3份简历，请仔细考虑后，评价每个求职者在这份工作上的胜任度。<br/><br/>
+        之后你将看到3份简历，请仔细考虑后，选出<b style="color:#a70b0bcf">一名</b>你觉得最适合这个岗位的员工。<br/><br/>
         <img src="https://s3.ax1x.com/2021/02/24/yO5sER.png"></img>
         `,
     ],
@@ -209,22 +209,28 @@ var instr_employ = {
     button_label_next: '继续'
 }
 
-var emp_211 = {
-    type: 'html-slider-response',
-    data: { varname: 'e211' },
-    on_load: function() { setSliderAttr() },
-    stimulus: `<img src="https://s3.ax1x.com/2021/03/17/6cBPpQ.png"></img>
-        <p style="text-align: left">请给这位求职者打分，1-7分，7分满分</p>`,
-    labels: ['1', '2', '3', '4', '5', '6', '7'],
-    min: 1,
-    max: 7,
-    start: 4,
-    prompt: '<b id="slider-value">_</b><br/><br/>',
-    button_label: '继续',
-    require_movement: true
+var instr_hindsight = {
+    type: 'instructions',
+    pages: [
+        `<p style="text-align: left">
+        还记得之前你作为江西银行人事负责人所招聘的员工吗？最后他与另一名申请者共同被南昌分行录取。下面请根据你之前判断时的感受，回答下列问题。
+        `,
+    ],
+    show_clickable_nav: true,
+    allow_backward: false,
+    button_label_previous: '返回',
+    button_label_next: '继续'
 }
 
-var emp_00 = {
+var emp_211 = {
+    type: 'html-button-response',
+    stimulus: '<img src="https://z3.ax1x.com/2021/03/22/6TAq81.png" id="imgShow"><div><input type="button" class="jspsych-btn" value="A的简历" onclick="changersm(1)"/><input type="button" class="jspsych-btn" value="B的简历" onclick="changersm(2)"/><input type="button" class="jspsych-btn" value="C的简历" onclick="changersm(3)"/></div>',
+    choices: ['A', 'B', 'C'],
+    prompt: "<p>你心目中最合适的申请者是谁？</p>",
+    nextbut:true
+}
+
+/*var emp_00 = {
     type: 'html-slider-response',
     data: { varname: 'e00' },
     on_load: function() { setSliderAttr() },
@@ -252,7 +258,7 @@ var emp_985 = {
     prompt: '<b id="slider-value">_</b><br/><br/>',
     button_label: '继续',
     require_movement: true
-}
+}*/
 
 var close_fullscreen = {
     type: 'fullscreen',
@@ -669,7 +675,7 @@ var OpenEnded = {
     data: { varname: 'OpenEnded' },
     questions: [{
         prompt: '实验已全部完成，你可以分享任何疑问、想法或是对实验目的的猜测：',
-        placeholder: '非必答',
+        placeholder: '非必答,欢迎说出你对实验的猜测',
         rows: 5,
         columns: 50,
         required: false
@@ -701,7 +707,7 @@ else {
 }
 
 var employ = {
-    timeline: [instr_employ,emp_211,emp_00,emp_985,
+    timeline: [instr_employ,emp_211,
     ]
 }
 
@@ -714,12 +720,12 @@ var employ = {
 if (qianxun == 0) {
     var surveys = {
         timeline: [
-            e_recall,svs_mrt,instr_stex, STEX,instr_firm,instr_humility, humility,employ,hindsight
+            e_recall,employ,svs_mrt,instr_stex, STEX,instr_firm,instr_humility, humility,hindsight
         ]}
 }else {
     var surveys = {
         timeline: [
-            c_recall,svs_mrt,instr_stex, STEX,instr_firm,instr_humility, humility,employ,hindsight
+            c_recall,employ,svs_mrt,instr_stex, STEX,instr_firm,instr_humility, humility,hindsight
         ]}
 }
     

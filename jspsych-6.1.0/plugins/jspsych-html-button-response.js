@@ -72,6 +72,12 @@ jsPsych.plugins["html-button-response"] = (function() {
         default: true,
         description: 'If true, then trial will end when user responds.'
       },
+      nextbut: {
+        type: jsPsych.plugins.parameterType.BOOL,
+        pretty_name: 'Next trial button',
+        default: false,
+        description: 'If true, there will be a button to the next trial.'
+      },
     }
   }
 
@@ -93,16 +99,18 @@ jsPsych.plugins["html-button-response"] = (function() {
         buttons.push(trial.button_html);
       }
     }
+    //show prompt if there is one
+    if (trial.prompt !== null) {
+      html += trial.prompt;
+    }
     html += '<div id="jspsych-html-button-response-btngroup">';
     for (var i = 0; i < trial.choices.length; i++) {
       var str = buttons[i].replace(/%choice%/g, trial.choices[i]);
       html += '<div class="jspsych-html-button-response-button" style="display: inline-block; margin:'+trial.margin_vertical+' '+trial.margin_horizontal+'" id="jspsych-html-button-response-button-' + i +'" data-choice="'+i+'">'+str+'</div>';
     }
     html += '</div>';
-
-    //show prompt if there is one
-    if (trial.prompt !== null) {
-      html += trial.prompt;
+    if (trial.nextbut){
+      html += '<button id="jspsych-html-slider-response-next" class="jspsych-btn" disabled>继续</button>';
     }
     display_element.innerHTML = html;
 
@@ -110,12 +118,29 @@ jsPsych.plugins["html-button-response"] = (function() {
     var start_time = performance.now();
 
     // add event listeners to buttons
-    for (var i = 0; i < trial.choices.length; i++) {
+    if (!trial.nextbut) {
+      for (var i = 0; i < trial.choices.length; i++) {
       display_element.querySelector('#jspsych-html-button-response-button-' + i).addEventListener('click', function(e){
         var choice = e.currentTarget.getAttribute('data-choice'); // don't use dataset for jsdom compatibility
         after_response(choice);
       });
     }
+  }else{
+    var choice = ''
+    for (var i = 0; i < trial.choices.length; i++) {
+      display_element.querySelector('#jspsych-html-button-response-button-' + i).addEventListener('click', function(e){
+        for (var n = 0; n < trial.choices.length; n++) {
+          document.querySelector('#jspsych-html-button-response-button-' + n +' > button').style.backgroundColor="white";
+        }
+        choice = e.currentTarget.getAttribute('data-choice');
+        e.currentTarget.firstChild.style.backgroundColor="grey"
+        document.querySelector('#jspsych-html-slider-response-next').disabled = false;
+      })
+  }
+  display_element.querySelector('#jspsych-html-slider-response-next').addEventListener('click', function(e){
+        after_response(choice);})
+}
+    
 
     // store response
     var response = {
@@ -131,7 +156,7 @@ jsPsych.plugins["html-button-response"] = (function() {
       var rt = end_time - start_time;
       response.button = choice;
       response.rt = rt;
-
+      
       // after a valid response, the stimulus will have the CSS class 'responded'
       // which can be used to provide visual feedback that a response was recorded
       display_element.querySelector('#jspsych-html-button-response-stimulus').className += ' responded';
@@ -142,10 +167,13 @@ jsPsych.plugins["html-button-response"] = (function() {
         //btns[i].removeEventListener('click');
         btns[i].setAttribute('disabled', 'disabled');
       }
-
-      if (trial.response_ends_trial) {
+      if (!trial.nextbut) {
+        if (trial.response_ends_trial) {
+        end_trial();
+      }}else{
         end_trial();
       }
+      
     };
 
     // function to end trial when it is time
