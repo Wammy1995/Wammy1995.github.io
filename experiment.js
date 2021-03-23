@@ -688,7 +688,7 @@ var OpenEnded = {
 
 var demographics = {
     timeline: [
-        AName, Height, /*Age, Speciality,*/ 
+        AName, Height, Age, Speciality,
     ]
 }
 
