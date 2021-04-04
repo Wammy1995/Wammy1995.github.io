@@ -18,6 +18,7 @@ const subID = jsPsych.randomization.randomID(8)
 //0、1随机分配被试组别，0为实验，1为控制
 const keban =  Math.round(Math.random())
 const qianxun =  Math.round(Math.random())
+const rdm_h = Math.round(Math.random())
 
 /* Blocks: HTML DOM Settings */
 
@@ -193,6 +194,19 @@ var instr_humility = {
     button_label_next: '继续'
 }
 
+var instr_friends = {
+    type: 'instructions',
+    pages: [
+        `<p style="text-align: left">
+        假如，你有一位和你<b>各方面情况都相近</b>的女性闺蜜，她家里人最近在给她安排相亲，她希望听听你的意见。<br/>
+        之后你将见到一些相亲对象的信息，请你根据自己的想法选择相应的按钮反应。`,
+    ],
+    show_clickable_nav: true,
+    allow_backward: false,
+    button_label_previous: '返回',
+    button_label_next: '继续'
+}
+
 var instr_employ = {
     type: 'instructions',
     pages: [
@@ -230,35 +244,6 @@ var emp_211 = {
     nextbut:true
 }
 
-/*var emp_00 = {
-    type: 'html-slider-response',
-    data: { varname: 'e00' },
-    on_load: function() { setSliderAttr() },
-    stimulus: `<img src="https://s3.ax1x.com/2021/03/17/6cBilj.png"></img>
-        <p style="text-align: left">请给这位求职者打分，1-7分，7分满分</p>`,
-    labels: ['1', '2', '3', '4', '5', '6', '7'],
-    min: 1,
-    max: 7,
-    start: 4,
-    prompt: '<b id="slider-value">_</b><br/><br/>',
-    button_label: '继续',
-    require_movement: true
-}
-
-var emp_985 = {
-    type: 'html-slider-response',
-    data: { varname: 'e985' },
-    on_load: function() { setSliderAttr() },
-    stimulus: `<img src="https://s3.ax1x.com/2021/03/17/6cB9fg.png"></img>
-        <p style="text-align: left">请给这位求职者打分，1-7分，7分满分</p>`,
-    labels: ['1', '2', '3', '4', '5', '6', '7'],
-    min: 1,
-    max: 7,
-    start: 4,
-    prompt: '<b id="slider-value">_</b><br/><br/>',
-    button_label: '继续',
-    require_movement: true
-}*/
 
 var close_fullscreen = {
     type: 'fullscreen',
@@ -276,7 +261,10 @@ var Height = {
     <p><input name="Q0" type="number" placeholder="150~200" min=150 max=200
     oninput="if(value.length>3) value=value.slice(0,3)" required style="font-size: 20px;width:100px;" /></p>`,
     button_label: '继续',
-    on_finish: function(data) { addRespFromButton(data) }
+    on_finish: function(data) { 
+        addRespFromSurvey(data);
+        const pheigth = Number(String(JSON.parse(data.responses).Q0));
+     }
 }
 
 var Age = {
@@ -341,6 +329,49 @@ var Speciality = {
     </select></p>`,
     button_label: '继续',
     on_finish: function(data) { addRespFromSurvey(data) }
+}
+
+var freigner1 = {
+    type: 'html-button-response',
+    stimulus: `
+    <div style="width: 600px;height: 800px;background-image: url('https://z3.ax1x.com/2021/04/04/cKFCN9.png';);background-size: cover;display: inline-block;"></div>
+    <div style="width: 600px;height: 800px;background-image: url('https://z3.ax1x.com/2021/04/04/cKizBF.png';);background-size: cover;display: inline-block;"></div>
+    `,
+    choices: ['A', 'B'],
+    prompt: "<p>你觉得这位怎么样？</p>",
+    nextbut:true
+}
+var freigner2 = {
+    type: 'html-button-response',
+    stimulus: `
+    <div style="width: 600px;height: 800px;background-image: url('https://z3.ax1x.com/2021/04/04/cKFS74.png';);background-size: cover;display: inline-block;"></div>
+    <div style="width: 600px;height: 800px;background-image: url('https://z3.ax1x.com/2021/04/04/cKixnU.png';);background-size: cover;display: inline-block;"></div>
+    `,
+    choices: ['A', 'B'],
+    prompt: "<p>你觉得这位怎么样？</p>",
+    nextbut:true
+}
+var chinese1 = {
+    type: 'html-button-response',
+    stimulus: `
+    <div style="width: 600px;height: 800px;background-image: url('https://z3.ax1x.com/2021/04/04/cKFCN9.png';);background-size: cover;display: inline-block;"></div>
+    <div style="width: 600px;height: 800px;background-image: url('https://z3.ax1x.com/2021/04/04/cKizBF.png';);background-size: cover;display: inline-block;">
+    <p style="position: absolute;padding-left: 183px;padding-top: 328px;font-size: 24px;color: rgb(75,75,75);">`+(rdm_h>0)?Number(pheigth+10):Number(pheigth-2)`cm</p></div>
+    `,
+    choices: ['A', 'B'],
+    prompt: "<p>你觉得这位怎么样？</p>",
+    nextbut:true
+}
+var chinese2 = {
+    type: 'html-button-response',
+    stimulus: `
+    <div style="width: 600px;height: 800px;background-image: url('https://z3.ax1x.com/2021/04/04/cKFCN9.png';);background-size: cover;display: inline-block;"></div>
+    <div style="width: 600px;height: 800px;background-image: url('https://z3.ax1x.com/2021/04/04/cKizBF.png';);background-size: cover;display: inline-block;">
+    <p style="position: absolute;padding-left: 183px;padding-top: 328px;font-size: 24px;color: rgb(75,75,75);">`+(rdm_h>0)?Number(pheigth-2):Number(pheigth+10)`cm</p></div>
+    `,
+    choices: ['A', 'B'],
+    prompt: "<p>你觉得这位怎么样？</p>",
+    nextbut:true
 }
 
 var instr_firm = {
@@ -670,6 +701,8 @@ var mrt_test = {
         time_limit:7
     };
 
+
+
 var OpenEnded = {
     type: 'survey-text',
     data: { varname: 'OpenEnded' },
@@ -689,6 +722,12 @@ var OpenEnded = {
 var demographics = {
     timeline: [
         AName, Height, Age, Speciality,
+    ]
+}
+
+var h_friends = {
+    timeline: [
+        instr_friends, freigner1, freigner2, chinese1,chinese2,
     ]
 }
 
@@ -720,7 +759,7 @@ var employ = {
 if (qianxun == 0) {
     var surveys = {
         timeline: [
-            e_recall,employ,svs_mrt,instr_stex, STEX,instr_firm,instr_humility, humility,hindsight
+            e_recall,employ,svs_mrt,instr_stex, STEX,instr_firm,h_friends,instr_humility, humility,hindsight
         ]}
 }else {
     var surveys = {
