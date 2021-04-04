@@ -334,44 +334,40 @@ var Speciality = {
 var freigner1 = {
     type: 'html-button-response',
     stimulus: `
-    <div style="width: 600px;height: 800px;background-image: url('https://z3.ax1x.com/2021/04/04/cKFCN9.png';);background-size: cover;display: inline-block;"></div>
-    <div style="width: 600px;height: 800px;background-image: url('https://z3.ax1x.com/2021/04/04/cKizBF.png';);background-size: cover;display: inline-block;"></div>
+    <div style="width: 600px;height: 800px;background-image: url('https://z3.ax1x.com/2021/04/04/cKFCN9.png');background-size: cover;display: inline-block;"></div>
+    <div style="width: 600px;height: 800px;background-image: url('https://z3.ax1x.com/2021/04/04/cKizBF.png');background-size: cover;display: inline-block;"></div>
     `,
     choices: ['A', 'B'],
     prompt: "<p>你觉得这位怎么样？</p>",
-    nextbut:true
 }
 var freigner2 = {
     type: 'html-button-response',
     stimulus: `
-    <div style="width: 600px;height: 800px;background-image: url('https://z3.ax1x.com/2021/04/04/cKFS74.png';);background-size: cover;display: inline-block;"></div>
-    <div style="width: 600px;height: 800px;background-image: url('https://z3.ax1x.com/2021/04/04/cKixnU.png';);background-size: cover;display: inline-block;"></div>
+    <div style="width: 600px;height: 800px;background-image: url('https://z3.ax1x.com/2021/04/04/cKFS74.png');background-size: cover;display: inline-block;"></div>
+    <div style="width: 600px;height: 800px;background-image: url('https://z3.ax1x.com/2021/04/04/cKixnU.png');background-size: cover;display: inline-block;"></div>
     `,
     choices: ['A', 'B'],
     prompt: "<p>你觉得这位怎么样？</p>",
-    nextbut:true
 }
 var chinese1 = {
     type: 'html-button-response',
     stimulus: `
-    <div style="width: 600px;height: 800px;background-image: url('https://z3.ax1x.com/2021/04/04/cKFCN9.png';);background-size: cover;display: inline-block;"></div>
-    <div style="width: 600px;height: 800px;background-image: url('https://z3.ax1x.com/2021/04/04/cKizBF.png';);background-size: cover;display: inline-block;">
+    <div style="width: 600px;height: 800px;background-image: url('https://z3.ax1x.com/2021/04/04/cKFCN9.png');background-size: cover;display: inline-block;"></div>
+    <div style="width: 600px;height: 800px;background-image: url('https://z3.ax1x.com/2021/04/04/cKizBF.png');background-size: cover;display: inline-block;">
     <p style="position: absolute;padding-left: 183px;padding-top: 328px;font-size: 24px;color: rgb(75,75,75);">`+(rdm_h>0)?Number(pheigth+10):Number(pheigth-2)`cm</p></div>
     `,
     choices: ['A', 'B'],
     prompt: "<p>你觉得这位怎么样？</p>",
-    nextbut:true
 }
 var chinese2 = {
     type: 'html-button-response',
     stimulus: `
-    <div style="width: 600px;height: 800px;background-image: url('https://z3.ax1x.com/2021/04/04/cKFCN9.png';);background-size: cover;display: inline-block;"></div>
-    <div style="width: 600px;height: 800px;background-image: url('https://z3.ax1x.com/2021/04/04/cKizBF.png';);background-size: cover;display: inline-block;">
+    <div style="width: 600px;height: 800px;background-image: url('https://z3.ax1x.com/2021/04/04/cKFCN9.png');background-size: cover;display: inline-block;"></div>
+    <div style="width: 600px;height: 800px;background-image: url('https://z3.ax1x.com/2021/04/04/cKizBF.png');background-size: cover;display: inline-block;">
     <p style="position: absolute;padding-left: 183px;padding-top: 328px;font-size: 24px;color: rgb(75,75,75);">`+(rdm_h>0)?Number(pheigth-2):Number(pheigth+10)`cm</p></div>
     `,
     choices: ['A', 'B'],
     prompt: "<p>你觉得这位怎么样？</p>",
-    nextbut:true
 }
 
 var instr_firm = {
