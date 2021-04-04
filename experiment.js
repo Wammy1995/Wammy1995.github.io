@@ -262,7 +262,7 @@ var Height = {
     oninput="if(value.length>3) value=value.slice(0,3)" required style="font-size: 20px;width:100px;" /></p>`,
     button_label: '继续',
     on_finish: function(data) {
-        pheigth = Number(JSON.parse(data.responses));
+        pheigth = parseInt(JSON.parse(data.responses).Q0);
         addRespFromSurvey(data);
      }
 }
@@ -351,21 +351,23 @@ var freigner2 = {
 }
 var chinese1 = {
     type: 'html-button-response',
-    stimulus: `
-    <div style="width: 600px;height: 800px;background-image: url('https://z3.ax1x.com/2021/04/04/cKFCN9.png');background-size: cover;display: inline-block;"></div>
-    <div style="width: 600px;height: 800px;background-image: url('https://z3.ax1x.com/2021/04/04/cKizBF.png');background-size: cover;display: inline-block;">
-    <p style="position: absolute;padding-left: 183px;padding-top: 328px;font-size: 24px;color: rgb(75,75,75);">`+(rdm_h>0)?Number(pheigth+10):Number(pheigth-2)`cm</p></div>
-    `,
+    stimulus: function() {  
+        // this question prompt is dynamic - the text that is shown 
+        // will change based on the participant's earlier response
+        var text = '<div style="width: 600px;height: 800px;background-image: url(\'https://z3.ax1x.com/2021/04/04/cKFk1x.png\');background-size: cover;display: inline-block;"></div><div style="width: 600px;height: 800px;background-image: url(\'https://z3.ax1x.com/2021/04/04/cKFF91.png\');background-size: cover;display: inline-block;"><p style="position: absolute;padding-left: 135px;padding-top: 328px;font-size: 24px;color: rgb(75,75,75);">'+((rdm_h>0)?(pheigth+10):(pheigth-2))+'cm</p></div>'
+        return text;
+      }, 
     choices: ['A', 'B'],
     prompt: "<p>你觉得这位怎么样？</p>",
 }
 var chinese2 = {
     type: 'html-button-response',
-    stimulus: `
-    <div style="width: 600px;height: 800px;background-image: url('https://z3.ax1x.com/2021/04/04/cKFCN9.png');background-size: cover;display: inline-block;"></div>
-    <div style="width: 600px;height: 800px;background-image: url('https://z3.ax1x.com/2021/04/04/cKizBF.png');background-size: cover;display: inline-block;">
-    <p style="position: absolute;padding-left: 183px;padding-top: 328px;font-size: 24px;color: rgb(75,75,75);">`+(rdm_h>0)?Number(pheigth-2):Number(pheigth+10)`cm</p></div>
-    `,
+   stimulus: function() {  
+        // this question prompt is dynamic - the text that is shown 
+        // will change based on the participant's earlier response
+        var text = '<div style="width: 600px;height: 800px;background-image: url(\'https://z3.ax1x.com/2021/04/04/cKF9AJ.png\');background-size: cover;display: inline-block;"></div><div style="width: 600px;height: 800px;background-image: url(\'https://z3.ax1x.com/2021/04/04/cKFPhR.png\');background-size: cover;display: inline-block;"><p style="position: absolute;padding-left: 135px;padding-top: 328px;font-size: 24px;color: rgb(75,75,75);">'+((rdm_h>0)?(pheigth+10):(pheigth-2))+'cm</p></div>'
+        return text;
+      }, 
     choices: ['A', 'B'],
     prompt: "<p>你觉得这位怎么样？</p>",
 }
@@ -755,12 +757,12 @@ var employ = {
 if (qianxun == 0) {
     var surveys = {
         timeline: [
-            e_recall,employ,svs_mrt,instr_stex, STEX,instr_firm,h_friends,instr_humility, humility,hindsight
+            /*e_recall,employ,svs_mrt,instr_stex, STEX,instr_firm,*/h_friends,instr_humility, humility,hindsight
         ]}
 }else {
     var surveys = {
         timeline: [
-            c_recall,employ,svs_mrt,instr_stex, STEX,instr_firm,instr_humility, humility,hindsight
+            /*c_recall,employ,svs_mrt,instr_stex, STEX,instr_firm,*/h_friends,instr_humility, humility,hindsight
         ]}
 }
     
