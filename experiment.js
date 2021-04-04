@@ -261,9 +261,9 @@ var Height = {
     <p><input name="Q0" type="number" placeholder="150~200" min=150 max=200
     oninput="if(value.length>3) value=value.slice(0,3)" required style="font-size: 20px;width:100px;" /></p>`,
     button_label: '继续',
-    on_finish: function(data) { 
+    on_finish: function(data) {
+        pheigth = Number(JSON.parse(data.responses));
         addRespFromSurvey(data);
-        pheigth = Number(String(JSON.parse(data.responses).Q0));
      }
 }
 
