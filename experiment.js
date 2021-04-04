@@ -19,7 +19,7 @@ const subID = jsPsych.randomization.randomID(8)
 const keban =  Math.round(Math.random())
 const qianxun =  Math.round(Math.random())
 const rdm_h = Math.round(Math.random())
-
+const pheigth = 0
 /* Blocks: HTML DOM Settings */
 
 var set_html_style = {
@@ -263,7 +263,7 @@ var Height = {
     button_label: '继续',
     on_finish: function(data) { 
         addRespFromSurvey(data);
-        const pheigth = Number(String(JSON.parse(data.responses).Q0));
+        pheigth = Number(String(JSON.parse(data.responses).Q0));
      }
 }
 
