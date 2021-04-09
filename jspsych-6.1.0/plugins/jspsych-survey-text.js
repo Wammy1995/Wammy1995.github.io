@@ -140,7 +140,7 @@ jsPsych.plugins['survey-text'] = (function() {
 
     // add submit button
     if (trial.required_word){
-      html += '<input type="submit" id="jspsych-survey-text-next" disabled=true class="jspsych-btn jspsych-survey-text" value="'+trial.button_label+'"></input>';
+      html += '<input type="submit" id="jspsych-survey-text-next"  class="jspsych-btn jspsych-survey-text" value="'+trial.button_label+'"></input>';
     } else {
       html += '<input type="submit" id="jspsych-survey-text-next" class="jspsych-btn jspsych-survey-text" value="'+trial.button_label+'"></input>';}
    }
