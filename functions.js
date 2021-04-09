@@ -31,8 +31,8 @@ function countdown(){
 }
 
 function word_length() {
-    var n = document.getElementById('input-0').length;
-    var btn = document.getElementsByClassName('jspsych-btn')[0]
+    var n = document.querySelector("#input-0").textLength;
+    var btn = document.querySelector("#jspsych-survey-text-next")
     if(n<trial.required_word){
       btn.disabled = true;
       } else {
