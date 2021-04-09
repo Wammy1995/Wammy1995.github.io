@@ -185,7 +185,7 @@ jsPsych.plugins['survey-text'] = (function() {
     });
 
     var startTime = performance.now();
-  };
+  }
 
   return plugin;
 })();
