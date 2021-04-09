@@ -30,10 +30,11 @@ function countdown(){
     }
 }
 
+//survey text 字数限制
 function word_length() {
     var n = document.querySelector("#input-0").textLength;
     var btn = document.querySelector("#jspsych-survey-text-next")
-    if(n<trial.required_word){
+    if(n<50){
       btn.disabled = true;
       } else {
       btn.disabled = false;
