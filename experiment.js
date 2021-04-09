@@ -238,7 +238,7 @@ var instr_hindsight = {
 
 var emp_211 = {
     type: 'html-button-response',
-    stimulus: '<img src="https://z3.ax1x.com/2021/03/22/6TAq81.png" id="imgShow"><div><input type="button" class="jspsych-btn" value="A的简历" onclick="changersm(1)"/><input type="button" class="jspsych-btn" value="B的简历" onclick="changersm(2)"/><input type="button" class="jspsych-btn" value="C的简历" onclick="changersm(3)"/></div>',
+    stimulus: '<img src="https://z3.ax1x.com/2021/03/22/6TAq81.png" id="imgShow"><div><input type="button" value="A的简历" onclick="changersm(1)"/><input type="button" value="B的简历" onclick="changersm(2)"/><input type="button" value="C的简历" onclick="changersm(3)"/></div>',
     choices: ['A', 'B', 'C'],
     prompt: "<p>你心目中最合适的申请者是谁？</p>",
     nextbut:true
@@ -337,8 +337,8 @@ var freigner1 = {
     <div style="width: 600px;height: 800px;background-image: url('https://z3.ax1x.com/2021/04/04/cKFCN9.png');background-size: cover;display: inline-block;"></div>
     <div style="width: 600px;height: 800px;background-image: url('https://z3.ax1x.com/2021/04/04/cKizBF.png');background-size: cover;display: inline-block;"></div>
     `,
-    choices: ['无感', '喜欢'],
-    button_html: ['<button style="height:50px;width:50px;border:none;background-image: url(\'https://z3.ax1x.com/2021/04/04/cKns76.png\');background-size: cover;"></button>','<button style="border:none;height:50px;width:50px;background-image: url(\'https://z3.ax1x.com/2021/04/04/cKnr0x.png\');background-size: cover;"></button>'],
+    choices: ['0', '1'],
+    button_html: ['<button title="无感" style="height:50px;width:50px;border:none;background-image: url(\'https://z3.ax1x.com/2021/04/04/cKns76.png\');background-size: cover;"></button>','<button title="喜欢" style="border:none;height:50px;width:50px;margin-left:100px;background-image: url(\'https://z3.ax1x.com/2021/04/04/cKnr0x.png\');background-size: cover;"></button>'],
     prompt: "<p>你觉得这位怎么样？</p>",
 }
 var freigner2 = {
@@ -347,30 +347,28 @@ var freigner2 = {
     <div style="width: 600px;height: 800px;background-image: url('https://z3.ax1x.com/2021/04/04/cKFS74.png');background-size: cover;display: inline-block;"></div>
     <div style="width: 600px;height: 800px;background-image: url('https://z3.ax1x.com/2021/04/04/cKixnU.png');background-size: cover;display: inline-block;"></div>
     `,
-    choices: ['无感', '喜欢'],
-    button_html: ['<button style="height:50px;width:50px;border:none;background-image: url(\'https://z3.ax1x.com/2021/04/04/cKns76.png\');background-size: cover;"></button>','<button style="border:none;height:50px;width:50px;background-image: url(\'https://z3.ax1x.com/2021/04/04/cKnr0x.png\');background-size: cover;"></button>'],
+    choices: ['0', '1'],
+    button_html: ['<button title="无感" style="height:50px;width:50px;border:none;background-image: url(\'https://z3.ax1x.com/2021/04/04/cKns76.png\');background-size: cover;"></button>','<button title="喜欢" style="border:none;height:50px;width:50px;margin-left:100px;background-image: url(\'https://z3.ax1x.com/2021/04/04/cKnr0x.png\');background-size: cover;"></button>'],
     prompt: "<p>你觉得这位怎么样？</p>",
 }
 var chinese1 = {
     type: 'html-button-response',
     stimulus: function() {  
-        // this question prompt is dynamic - the text that is shown 
-        // will change based on the participant's earlier response
-        var text = '<div style="width: 600px;height: 800px;background-image: url(\'https://z3.ax1x.com/2021/04/04/cKFk1x.png\');background-size: cover;display: inline-block;"></div><div style="width: 600px;height: 800px;background-image: url(\'https://z3.ax1x.com/2021/04/04/cKFF91.png\');background-size: cover;display: inline-block;"><p style="position: absolute;padding-left: 135px;padding-top: 328px;font-size: 24px;color: rgb(75,75,75);">'+((rdm_h>0)?(pheigth+10):(pheigth-2))+'cm</p></div>'
+        var text = '<div style="width: 600px;height: 800px;background-image: url(\'https://z3.ax1x.com/2021/04/04/cKFk1x.png\');background-size: cover;display: inline-block;"></div><div style="width: 600px;height: 800px;background-image: url(\'https://z3.ax1x.com/2021/04/04/cKFF91.png\');background-size: cover;display: inline-block;"><p style="position: absolute;padding-left: 135px;padding-top: 328px;font-size: 24px;color: rgb(75,75,75);">'+((rdm_h==0)?(pheigth+10):(pheigth-2))+'cm</p></div>'
         return text;
       }, 
-    choices: ['A', 'B'],
+    choices: ['0', '1'],
+    button_html: ['<button title="无感" style="height:50px;width:50px;border:none;background-image: url(\'https://z3.ax1x.com/2021/04/04/cKns76.png\');background-size: cover;"></button>','<button title="喜欢" style="border:none;height:50px;width:50px;margin-left:100px;background-image: url(\'https://z3.ax1x.com/2021/04/04/cKnr0x.png\');background-size: cover;"></button>'],
     prompt: "<p>你觉得这位怎么样？</p>",
 }
 var chinese2 = {
     type: 'html-button-response',
    stimulus: function() {  
-        // this question prompt is dynamic - the text that is shown 
-        // will change based on the participant's earlier response
-        var text = '<div style="width: 600px;height: 800px;background-image: url(\'https://z3.ax1x.com/2021/04/04/cKF9AJ.png\');background-size: cover;display: inline-block;"></div><div style="width: 600px;height: 800px;background-image: url(\'https://z3.ax1x.com/2021/04/04/cKFPhR.png\');background-size: cover;display: inline-block;"><p style="position: absolute;padding-left: 135px;padding-top: 328px;font-size: 24px;color: rgb(75,75,75);">'+((rdm_h>0)?(pheigth+10):(pheigth-2))+'cm</p></div>'
+        var text = '<div style="width: 600px;height: 800px;background-image: url(\'https://z3.ax1x.com/2021/04/04/cKF9AJ.png\');background-size: cover;display: inline-block;"></div><div style="width: 600px;height: 800px;background-image: url(\'https://z3.ax1x.com/2021/04/04/cKFPhR.png\');background-size: cover;display: inline-block;"><p style="position: absolute;padding-left: 135px;padding-top: 328px;font-size: 24px;color: rgb(75,75,75);">'+((rdm_h==1)?(pheigth+10):(pheigth-2))+'cm</p></div>'
         return text;
       }, 
-    choices: ['A', 'B'],
+    choices: ['0', '1'],
+    button_html: ['<button title="无感" style="height:50px;width:50px;border:none;background-image: url(\'https://z3.ax1x.com/2021/04/04/cKns76.png\');background-size: cover;"></button>','<button title="喜欢" style="border:none;height:50px;width:50px;margin-left:100px;background-image: url(\'https://z3.ax1x.com/2021/04/04/cKnr0x.png\');background-size: cover;"></button>'],
     prompt: "<p>你觉得这位怎么样？</p>",
 }
 
@@ -727,7 +725,7 @@ var demographics = {
 
 var h_friends = {
     timeline: [
-        instr_friends, freigner1, freigner2, chinese1,chinese2,
+        instr_friends, freigner1, freigner2, chinese2,chinese1,
     ]
 }
 
@@ -759,12 +757,12 @@ var employ = {
 if (qianxun == 0) {
     var surveys = {
         timeline: [
-            /*e_recall,employ,svs_mrt,instr_stex, STEX,instr_firm,*/h_friends,instr_humility, humility,hindsight
+            e_recall,employ,svs_mrt,instr_stex, STEX,instr_firm,h_friends,instr_humility, humility,hindsight
         ]}
 }else {
     var surveys = {
         timeline: [
-            /*c_recall,employ,svs_mrt,instr_stex, STEX,instr_firm,*/h_friends,instr_humility, humility,hindsight
+            c_recall,employ,svs_mrt,instr_stex, STEX,instr_firm,h_friends,instr_humility, humility,hindsight
         ]}
 }
     
