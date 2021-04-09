@@ -72,7 +72,7 @@ jsPsych.plugins['survey-text'] = (function() {
         pretty_name: 'Button label',
         default:  'Continue',
         description: 'The text that appears on the button to finish the trial.'
-      }
+      },
       required_word: {
         type: jsPsych.plugins.parameterType.INT,
         pretty_name: 'Required word length',
@@ -140,7 +140,7 @@ jsPsych.plugins['survey-text'] = (function() {
 
     // add submit button
     if (trial.required_word){
-      html += '<input type="submit" id="jspsych-survey-text-next"  class="jspsych-btn jspsych-survey-text" value="'+trial.button_label+'"></input>';
+      html += '<input type="submit" id="jspsych-survey-text-next" disabled=true class="jspsych-btn jspsych-survey-text" value="'+trial.button_label+'"></input>';
     } else {
       html += '<input type="submit" id="jspsych-survey-text-next" class="jspsych-btn jspsych-survey-text" value="'+trial.button_label+'"></input>';}
    }
