@@ -10,7 +10,6 @@
 
 
 jsPsych.plugins['survey-text'] = (function() {
-
   var plugin = {};
 
   plugin.info = {
@@ -81,7 +80,6 @@ jsPsych.plugins['survey-text'] = (function() {
       }
     }
   }
-
   plugin.trial = function(display_element, trial) {
    
     for (var i = 0; i < trial.questions.length; i++) {
@@ -141,9 +139,9 @@ jsPsych.plugins['survey-text'] = (function() {
     // add submit button
     if (trial.required_word){
       html += '<input type="submit" id="jspsych-survey-text-next" disabled=true class="jspsych-btn jspsych-survey-text" value="'+trial.button_label+'"></input>';
-    } else {
+      } else {
       html += '<input type="submit" id="jspsych-survey-text-next" class="jspsych-btn jspsych-survey-text" value="'+trial.button_label+'"></input>';}
-   }
+    
 
     html += '</form>'
     display_element.innerHTML = html;
@@ -185,7 +183,7 @@ jsPsych.plugins['survey-text'] = (function() {
     });
 
     var startTime = performance.now();
-  }
+  };
 
   return plugin;
 })();
