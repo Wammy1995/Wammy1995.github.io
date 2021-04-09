@@ -299,7 +299,8 @@ var e_recall = {
         columns: 120,
         required: true
     }],
-    button_label: '继续',
+    button_html: `<style onload="tid=setInterval(timer, 1000)"></style>
+                  <button onclick="clearInterval(tid)" class="jspsych-btn" disabled=true><span id="timer">120</span>秒后继续</button>`,
     on_finish: function(data) { addRespFromSurvey(data) }
 }
 
@@ -314,7 +315,8 @@ var c_recall = {
         columns: 120,
         required: true
     }],
-    button_label: '继续',
+    button_html: `<style onload="tid=setInterval(timer, 1000)"></style>
+                  <button onclick="clearInterval(tid)" class="jspsych-btn" disabled=true><span id="timer">120</span>秒后继续</button>`,
     on_finish: function(data) { addRespFromSurvey(data) }
 }
 
