@@ -30,6 +30,16 @@ function countdown(){
     }
 }
 
+function word_length() {
+    var n = document.getElementById('input-0').length;
+    var btn = document.getElementsByClassName('jspsych-btn')[0]
+    if(n<trial.required_word){
+      btn.disabled = true;
+      } else {
+      btn.disabled = false;
+      }
+}
+    
 function nextquestion(){
     var nowq = parseInt(document.querySelector("#nextq").getAttribute("index"));
     var nowid = 'jspsych-test-multi-select-'+nowq;

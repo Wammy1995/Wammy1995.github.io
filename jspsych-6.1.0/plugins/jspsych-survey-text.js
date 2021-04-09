@@ -83,18 +83,7 @@ jsPsych.plugins['survey-text'] = (function() {
   }
 
   plugin.trial = function(display_element, trial) {
-    if (trial.required_word) {
-      function word_length() {
-        var n = document.getElementById('input-0').length;
-        var btn = document.getElementsByClassName('jspsych-btn')[0]
-        if(n<trial.required_word){
-          btn.disabled = true;
-          } else {
-          btn.disabled = false;
-          }
-        }
-    }
-    
+   
     for (var i = 0; i < trial.questions.length; i++) {
       if (typeof trial.questions[i].rows == 'undefined') {
         trial.questions[i].rows = 1;
