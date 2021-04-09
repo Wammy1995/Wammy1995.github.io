@@ -238,7 +238,7 @@ var instr_hindsight = {
 
 var emp_211 = {
     type: 'html-button-response',
-    stimulus: '<img src="https://z3.ax1x.com/2021/03/22/6TAq81.png" id="imgShow"><div><input type="button" value="A的简历" onclick="changersm(1)"/><input type="button" value="B的简历" onclick="changersm(2)"/><input type="button" value="C的简历" onclick="changersm(3)"/></div>',
+    stimulus: '<img src="https://z3.ax1x.com/2021/03/22/6TAq81.png" id="imgShow"><div style="margin-bottom: -25px;margin-top: -25px;"><span style="font-size: small;">点击此处切换参看简历: </span><input type="button" value="A的简历" onclick="changersm(1)"/><input type="button" value="B的简历" onclick="changersm(2)"/><input type="button" value="C的简历" onclick="changersm(3)"/></div>',
     choices: ['A', 'B', 'C'],
     prompt: "<p>你心目中最合适的申请者是谁？</p>",
     nextbut:true
