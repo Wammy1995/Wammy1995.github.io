@@ -320,20 +320,14 @@ var Speciality = {
 
 var freigner1 = {
     type: 'html-button-response',
-    stimulus: `
-    <div style="width: 600px;height: 800px;background-image: url('https://z3.ax1x.com/2021/04/04/cKFCN9.png');background-size: cover;display: inline-block;"></div>
-    <div style="width: 600px;height: 800px;background-image: url('https://z3.ax1x.com/2021/04/04/cKizBF.png');background-size: cover;display: inline-block;"></div>
-    `,
+    stimulus: `<div style="width: 600px;height: 800px;background-image: url('https://z3.ax1x.com/2021/04/04/cKFCN9.png');background-size: cover;display: inline-block;"></div><div style="width: 600px;height: 800px;background-image: url('https://z3.ax1x.com/2021/04/04/cKizBF.png');background-size: cover;display: inline-block;"></div>`,
     choices: ['0', '1'],
     button_html: ['<button title="无感" style="height:50px;width:50px;border:none;background-image: url(\'https://z3.ax1x.com/2021/04/04/cKns76.png\');background-size: cover;"></button>','<button title="喜欢" style="border:none;height:50px;width:50px;margin-left:100px;background-image: url(\'https://z3.ax1x.com/2021/04/04/cKnr0x.png\');background-size: cover;"></button>'],
     prompt: "<p>你觉得这位怎么样？</p>",
 }
 var freigner2 = {
     type: 'html-button-response',
-    stimulus: `
-    <div style="width: 600px;height: 800px;background-image: url('https://z3.ax1x.com/2021/04/04/cKFS74.png');background-size: cover;display: inline-block;"></div>
-    <div style="width: 600px;height: 800px;background-image: url('https://z3.ax1x.com/2021/04/04/cKixnU.png');background-size: cover;display: inline-block;"></div>
-    `,
+    stimulus: `<div style="width: 600px;height: 800px;background-image: url('https://z3.ax1x.com/2021/04/04/cKFS74.png');background-size: cover;display: inline-block;"></div><div style="width: 600px;height: 800px;background-image: url('https://z3.ax1x.com/2021/04/04/cKixnU.png');background-size: cover;display: inline-block;"></div>`,
     choices: ['0', '1'],
     button_html: ['<button title="无感" style="height:50px;width:50px;border:none;background-image: url(\'https://z3.ax1x.com/2021/04/04/cKns76.png\');background-size: cover;"></button>','<button title="喜欢" style="border:none;height:50px;width:50px;margin-left:100px;background-image: url(\'https://z3.ax1x.com/2021/04/04/cKnr0x.png\');background-size: cover;"></button>'],
     prompt: "<p>你觉得这位怎么样？</p>",
