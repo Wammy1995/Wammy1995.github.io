@@ -223,6 +223,7 @@ var instr_hindsight = {
 
 var emp_211 = {
     type: 'html-button-response',
+    data: { varname: 'recruit' },
     stimulus: '<img src="https://z3.ax1x.com/2021/03/22/6TAq81.png" id="imgShow"><div style="margin-bottom: -25px;margin-top: -25px;"><span style="font-size: small;">点击此处切换参看简历: </span><input type="button" value="A的简历" onclick="changersm(1)"/><input type="button" value="B的简历" onclick="changersm(2)"/><input type="button" value="C的简历" onclick="changersm(3)"/></div>',
     choices: ['A', 'B', 'C'],
     prompt: "<p>你心目中最合适的申请者是谁？</p>",
@@ -334,6 +335,7 @@ var freigner2 = {
 }
 var chinese1 = {
     type: 'html-button-response',
+    data: { varname: 'rdm_h0' },
     stimulus: function() {  
         var text = '<div style="width: 600px;height: 800px;background-image: url(\'https://z3.ax1x.com/2021/04/04/cKFk1x.png\');background-size: cover;display: inline-block;"></div><div style="width: 600px;height: 800px;background-image: url(\'https://z3.ax1x.com/2021/04/04/cKFF91.png\');background-size: cover;display: inline-block;"><p style="position: absolute;padding-left: 135px;padding-top: 328px;font-size: 24px;color: rgb(75,75,75);">'+((rdm_h==0)?(pheigth+10):(pheigth-2))+'cm</p></div>'
         return text;
@@ -344,6 +346,7 @@ var chinese1 = {
 }
 var chinese2 = {
     type: 'html-button-response',
+    data: { varname: 'rdm_h1' },
    stimulus: function() {  
         var text = '<div style="width: 600px;height: 800px;background-image: url(\'https://z3.ax1x.com/2021/04/04/cKF9AJ.png\');background-size: cover;display: inline-block;"></div><div style="width: 600px;height: 800px;background-image: url(\'https://z3.ax1x.com/2021/04/04/cKFPhR.png\');background-size: cover;display: inline-block;"><p style="position: absolute;padding-left: 135px;padding-top: 328px;font-size: 24px;color: rgb(75,75,75);">'+((rdm_h==1)?(pheigth+10):(pheigth-2))+'cm</p></div>'
         return text;
