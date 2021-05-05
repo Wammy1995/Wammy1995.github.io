@@ -117,7 +117,7 @@ var instr_aftermrt = {
 //空间旋转测验刻板印象唤起组
 var exp_mrt = {
     type: 'html-button-response',
-    stimulus: `<p style="text-align: left;text-indent: 2em;">指导语：请仔细阅读下面这段话，在这之后将有一个空间认知任务。</p><p style="text-align: left;text-indent: 2em;">空间能力是智能的基本成分之一。空间认知能力有广义和狭义之分。广义的空间能力指非言语信息加工中的个体差异，狭义的则指在完成空间测验中的个体差异。一些科学家认为，空间能力上的性别差异主要是在于右脑空间认知能力功能定位化程度的不同，而男性在此方面的功能强于女性，因此男性的空间认知能力强于女性。以往研究调查表明，接下来的任务能准确反映出个体的空间认知能力。<b style="color:#a70b0bcf">且绝大部分研究结果显示，男性在此任务上的表现优于女性</b>。</p>`,
+    stimulus: `<p style="text-align: left;text-indent: 2em;">指导语：请仔细阅读下面这段话，在这之后将有一个空间认知任务。</p><p style="text-align: left;text-indent: 2em;">空间能力是智能的基本成分之一。空间认知能力有广义和狭义之分。广义的空间能力指非言语信息加工中的个体差异，狭义的则指在完成空间测验中的个体差异。一些科学家认为，空间能力上的性别差异主要是在于右脑空间认知能力功能定位化程度的不同，而男性在此方面的功能强于女性，因此男性的空间认知能力强于女性。以往研究调查表明，接下来的任务能准确反映出个体的空间认知能力。<b style="color:#a70b0b">且绝大部分研究结果显示，男性在此任务上的表现优于女性</b>。</p>`,
     choices: ['<span id="timer">20</span>秒后继续'],
     button_html: btn_html_timer
 }
@@ -125,14 +125,14 @@ var exp_mrt = {
 //空间旋转测验刻板印象无效组
 var control_mrt = {
     type: 'html-button-response',
-    stimulus: `<p style="text-align: left;text-indent: 2em;">指导语：请仔细阅读下面这段话，在这之后将有一个空间认知任务。</p><p style="text-align: left;text-indent: 2em;">空间能力是智能的基本成分之一。空间认知能力有广义和狭义之分。广义的空间能力指非言语信息加工中的个体差异，狭义的则指在完成空间测验中的个体差异。一些科学家认为，空间能力上的性别差异主要是在于右脑空间认知能力功能定位化程度的不同，男性在此方面强于女性；而另一些科学家则认为是具体任务类型的不同，在特定任务上，男性优于女性，但在某些任务中，女性要优于男性。<b style="color:#a70b0bcf">接下来的任务在绝大部分研究结果中显示男性与女性表现相近</b>。</p>`,
+    stimulus: `<p style="text-align: left;text-indent: 2em;">指导语：请仔细阅读下面这段话，在这之后将有一个空间认知任务。</p><p style="text-align: left;text-indent: 2em;">空间能力是智能的基本成分之一。空间认知能力有广义和狭义之分。广义的空间能力指非言语信息加工中的个体差异，狭义的则指在完成空间测验中的个体差异。一些科学家认为，空间能力上的性别差异主要是在于右脑空间认知能力功能定位化程度的不同，男性在此方面强于女性；而另一些科学家则认为是具体任务类型的不同，在特定任务上，男性优于女性，但在某些任务中，女性要优于男性。<b style="color:#a70b0b">接下来的任务在绝大部分研究结果中显示男性与女性表现相近</b>。</p>`,
     choices: ['<span id="timer">20</span>秒后继续'],
     button_html: btn_html_timer
 }
 
 var instr_mrt = {
     type: 'html-button-response',
-    stimulus: `<p style="text-align: left;text-indent: 2em;"><b>指导语：</b>在所给的五个图形中，分割线左侧的图形（题干）与分割线右侧四个图形（选项）中的两个是同一个图形，由第一个图形旋转一定角度得到的，如题干图形和选项图形中的第一个和第三个图形是同一个图形。请在下面的题目中选择与题干图形相同的<b style="color:#a70b0bcf;">两个图片，多选或少选均不得分</b>。</p><p style="text-align: left;text-indent: 2em;">此任务为限时测验，你只有7分钟来回答问题，请不要感到慌乱，尽力答题即可。</p><img src="https://s3.ax1x.com/2021/02/24/yXJGes.png"></img>`,
+    stimulus: `<p style="text-align: left;text-indent: 2em;"><b>指导语：</b>在所给的五个图形中，分割线左侧的图形（题干）与分割线右侧四个图形（选项）中的两个是同一个图形，由第一个图形旋转一定角度得到的，如题干图形和选项图形中的第一个和第三个图形是同一个图形。请在下面的题目中选择与题干图形相同的<b style="color:#a70b0b;">两个图片，多选或少选均不得分</b>。</p><p style="text-align: left;text-indent: 2em;">此任务为限时测验，你只有7分钟来回答问题，请不要感到慌乱，尽力答题即可。</p><img src="https://s3.ax1x.com/2021/02/24/yXJGes.png"></img>`,
     choices: ['<span id="timer">20</span>秒后继续'],
     button_html: btn_html_timer
 }
@@ -198,7 +198,7 @@ var instr_employ = {
         `<p style="text-align: left">
         指导语：<br/>
         假设你现在是江西银行南昌分行的人事负责人，你行正在招聘一名新员工，详细招聘公告见下图。<br/>
-        之后你将看到3份简历，请仔细考虑后，选出<b style="color:#a70b0bcf">一名</b>你觉得最适合这个岗位的员工。<br/><br/>
+        之后你将看到3份简历，请仔细考虑后，选出<b style="color:#a70b0b">一名</b>你觉得最适合这个岗位的员工。<br/><br/>
         <img src="https://s3.ax1x.com/2021/02/24/yO5sER.png"></img>
         `,
     ],
@@ -279,7 +279,7 @@ var e_recall = {
    type: 'survey-text',
     data: { varname: 'recall' },
     questions: [{
-        prompt: `指导语：</br>请回忆一个你本可以表现得很谦逊，但却没有那么做的经历。请尽量生动具体地在脑海里想象这个场景，当你能成功地回忆这段经历时，请在下方写下这段经历。请尽量描述每一个细节，你不需要写成一段连贯的文字，任何与之相关的细节都可以被记录下来，例如，你做了什么，你本可以做的谦逊的部分是什么，如果你表现得谦逊结果会有什么改变，为什么你应该表现得更加谦逊，等等。<b style="color:#a70b0bcf">请至少填写50字</b></br>譬如：决策时面对不同的意见，你选择了固执己见，也许再多些时间思考他人的想法，会有不一样的结果。`,
+        prompt: `指导语：</br>请回忆一个你本可以表现得很谦逊，但却没有那么做的经历。请尽量生动具体地在脑海里想象这个场景，当你能成功地回忆这段经历时，请在下方写下这段经历。请尽量描述每一个细节，你不需要写成一段连贯的文字，任何与之相关的细节都可以被记录下来，例如，你做了什么，你本可以做的谦逊的部分是什么，如果你表现得谦逊结果会有什么改变，为什么你应该表现得更加谦逊，等等。<b style="color:#a70b0b">请至少填写50字</b></br>譬如：决策时面对不同的意见，你选择了固执己见，也许再多些时间思考他人的想法，会有不一样的结果。`,
         placeholder: `请注意，在本研究中谦逊并不是指卑微或者受辱的事件。谦逊并不会让你感到羞耻、惭愧或者愚蠢。反而本研究所感兴趣的是那些能让你正确认识到你和他人之间关系的视角。就像一句名言所说的，谦逊并不是看轻自己，而是避免只想到自己。`,
         rows: 10,
         columns: 120,
@@ -295,7 +295,7 @@ var c_recall = {
    type: 'survey-text',
     data: { varname: 'recall' },
     questions: [{
-        prompt: `指导语：</br>请回忆以下这个校园生活中常遇到的场景：你打算在食堂吃饭，在点餐后找到了位置，就坐吃饭。请尽量生动具体地在脑海里想象这个过程，当你能成功地回忆这段经历时，请在下方写下这段经历。请尽量描述每一个细节，你不需要写成一段连贯的文字，也无需描述自己的心情，任何与之相关的细节都可以被记录下来，例如，人流量怎么样、你是如何挑选食物、座位的，等等。<b style="color:#a70b0bcf">请至少填写50字</b>`,
+        prompt: `指导语：</br>请回忆以下这个校园生活中常遇到的场景：你打算在食堂吃饭，在点餐后找到了位置，就坐吃饭。请尽量生动具体地在脑海里想象这个过程，当你能成功地回忆这段经历时，请在下方写下这段经历。请尽量描述每一个细节，你不需要写成一段连贯的文字，也无需描述自己的心情，任何与之相关的细节都可以被记录下来，例如，人流量怎么样、你是如何挑选食物、座位的，等等。<b style="color:#a70b0b">请至少填写50字</b>`,
         placeholder: `请注意，请尽可能地描述日常大多数时候会发生的细节，而不是某几次偶然发生却给你留下深刻印象的细节`,
         rows: 10,
         columns: 120,
@@ -771,7 +771,7 @@ var main_timeline = [
 jsPsych.init({
     timeline: main_timeline,
     on_finish: function() {
-        jsPsych.data.get().localSave('csv', `data_${qianxun+keban+subID}.csv`) // download from browser
+        jsPsych.data.get().localSave('csv', `data_${String(qianxun)+String(keban)+subID}.csv`) // download from browser
         document.getElementById('jspsych-content').innerHTML += '实验结束，请不要同未参加过本研究的人讨论实验内容，非常感谢您的参与与合作！'
     }
 })
