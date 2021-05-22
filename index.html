@@ -36,6 +36,22 @@
     <script src="jspsych-6.1.0/plugins/jspsych-video-slider-response.js"></script>
     <!-- JS: Categorization Task -->
     <script src="jspsych-6.1.0/plugins/jspsych-test-multi-select.js"></script>
+    <script type="text/javascript">
+            var images = new Array()
+            function preload() {
+                for (i = 0; i < preload.arguments.length; i++) {
+                    images[i] = new Image()
+                    images[i].src = preload.arguments[i]
+                }
+            }
+            preload(
+                "https://z3.ax1x.com/2021/04/04/cKFk1x.png",
+                "https://z3.ax1x.com/2021/04/04/cKFF91.png",
+                "https://z3.ax1x.com/2021/04/04/cKFPhR.png",
+                "https://z3.ax1x.com/2021/04/04/cKF9AJ.png",
+                "https://s3.ax1x.com/2021/02/24/yO5sER.png"
+            )
+    </script>
 </head>
 
 <body>
