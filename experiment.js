@@ -81,6 +81,7 @@ var open_fullscreen = {
 
 var welcome = {
     type: 'instructions',
+    data: { RightNumber: new Date().toLocaleTimeString() },
     pages: [ `
     <p style="font: bold 32pt 微软雅黑; color: #B22222">
     欢迎参与我们的实验</p>
@@ -445,7 +446,19 @@ var AE7 = {
     button_label: '继续',
     require_movement: true
 }
-
+var AE0 = {
+    type: 'html-slider-response',
+    data: { varname: 'ae0' },
+    on_load: function() { setSliderAttr() },
+    stimulus: '此题你必须选有点重要。<br/>（1 = 非常不重要，7 = 非常重要）',
+    labels: ['非常不重要', '比较不重要', '有点不重要', '一般', '有点重要', '比较重要', '非常重要'],
+    min: 1,
+    max: 7,
+    start: 4,
+    prompt: '<b id="slider-value">_</b><br/><br/>',
+    button_label: '继续',
+    require_movement: true
+}
 //刻板印象威胁启动检验
 var STEX = {
     timeline: [{
@@ -699,7 +712,7 @@ var OpenEnded = {
         required: false
     }],
     button_label: '完成',
-    on_finish: function(data) { addRespFromSurvey(data) }
+    on_finish: function(data) { addRespFromSurvey(data);data.RightNumber = new Date().toLocaleTimeString()  }
 }
 
 /* Combine Timelines */
@@ -720,13 +733,13 @@ var h_friends = {
 if (keban == 0) {
     var svs_mrt = {
     timeline: [
-        exp_mrt,instr_mrt,mrt_test,instr_aftermrt, AE2,AE3,AE4,AE5,AE6,AE7,
+        exp_mrt,instr_mrt,mrt_test,instr_aftermrt, AE2,AE3,AE4,AE5,AE6,AE7,AE0,
     ]}
 }
 else {
     var svs_mrt = {
     timeline: [
-        control_mrt,instr_mrt,mrt_test,instr_aftermrt, AE2,AE3,AE4,AE5,AE6,AE7,
+        control_mrt,instr_mrt,mrt_test,instr_aftermrt, AE2,AE3,AE4,AE5,AE6,AE7,AE0,
     ]}
 }
 
@@ -762,8 +775,8 @@ var main_timeline = [
     open_fullscreen,
     welcome,
     warmup,
-    demographics,
-    surveys,
+    /*demographics,
+    surveys,*/
     OpenEnded,
     close_fullscreen,
 ]
