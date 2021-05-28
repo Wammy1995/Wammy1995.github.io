@@ -97,7 +97,7 @@ var welcome = {
 
 var warmup = {
     type: 'html-button-response',
-    stimulus: `<p>在每一部分的问题前都有详细的指导语，请务必仔细阅读指导语后再进行作答。每个人的行为或想法都不一样，所以问题的答案没有好与坏之分，您只需要按照内心的直觉作答即可。如果不是理解错误导致的错选，您无需反复修改您的答案。</p><p>您的回答不会被用于除研究以外的其他用途或透露给与研究无关的人员，本研究也不会记录任何事后能将您与本问卷回答进行联系或追溯的个人信息，请放心作答。</p><p>如果您遇到不能理解的问题，请随时示意主试。</p>`,
+    stimulus: `<p>在每一部分的问题前都有详细的指导语，请务必仔细阅读指导语后再进行作答。每个人的行为或想法都不一样，所以问题的答案没有好与坏之分，您只需要按照内心的直觉作答即可。如果不是理解错误导致的错选，您无需反复修改您的答案。</p><p>您的回答不会被用于除研究以外的其他用途或透露给与研究无关的人员，本研究也不会记录任何事后能将您与本问卷回答进行联系或追溯的个人信息，请放心作答。</p><p>遇到没有选择按钮时，请尝试使用滚轮向下查看。</p>`,
     choices: ['<span id="timer">10</span>秒后继续'],
     button_html: btn_html_timer
 }
@@ -775,8 +775,8 @@ var main_timeline = [
     open_fullscreen,
     welcome,
     warmup,
-    /*demographics,
-    surveys,*/
+    demographics,
+    surveys,
     OpenEnded,
     close_fullscreen,
 ]
@@ -788,6 +788,6 @@ jsPsych.init({
     timeline: main_timeline,
     on_finish: function() {
         jsPsych.data.get().localSave('csv', `data_${String(qianxun)+String(keban)+subID}.csv`) // download from browser
-        document.getElementById('jspsych-content').innerHTML += '实验结束，请不要同未参加过本研究的人讨论实验内容，非常感谢您的参与与合作！'
+        document.getElementById('jspsych-content').innerHTML += '实验结束，请不要同未参加过本研究的人讨论实验内容，并提交下载的CSV文件至linqi19951102@126.com。非常感谢您的参与与合作！'
     }
 })
