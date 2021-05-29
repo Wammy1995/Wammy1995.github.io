@@ -216,7 +216,7 @@ var instr_hindsight = {
     type: 'instructions',
     pages: [
         `<p style="text-align: left">
-        还记得之前你作为江西银行人事负责人所招聘的员工吗？最后他与另一名申请者共同被南昌分行录取。下面请根据你之前判断时的感受，回答下列问题。
+        还记得之前你作为江西银行人事负责人所招聘的那位员工吗？最后他与另一名申请者共同被南昌分行录取。下面请根据你之前判断时的感受，回答下列问题。
         `,
     ],
     show_clickable_nav: true,
@@ -508,6 +508,8 @@ var humility = {
     randomize_order: false
 }
 
+
+
 var hindsight = {
     timeline: [{
         type: 'html-slider-response',
@@ -757,12 +759,12 @@ var employ = {
 if (qianxun == 0) {
     var surveys = {
         timeline: [
-            e_recall,employ,svs_mrt,instr_stex, STEX,instr_firm,h_friends,instr_humility, humility,hindsight
+            e_recall,employ,svs_mrt,instr_stex, STEX,instr_firm,h_friends,instr_humility, humility,instr_hindsight，hindsight
         ]}
 }else {
     var surveys = {
         timeline: [
-            c_recall,employ,svs_mrt,instr_stex, STEX,instr_firm,h_friends,instr_humility, humility,hindsight
+            c_recall,employ,svs_mrt,instr_stex, STEX,instr_firm,h_friends,instr_humility, humility,instr_hindsight，hindsight
         ]}
 }
     
