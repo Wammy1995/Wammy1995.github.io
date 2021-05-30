@@ -759,12 +759,12 @@ var employ = {
 if (qianxun == 0) {
     var surveys = {
         timeline: [
-            e_recall,employ,svs_mrt,instr_stex, STEX,instr_firm,h_friends,instr_humility, humility,instr_hindsight，hindsight
+            e_recall,employ,svs_mrt,instr_stex, STEX,instr_firm,h_friends,instr_humility, humility,instr_hindsight,hindsight
         ]}
 }else {
     var surveys = {
         timeline: [
-            c_recall,employ,svs_mrt,instr_stex, STEX,instr_firm,h_friends,instr_humility, humility,instr_hindsight，hindsight
+            c_recall,employ,svs_mrt,instr_stex, STEX,instr_firm,h_friends,instr_humility, humility,instr_hindsight,hindsight
         ]}
 }
     
