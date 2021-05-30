@@ -121,8 +121,7 @@ var exp_mrt = {
     data: { RightNumber: 0 },
     stimulus: `<p style="text-align: left;text-indent: 2em;">指导语：请仔细阅读下面这段话，在这之后将有一个空间认知任务。</p><p style="text-align: left;text-indent: 2em;">空间能力是智能的基本成分之一。空间认知能力有广义和狭义之分。广义的空间能力指非言语信息加工中的个体差异，狭义的则指在完成空间测验中的个体差异。一些科学家认为，空间能力上的性别差异主要是在于右脑空间认知能力功能定位化程度的不同，而男性在此方面的功能强于女性，因此男性的空间认知能力强于女性。以往研究调查表明，接下来的任务能准确反映出个体的空间认知能力。<b style="color:#a70b0b">且绝大部分研究结果显示，男性在此任务上的表现优于女性</b>。</p>`,
     choices: ['<span id="timer">20</span>秒后继续'],
-    button_html: btn_html_timer,
-     on_finish: function(data) { addRespFromSurvey(data) }
+    button_html: btn_html_timer
 }
 
 //空间旋转测验刻板印象无效组
