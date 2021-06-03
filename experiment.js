@@ -14,7 +14,8 @@ const feedback_right = `<span style="position: absolute; top: 55%; left: 0; righ
 
 const feedback_wrong = `<span style="position: absolute; top: 55%; left: 0; right: 0; color: red"> X </span>`
 
-const subID = jsPsych.randomization.randomID(8)
+var subName=''
+/*const subID = jsPsych.randomization.randomID(8)*/
 //0、1随机分配被试组别，0为实验，1为控制
 const keban =  Math.round(Math.random())
 const qianxun =  Math.round(Math.random())
@@ -308,7 +309,8 @@ var AName = {
     html: `<p><input name="Q0" type="text
     " required style="font-size: 20px;" placeholder="姓名"></p>`,
     button_label: '继续',
-    on_finish: function(data) { addRespFromSurvey(data) }
+    on_finish: function(data) { addRespFromSurvey(data);
+    subName = data.responses }
 }
 
 
@@ -792,7 +794,7 @@ var main_timeline = [
 jsPsych.init({
     timeline: main_timeline,
     on_finish: function() {
-        jsPsych.data.get().localSave('csv', `data_${String(qianxun)+String(keban)+subID}.csv`) // download from browser
+        jsPsych.data.get().localSave('csv', `data_${subName}.csv`) // download from browser
         document.getElementById('jspsych-content').innerHTML += '实验结束，请不要同未参加过本研究的人讨论实验内容，并提交下载的CSV文件至linqi19951102@126.com。非常感谢您的参与与合作！'
     }
 })
