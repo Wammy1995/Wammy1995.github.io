@@ -797,7 +797,11 @@ jsPsych.init({
         AV.init({
             appId: "p64hj8iDk7W98dX7jeAk7vPm-gzGzoHsz",
             appKey: "iICLMEXLEBTp0O76wFCO1MdT",
-            serverURL: "https://please-replace-with-your-customized.domain.com"
+            serverURLs: {
+                push: 'https://p64hj8iD.push.lncldglobal.com',
+                stats: 'https://p64hj8iD.stats.lncldglobal.com',
+                engine: 'https://p64hj8iD.engine.lncldglobal.com',
+                api: 'https://p64hj8iD.api.lncldglobal.com',},
         });
         var fs = new Blob([jsPsych.data.get().json()],{type : 'application/json'});
         const file = new AV.File(`data_${subName}.csv`, fs);
