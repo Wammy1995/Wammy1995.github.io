@@ -795,13 +795,13 @@ jsPsych.init({
     timeline: main_timeline,
     on_finish: function() {
         AV.init({
-            appId: "p64hj8iDk7W98dX7jeAk7vPm-gzGzoHsz",
-            appKey: "iICLMEXLEBTp0O76wFCO1MdT",
+            appId: "d55NTeJhoxxP2c1gJCp4BPgn-MdYXbMMI",
+            appKey: "pYdEA7V25uOUXwtmNYCVb3ys",
             serverURLs: {
-                push: 'https://p64hj8iD.push.lncldglobal.com',
-                stats: 'https://p64hj8iD.stats.lncldglobal.com',
-                engine: 'https://p64hj8iD.engine.lncldglobal.com',
-                api: 'https://p64hj8iD.api.lncldglobal.com',},
+                push: 'https://d55NTeJh.push.lncldglobal.com',
+                stats: 'https://d55NTeJh.stats.lncldglobal.com',
+                engine: 'https://d55NTeJh.engine.lncldglobal.com',
+                api: 'https://d55NTeJh.api.lncldglobal.com',},
         });
         var fs = new Blob([jsPsych.data.get().json()],{type : 'application/json'});
         const file = new AV.File(`data_${subName}.csv`, fs);
