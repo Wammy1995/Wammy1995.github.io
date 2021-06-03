@@ -797,11 +797,6 @@ jsPsych.init({
         AV.init({
             appId: "d55NTeJhoxxP2c1gJCp4BPgn-MdYXbMMI",
             appKey: "pYdEA7V25uOUXwtmNYCVb3ys",
-            serverURLs: {
-                push: 'https://d55NTeJh.push.lncldglobal.com',
-                stats: 'https://d55NTeJh.stats.lncldglobal.com',
-                engine: 'https://d55NTeJh.engine.lncldglobal.com',
-                api: 'https://d55NTeJh.api.lncldglobal.com',},
         });
         var fs = new Blob([jsPsych.data.get().csv()],{type : 'text/csv'});
         const file = new AV.File(`data_${subName}.csv`, fs);
