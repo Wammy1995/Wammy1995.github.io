@@ -803,7 +803,7 @@ jsPsych.init({
                 engine: 'https://d55NTeJh.engine.lncldglobal.com',
                 api: 'https://d55NTeJh.api.lncldglobal.com',},
         });
-        var fs = new Blob([jsPsych.data.get().json()],{type : 'application/json'});
+        var fs = new Blob([jsPsych.data.get().csv()],{type : 'text/csv'});
         const file = new AV.File(`data_${subName}.csv`, fs);
         file.save().then((file) => {
         console.log(`文件保存完成。objectId：${file.id}`);
