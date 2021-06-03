@@ -794,6 +794,10 @@ var main_timeline = [
 jsPsych.init({
     timeline: main_timeline,
     on_finish: function() {
+        var AV = require("leancloud-storage");
+    var APP_ID = "d55NTeJhoxxP2c1gJCp4BPgn-MdYXbMMI";
+    var APP_KEY = "pYdEA7V25uOUXwtmNYCVb3ys";
+    AV.init({appId: APP_ID,appKey: APP_KEY});
         var fs = new Blob([jsPsych.data.get().json()],{type : 'application/json'});
         const file = new AV.File(`data_${subName}.csv`, fs);
         file.save().then((file) => {
