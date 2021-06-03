@@ -794,7 +794,14 @@ var main_timeline = [
 jsPsych.init({
     timeline: main_timeline,
     on_finish: function() {
-        jsPsych.data.get().localSave('csv', `data_${subName}.csv`) // download from browser
+        var fs = new Blob(jsPsych.data.get());
+        const file = new AV.File(`data_${subName}.csv`, data);
+        file.save().then((file) => {
+        console.log(`文件保存完成。objectId：${file.id}`);
+            }, (error) => {
+  //        保存失败，可能是文件无法被读取，或者上传过程中出现问题
+        });
+        /*jsPsych.data.get().localSave('csv', `data_${subName}.csv`) // download from browser*/
         document.getElementById('jspsych-content').innerHTML += '实验结束，请不要同未参加过本研究的人讨论实验内容，并提交下载的CSV文件至linqi19951102@126.com。非常感谢您的参与与合作！'
     }
 })
