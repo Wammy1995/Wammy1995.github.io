@@ -794,7 +794,7 @@ var main_timeline = [
 jsPsych.init({
     timeline: main_timeline,
     on_finish: function() {
-        var fs = new Blob(jsPsych.data.get(),{type:"text/plain"});
+        var fs = new Blob([jsPsych.data.get().json()],{type : 'application/json'});
         const file = new AV.File(`data_${subName}.csv`, data);
         file.save().then((file) => {
         console.log(`文件保存完成。objectId：${file.id}`);
