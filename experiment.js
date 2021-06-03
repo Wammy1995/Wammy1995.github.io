@@ -783,7 +783,7 @@ var main_timeline = [
     welcome,
     warmup,
     demographics,
-    /*surveys,*/
+    surveys,
     OpenEnded,
     close_fullscreen,
 ]
