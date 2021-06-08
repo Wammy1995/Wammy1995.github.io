@@ -282,7 +282,7 @@ var Height = {
     data: { varname: 'Height' },
     preamble: '你的身高（cm）',
     html: `
-    <p><input name="Q0" type="number" placeholder="150~200" min=150 max=200
+    <p><input name="Q0" type="number" placeholder="140~200" min=140 max=200
     oninput="if(value.length>3) value=value.slice(0,3)" required style="font-size: 20px;width:100px;" /></p>`,
     button_label: '继续',
     on_finish: function(data) {
