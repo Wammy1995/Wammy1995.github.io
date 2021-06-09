@@ -34,7 +34,7 @@ function countdown(){
 function word_length() {
     var n = document.querySelector("#input-0").textLength;
     var btn = document.querySelector("#jspsych-survey-text-next")
-    if(n<50){
+    if(n<100){
       btn.disabled = true;
       } else {
       btn.disabled = false;
