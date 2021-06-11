@@ -243,7 +243,7 @@ var c_recall = {
         required: true
     }],
     button_label: '继续',
-    required_word:100,
+    required_word:150,
     on_finish: function(data) { addRespFromSurvey(data) }
 }
 //空间旋转测验刻板印象唤起组
