@@ -125,7 +125,7 @@ var instr_aftermrt = {
 
 var instr_mrt = {
     type: 'html-button-response',
-    stimulus: `<p style="text-align: left;text-indent: 2em;"><b>指导语：</b>在所给的五个图形中，分割线左侧的图形（题干）与分割线右侧四个图形（选项）中的两个是同一个图形，由第一个图形旋转一定角度得到的，如选项图形中的第一个、第三个图形是由题干图形旋转而来，是同一个图形。请在下面的题目中选择与题干图形相同的<b style="color:#a70b0b;">两个图片，多选或少选均不得分</b>。</p><p style="text-align: left;text-indent: 2em;">此任务为限时测验，你只有7分钟来回答问题，请不要感到慌乱，尽力答题即可。</p><img src="https://s3.ax1x.com/2021/02/24/yXJGes.png"></img>`,
+    stimulus: `<p style="text-align: left;text-indent: 2em;"><b>指导语：</b>在所给的五个图形中，分割线左侧的图形（题干）与分割线右侧四个图形（选项）中的两个是同一个图形，由第一个图形旋转一定角度得到的，如选项图形中的第一个、第三个图形是由题干图形旋转而来，是同一个图形。请在下面的题目中选择与题干图形相同的<b style="color:#a70b0b;">两个图片，多选或少选均不得分</b>。</p><p style="text-align: left;text-indent: 2em;">此任务为限时测验，你只有7分钟来回答问题，请不要感到慌乱，尽力答题即可。</p><img src="mrt/mrt_instr11.png"></img>`,
     choices: ['<span id="timer">20</span>秒后继续'],
     button_html: btn_html_timer
 }
@@ -192,7 +192,7 @@ var instr_employ = {
         指导语：<br/>
         假设你现在是江西银行南昌分行的人事负责人，你行正在招聘一名新员工，详细招聘公告见下图。<br/>
         之后你将看到3份简历，请仔细考虑后，选出<b style="color:#a70b0b">一名</b>你觉得最适合这个岗位的员工。<br/><br/>
-        <img src="https://s3.ax1x.com/2021/02/24/yO5sER.png"></img>
+        <img src="Recuit/wanted.PNG"></img>
         `,
     ],
     show_clickable_nav: true,
@@ -268,7 +268,7 @@ var control_mrt = {
 var emp_211 = {
     type: 'html-button-response',
     data: { varname: 'recruit' },
-    stimulus: '<img src="https://z3.ax1x.com/2021/03/22/6TAq81.png" id="imgShow"><div style="margin-bottom: -25px;margin-top: -25px;"><span style="font-size: small;">点击此处切换参看简历: </span><input type="button" value="A的简历" onclick="changersm(1)"/><input type="button" value="B的简历" onclick="changersm(2)"/><input type="button" value="C的简历" onclick="changersm(3)"/></div>',
+    stimulus: '<img src="Recuit/00.png" id="imgShow"><div style="margin-bottom: -25px;margin-top: -25px;"><span style="font-size: small;">点击此处切换参看简历: </span><input type="button" value="A的简历" onclick="changersm(1)"/><input type="button" value="B的简历" onclick="changersm(2)"/><input type="button" value="C的简历" onclick="changersm(3)"/></div>',
     choices: ['A', 'B', 'C'],
     prompt: "<p>你心目中最合适的申请者是谁？</p>",
     nextbut:true
@@ -330,38 +330,38 @@ var Speciality = {
 
 var freigner1 = {
     type: 'html-button-response',
-    stimulus: `<div style="width: 600px;height: 800px;background-image: url('https://z3.ax1x.com/2021/04/04/cKFCN9.png');background-size: cover;display: inline-block;"></div><div style="width: 600px;height: 800px;background-image: url('https://z3.ax1x.com/2021/04/04/cKizBF.png');background-size: cover;display: inline-block;"></div>`,
+    stimulus: `<div style="width: 600px;height: 800px;background-image: url('tantan/Harold.png');background-size: cover;display: inline-block;"></div><div style="width: 600px;height: 800px;background-image: url('tantan/Harold-info.png');background-size: cover;display: inline-block;"></div>`,
     choices: ['0', '1'],
-    button_html: ['<button title="无感" style="height:50px;width:50px;border:none;background-image: url(\'https://z3.ax1x.com/2021/04/04/cKns76.png\');background-size: cover;"></button>','<button title="喜欢" style="border:none;height:50px;width:50px;margin-left:100px;background-image: url(\'https://z3.ax1x.com/2021/04/04/cKnr0x.png\');background-size: cover;"></button>'],
+    button_html: ['<button title="无感" style="height:50px;width:50px;border:none;background-image: url(\'tantan/ig.png\');background-size: cover;"></button>','<button title="喜欢" style="border:none;height:50px;width:50px;margin-left:100px;background-image: url(\'tantan/like.png\');background-size: cover;"></button>'],
     prompt: "<p>你觉得这位怎么样？</p>",
 }
 var freigner2 = {
     type: 'html-button-response',
-    stimulus: `<div style="width: 600px;height: 800px;background-image: url('https://z3.ax1x.com/2021/04/04/cKFS74.png');background-size: cover;display: inline-block;"></div><div style="width: 600px;height: 800px;background-image: url('https://z3.ax1x.com/2021/04/04/cKixnU.png');background-size: cover;display: inline-block;"></div>`,
+    stimulus: `<div style="width: 600px;height: 800px;background-image: url('tantan/markman.png');background-size: cover;display: inline-block;"></div><div style="width: 600px;height: 800px;background-image: url('https://tantan/markman-info.png');background-size: cover;display: inline-block;"></div>`,
     choices: ['0', '1'],
-    button_html: ['<button title="无感" style="height:50px;width:50px;border:none;background-image: url(\'https://z3.ax1x.com/2021/04/04/cKns76.png\');background-size: cover;"></button>','<button title="喜欢" style="border:none;height:50px;width:50px;margin-left:100px;background-image: url(\'https://z3.ax1x.com/2021/04/04/cKnr0x.png\');background-size: cover;"></button>'],
+    button_html: ['<button title="无感" style="height:50px;width:50px;border:none;background-image: url(\'tantan/ig.png\');background-size: cover;"></button>','<button title="喜欢" style="border:none;height:50px;width:50px;margin-left:100px;background-image: url(\'tantan/like.png\');background-size: cover;"></button>'],
     prompt: "<p>你觉得这位怎么样？</p>",
 }
 var chinese1 = {
     type: 'html-button-response',
     data: { varname: 'rdm_h0' },
     stimulus: function() {  
-        var text = '<div style="width: 600px;height: 800px;background-image: url(\'https://z3.ax1x.com/2021/04/04/cKFk1x.png\');background-size: cover;display: inline-block;"></div><div style="width: 600px;height: 800px;background-image: url(\'https://z3.ax1x.com/2021/04/04/cKFF91.png\');background-size: cover;display: inline-block;"><p style="position: absolute;padding-left: 135px;padding-top: 328px;font-size: 24px;color: rgb(75,75,75);">'+((rdm_h==0)?(pheigth+10):(pheigth-2))+'cm</p></div>'
+        var text = '<div style="width: 600px;height: 800px;background-image: url(\'tantan/q.png\');background-size: cover;display: inline-block;"></div><div style="width: 600px;height: 800px;background-image: url(\'tantan/q-info.png\');background-size: cover;display: inline-block;"><p style="position: absolute;padding-left: 135px;padding-top: 328px;font-size: 24px;color: rgb(75,75,75);">'+((rdm_h==0)?(pheigth+10):(pheigth-2))+'cm</p></div>'
         return text;
       }, 
     choices: ['0', '1'],
-    button_html: ['<button title="无感" style="height:50px;width:50px;border:none;background-image: url(\'https://z3.ax1x.com/2021/04/04/cKns76.png\');background-size: cover;"></button>','<button title="喜欢" style="border:none;height:50px;width:50px;margin-left:100px;background-image: url(\'https://z3.ax1x.com/2021/04/04/cKnr0x.png\');background-size: cover;"></button>'],
+    button_html: ['<button title="无感" style="height:50px;width:50px;border:none;background-image: url(\'tantan/ig.png\');background-size: cover;"></button>','<button title="喜欢" style="border:none;height:50px;width:50px;margin-left:100px;background-image: url(\'tantan/like.png\');background-size: cover;"></button>'],
     prompt: "<p>你觉得这位怎么样？</p>",
 }
 var chinese2 = {
     type: 'html-button-response',
     data: { varname: 'rdm_h1' },
    stimulus: function() {  
-        var text = '<div style="width: 600px;height: 800px;background-image: url(\'https://z3.ax1x.com/2021/04/04/cKF9AJ.png\');background-size: cover;display: inline-block;"></div><div style="width: 600px;height: 800px;background-image: url(\'https://z3.ax1x.com/2021/04/04/cKFPhR.png\');background-size: cover;display: inline-block;"><p style="position: absolute;padding-left: 135px;padding-top: 328px;font-size: 24px;color: rgb(75,75,75);">'+((rdm_h==1)?(pheigth+10):(pheigth-2))+'cm</p></div>'
+        var text = '<div style="width: 600px;height: 800px;background-image: url(\'tantan/z.png\');background-size: cover;display: inline-block;"></div><div style="width: 600px;height: 800px;background-image: url(\'tantan/z-info.png\');background-size: cover;display: inline-block;"><p style="position: absolute;padding-left: 135px;padding-top: 328px;font-size: 24px;color: rgb(75,75,75);">'+((rdm_h==1)?(pheigth+10):(pheigth-2))+'cm</p></div>'
         return text;
       }, 
     choices: ['0', '1'],
-    button_html: ['<button title="无感" style="height:50px;width:50px;border:none;background-image: url(\'https://z3.ax1x.com/2021/04/04/cKns76.png\');background-size: cover;"></button>','<button title="喜欢" style="border:none;height:50px;width:50px;margin-left:100px;background-image: url(\'https://z3.ax1x.com/2021/04/04/cKnr0x.png\');background-size: cover;"></button>'],
+    button_html: ['<button title="无感" style="height:50px;width:50px;border:none;background-image: url(\'tantan/ig.png\');background-size: cover;"></button>','<button title="喜欢" style="border:none;height:50px;width:50px;margin-left:100px;background-image: url(\'tantan/like.png\');background-size: cover;"></button>'],
     prompt: "<p>你觉得这位怎么样？</p>",
 }
 
@@ -542,160 +542,160 @@ var mrt_test = {
         type: 'test-multi-select',
         questions: [
           {
-            prompt: "https://s3.ax1x.com/2021/02/24/yO5agU.png", 
-            options: ["https://s3.ax1x.com/2021/02/24/yO564x.png", "https://s3.ax1x.com/2021/02/24/yO5BDJ.png", "https://s3.ax1x.com/2021/02/24/yO5gC6.png", "https://s3.ax1x.com/2021/02/24/yO5yU1.png"], 
+            prompt: "mrt/1.png", 
+            options: ["mrt/1A.png", "mrt/1-1.png", "mrt/1C.png", "mrt/1-2.png"], 
             horizontal: true,
             required: false,
             name: 'n1',
             rof:"02"
           }, 
           {
-            prompt: "https://s3.ax1x.com/2021/02/24/yO528K.png", 
-            options: ["https://s3.ax1x.com/2021/02/24/yO54DH.png", "https://s3.ax1x.com/2021/02/24/yO5RgO.png", "https://s3.ax1x.com/2021/02/24/yO5WvD.png", "https://s3.ax1x.com/2021/02/24/yO5oVA.png"], 
+            prompt: "mrt/2.png", 
+            options: ["mrt/2A.png", "mrt/2-1.png", "mrt/2-2.png", "mrt/2D.png"], 
             horizontal: true,
             required: false,
             name: 'n2',
             rof:"03"
           }, 
           {
-            prompt: "https://s3.ax1x.com/2021/02/24/yO575t.png", 
-            options: ["https://s3.ax1x.com/2021/02/24/yO5TUI.png", "https://s3.ax1x.com/2021/02/24/yO5q8f.png", "https://s3.ax1x.com/2021/02/24/yO5bPP.png", "https://s3.ax1x.com/2021/02/24/yO5L28.png"], 
+            prompt: "mrt/3.png", 
+            options: ["mrt/3-1.png", "mrt/3B.png", "mrt/3-2", "mrt/3D.png"], 
             horizontal: true,
             required: false,
             name: 'n3',
             rof:"13"
           }, 
           {
-            prompt: "https://s3.ax1x.com/2021/02/24/yO5OxS.png", 
-            options: ["https://s3.ax1x.com/2021/02/24/yO5jKg.png", "https://s3.ax1x.com/2021/02/24/yOISVs.png", "https://s3.ax1x.com/2021/02/24/yOIpan.png", "https://s3.ax1x.com/2021/02/24/yO5xbj.png"], 
+            prompt: "mrt/4.png", 
+            options: ["mrt/4-1.png", "mrt/4B.png", "mrt/4C.png", "mrt/4-2.png"], 
             horizontal: true,
             required: false,
             name: 'n4',
             rof:"12"
           }, 
           {
-            prompt: "https://s3.ax1x.com/2021/02/24/yOI95q.png", 
-            options: ["https://s3.ax1x.com/2021/02/24/yOIF2T.png", "https://s3.ax1x.com/2021/02/24/yOIPP0.png", "https://s3.ax1x.com/2021/02/24/yOIkxU.png", "https://s3.ax1x.com/2021/02/24/yOIiGV.png"], 
+            prompt: "mrt/5.png", 
+            options: ["mrt/5A.png", "mrt/5-1.png", "mrt/5C.png", "mrt/5-2.png"], 
             horizontal: true,
             required: false,
             name: 'n5',
             rof:"02"
           }, 
           {
-            prompt: "https://s3.ax1x.com/2021/02/24/yOIEMF.png", 
-            options: ["https://s3.ax1x.com/2021/02/24/yOImZ9.png", "https://s3.ax1x.com/2021/02/24/yOIVr4.png", "https://s3.ax1x.com/2021/02/24/yOIZqJ.png", "https://s3.ax1x.com/2021/02/24/yOInaR.png"], 
+            prompt: "mrt/6.png", 
+            options: ["mrt/6A.png", "mrt/6-1.png", "mrt/6-2.png", "mrt/6D.png"], 
             horizontal: true,
             required: false,
             name: 'n6',
             rof:"03"
           }, 
           {
-            prompt: "https://s3.ax1x.com/2021/02/24/yOIuI1.png", 
-            options: ["https://s3.ax1x.com/2021/02/24/yOIMPx.png", "https://s3.ax1x.com/2021/02/24/yOIQG6.png", "https://s3.ax1x.com/2021/02/24/yOIlRK.png", "https://s3.ax1x.com/2021/02/24/yOI1xO.png"], 
+            prompt: "mrt/7.png", 
+            options: ["mrt/7-1.png", "mrt/7B.png", "mrt/7-2.png", "mrt/7D.png"], 
             horizontal: true,
             required: false,
             name: 'n7',
             rof:"13"
           }, 
           {
-            prompt: "https://s3.ax1x.com/2021/02/24/yOI8MD.png", 
-            options: ["https://s3.ax1x.com/2021/02/24/yOIJqH.png", "https://s3.ax1x.com/2021/02/24/yOItZd.png", "https://s3.ax1x.com/2021/02/24/yOINdA.png", "https://s3.ax1x.com/2021/02/24/yOIGse.png"], 
+            prompt: "mrt/8.png", 
+            options: ["mrt/8-1.png", "mrt/8B.png", "mrt/8C.png", "mrt/8-2.png"], 
             horizontal: true,
             required: false,
             name: 'n8',
             rof:"12"
           }, 
           {
-            prompt: "https://s3.ax1x.com/2021/02/24/yOIUII.png", 
-            options: ["https://s3.ax1x.com/2021/02/24/yOIdit.png", "https://s3.ax1x.com/2021/02/24/yOI0Rf.png", "https://s3.ax1x.com/2021/02/24/yOIwJP.png", "https://s3.ax1x.com/2021/02/24/yOIBz8.png"], 
+            prompt: "mrt/9.png", 
+            options: ["mrt/9-1.png", "mrt/9B.png", "mrt/9-2.png", "mrt/9D.png"], 
             horizontal: true,
             required: false,
             name: 'n9',
             rof:"13"
           }, 
           {
-            prompt: "https://s3.ax1x.com/2021/02/24/yOIrQS.png", 
-            options: ["https://s3.ax1x.com/2021/02/24/yOIssg.png", "https://s3.ax1x.com/2021/02/24/yOIyLQ.png", "https://s3.ax1x.com/2021/02/24/yOIcZj.png", "https://s3.ax1x.com/2021/02/24/yOIgds.png"], 
+            prompt: "mrt/10.png", 
+            options: ["mrt/10-1.png", "mrt/10-2.png", "mrt/10C.png", "mrt/10D.png"], 
             horizontal: true,
             required: false,
             name: 'n10',
             rof:"23"
           }, 
           {
-            prompt: "https://s3.ax1x.com/2021/02/24/yOI2on.png", 
-            options: ["https://s3.ax1x.com/2021/02/24/yOIWiq.png", "https://s3.ax1x.com/2021/02/24/yOIfJ0.png", "https://s3.ax1x.com/2021/02/24/yOIhWV.png", "https://s3.ax1x.com/2021/02/24/yOI4zT.png"], 
+            prompt: "mrt/11.png", 
+            options: ["mrt/11-1.png", "mrt/11-2.png", "mrt/11C.png", "mrt/11D.png"], 
             horizontal: true,
             required: false,
             name: 'n11',
             rof:"23"
           }, 
           {
-            prompt: "https://s3.ax1x.com/2021/02/24/yOIIQU.png", 
-            options: ["https://s3.ax1x.com/2021/02/24/yOITL4.png", "https://s3.ax1x.com/2021/02/24/yXGwqA.png", "https://s3.ax1x.com/2021/02/24/yXGdrd.png", "https://s3.ax1x.com/2021/02/24/yOIoyF.png"], 
+            prompt: "mrt/12.png", 
+            options: ["mrt/12-1.png", "mrt/12B.png", "mrt/12C.png", "mrt/12-2.png"], 
             horizontal: true,
             required: false,
             name: 'n12',
             rof:"12"
           }, 
           {
-            prompt: "https://s3.ax1x.com/2021/02/24/yXGaKH.png", 
-            options: ["https://s3.ax1x.com/2021/02/24/yXGt2D.png", "https://s3.ax1x.com/2021/02/24/yXGBVI.png", "https://s3.ax1x.com/2021/02/24/yXGNxe.png", "https://s3.ax1x.com/2021/02/24/yXGDat.png"], 
+            prompt: "mrt/13.png", 
+            options: ["mrt/13-1.png", "mrt/13B.png", "mrt/13-2.png", "mrt/13D.png"], 
             horizontal: true,
             required: false,
             name: 'n13',
             rof:"13"
           }, 
           {
-            prompt: "https://s3.ax1x.com/2021/02/24/yXGrIP.png", 
-            options: ["https://s3.ax1x.com/2021/02/24/yXG6G8.png", "https://s3.ax1x.com/2021/02/24/yXGcRS.png", "https://s3.ax1x.com/2021/02/24/yXGyPf.png", "https://s3.ax1x.com/2021/02/24/yXGgxg.png"], 
+            prompt: "mrt/14.png", 
+            options: ["mrt/14-1.png", "mrt/14B.png", "mrt/14-2.png", "mrt/14D.png"], 
             horizontal: true,
             required: false,
             name: 'n14',
             rof:"13"
           }, 
           {
-            prompt: "https://s3.ax1x.com/2021/02/24/yXGRMQ.png", 
-            options: ["https://s3.ax1x.com/2021/02/24/yXGfqs.png", "https://s3.ax1x.com/2021/02/24/yXG4Zn.png", "https://s3.ax1x.com/2021/02/24/yXGWrj.png", "https://s3.ax1x.com/2021/02/24/yXG5aq.png"], 
+            prompt: "mrt/15.png", 
+            options: ["mrt/15-1.png", "mrt/15B.png", "mrt/15-3.png", "mrt/15-D.png"], 
             horizontal: true,
             required: false,
             name: 'n15',
             rof:"13"
           }, 
           {
-            prompt: "https://s3.ax1x.com/2021/02/24/yXGII0.png", 
-            options: ["https://s3.ax1x.com/2021/02/24/yXGHRU.png", "https://s3.ax1x.com/2021/02/24/yXGTiV.png", "https://s3.ax1x.com/2021/02/24/yXG7GT.png", "https://s3.ax1x.com/2021/02/24/yXGbzF.png"], 
+            prompt: "mrt/16.png", 
+            options: ["mrt/16A.png", "mrt/16-1.png", "mrt/16-2.png", "mrt/16D.png"], 
             horizontal: true,
             required: false,
             name: 'n16',
             rof:"03"
           }, 
           {
-            prompt: "https://s3.ax1x.com/2021/02/24/yXGLM4.png", 
-            options: ["https://s3.ax1x.com/2021/02/24/yXGXL9.png", "https://s3.ax1x.com/2021/02/24/yXGvZR.png", "https://s3.ax1x.com/2021/02/24/yXGOsJ.png", "https://s3.ax1x.com/2021/02/24/yXGxd1.png"], 
+            prompt: "mrt/17.png", 
+            options: ["mrt/17-1.png", "mrt/17B.png", "mrt/17-2.png", "mrt/17D.png"], 
             horizontal: true,
             required: false,
             name: 'n17',
             rof:"13"
           }, 
           {
-            prompt: "https://s3.ax1x.com/2021/02/24/yXJpi6.png", 
-            options: ["https://s3.ax1x.com/2021/02/24/yXJPzD.png", "https://s3.ax1x.com/2021/02/24/yXJFQe.png", "https://s3.ax1x.com/2021/02/24/yXJksH.png", "https://s3.ax1x.com/2021/02/24/yXJCRO.png"], 
+            prompt: "mrt/18.png", 
+            options: ["mrt/18-1.png", "mrt/18B.png", "mrt/18C.png", "mrt/18-2.png"], 
             horizontal: true,
             required: false,
             name: 'n18',
             rof:"12"
           }, 
           {
-            prompt: "https://s3.ax1x.com/2021/02/24/yXJALd.png", 
-            options: ["https://s3.ax1x.com/2021/02/24/yXJeot.png", "https://s3.ax1x.com/2021/02/24/yXJVeA.png", "https://s3.ax1x.com/2021/02/24/yXJnFP.png", "https://s3.ax1x.com/2021/02/24/yXJZdI.png"], 
+            prompt: "mrt/19.png", 
+            options: ["mrt/19A.png", "mrt/19-1.png", "mrt/19-C.png", "mrt/19-2.png"], 
             horizontal: true,
             required: false,
             name: 'n19',
             rof:"02"
           }, 
           {
-            prompt: "https://s3.ax1x.com/2021/02/24/yXJuJf.png", 
-            options: ["https://s3.ax1x.com/2021/02/24/yXJlQg.png", "https://s3.ax1x.com/2021/02/24/yXJKW8.png", "https://s3.ax1x.com/2021/02/24/yXJQSS.png", "https://s3.ax1x.com/2021/02/24/yXJ1yQ.png"], 
+            prompt: "mrt/20.png", 
+            options: ["mrt/20A.png", "mrt/20-1.png", "mrt/20-2.png", "mrt/20D.png"], 
             horizontal: true,
             required: false,
             name: 'n20',
