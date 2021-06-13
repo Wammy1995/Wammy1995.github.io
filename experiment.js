@@ -790,11 +790,13 @@ var main_timeline = [
 
 
 /* Launch jsPsych */
-
-jsPsych.init({
+jatos.onLoad(function() {
+    jsPsych.init({
     timeline: main_timeline,
     on_finish: function() {
-        jsPsych.data.get().localSave('csv', `data_${subName}.csv`) // download from browser
+        var resultJson = jsPsych.data.get().json();
+        jatos.submitResultData(resultJson, jatos.startNextComponent);
         document.getElementById('jspsych-content').innerHTML += '实验结束，请不要同未参加过本研究的人讨论实验内容，并提交下载的CSV文件至linqi19951102@126.com。非常感谢您的参与与合作！'
     }
-})
+});
+});
