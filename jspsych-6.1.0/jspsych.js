@@ -2552,16 +2552,13 @@ jsPsych.pluginAPI = (function() {
       jsPsych.getDisplayElement().innerHTML = pb_html;
     }
 
-/*    function update_loading_progress_bar(){
+    function update_loading_progress_bar(){
       loaded++;
-        if(trial.show_progress_bar){
-          var percent_loaded = (loaded/total_n)*100;
-          var preload_progress_bar = jsPsych.getDisplayElement().querySelector('#jspsych-loading-progress-bar');
-          if (preload_progress_bar !== null) {
-            preload_progress_bar.style.width = percent_loaded+"%";
-          }
-        }
-    }*/
+      if(progress_bar){
+        var percent_loaded = (loaded/total_n)*100;
+        jsPsych.getDisplayElement().querySelector('#jspsych-loading-progress-bar').style.width = percent_loaded+"%";
+      }
+    }
 
     // do the preloading
     // first the images, then when the images are complete
@@ -2574,87 +2571,7 @@ jsPsych.pluginAPI = (function() {
       }, update_loading_progress_bar);
     }, update_loading_progress_bar);
   }
-  module.getAutoPreloadList = function(timeline_description){
 
-    function getTrialsOfTypeFromTimelineDescription(td, target_type, inherited_type){
-      var trials = [];
-
-      for(var i=0; i<td.length; i++){
-        var node = td[i];
-        if(Array.isArray(node.timeline)){
-          if(typeof node.type !== 'undefined'){
-            inherited_type = node.type;
-          }
-          trials = trials.concat(getTrialsOfTypeFromTimelineDescription(node.timeline, target_type, inherited_type));
-        } else {
-          if(typeof node.type !== 'undefined' && node.type == target_type){
-            trials.push(node);
-          }
-          if(typeof node.type == 'undefined' && inherited_type == target_type){
-            trials.push(Object.assign({}, {type: target_type}, node));
-          }
-        }
-      }
-
-      return trials;
-    }
-
-    if(typeof timeline_description == 'undefined'){
-      timeline_description = jsPsych.initSettings().timeline;
-    }
-
-    // list of items to preload
-    var images = [];
-    var audio = [];
-    var video = [];
-
-    // construct list
-    for (var i = 0; i < preloads.length; i++) {
-      var type = preloads[i].plugin;
-      var param = preloads[i].parameter;
-      var media = preloads[i].media_type;
-
-      var trials = getTrialsOfTypeFromTimelineDescription(timeline_description, type);
-      for (var j = 0; j < trials.length; j++) {
-
-        if (typeof trials[j][param] == 'undefined') {
-          console.warn("jsPsych failed to auto preload one or more files:");
-          console.warn("no parameter called "+param+" in plugin "+type);
-        } else if (typeof trials[j][param] !== 'function') {
-          if (media === 'image') {
-            images = images.concat(jsPsych.utils.flatten([trials[j][param]]));
-          } else if (media === 'audio') {
-            audio = audio.concat(jsPsych.utils.flatten([trials[j][param]]));
-          } else if (media === 'video') {
-            video = video.concat(jsPsych.utils.flatten([trials[j][param]]));
-          }
-        }
-      }
-    }
-
-    images = jsPsych.utils.unique(jsPsych.utils.flatten(images));
-    audio  = jsPsych.utils.unique(jsPsych.utils.flatten(audio));
-    video  = jsPsych.utils.unique(jsPsych.utils.flatten(video));
-
-    // remove any nulls false values
-    images = images.filter(function(x) { return x != false && x != null})
-    audio = audio.filter(function(x) { return x != false && x != null})
-    video = video.filter(function(x) { return x != false && x != null})
-
-    return {
-      images, audio, video
-    }
-  }
-
-  module.cancelPreloads = function() {
-    for(var i=0;i<preload_requests.length; i++){
-      preload_requests[i].onload = function() {};
-      preload_requests[i].onerror = function() {};
-      preload_requests[i].oncanplaythrough = function() {};
-      preload_requests[i].onabort = function() {};
-    }
-    preload_requests = [];
-  }
   /**
    * Allows communication with user hardware through our custom Google Chrome extension + native C++ program
    * @param		{object}	mess	The message to be passed to our extension, see its documentation for the expected members of this object.
