@@ -559,7 +559,7 @@ var mrt_test = {
           }, 
           {
             prompt: "./mrt/3.png", 
-            options: ["./mrt/3-1.png", "./mrt/3B.png", "./mrt/3-2", "./mrt/3D.png"], 
+            options: ["./mrt/3-1.png", "./mrt/3B.png", "./mrt/3-2.png", "./mrt/3D.png"], 
             horizontal: true,
             required: false,
             name: 'n3',
@@ -575,7 +575,7 @@ var mrt_test = {
           }, 
           {
             prompt: "./mrt/5.png", 
-            options: ["./mrt/5A.png", "./mrt/5-1.png", "./mrt/5C.png", "./mrt/5-2.png"], 
+            options: ["./mrt/5A.png", "./mrt/5-3.png", "./mrt/5C.png", "./mrt/5-2.png"], 
             horizontal: true,
             required: false,
             name: 'n5',
@@ -655,7 +655,7 @@ var mrt_test = {
           }, 
           {
             prompt: "./mrt/15.png", 
-            options: ["./mrt/15-1.png", "./mrt/15B.png", "./mrt/15-3.png", "./mrt/15-D.png"], 
+            options: ["./mrt/15-1.png", "./mrt/15B.png", "./mrt/15-3.png", "./mrt/15D.png"], 
             horizontal: true,
             required: false,
             name: 'n15',
@@ -687,7 +687,7 @@ var mrt_test = {
           }, 
           {
             prompt: "./mrt/19.png", 
-            options: ["./mrt/19A.png", "./mrt/19-1.png", "./mrt/19-C.png", "./mrt/19-2.png"], 
+            options: ["./mrt/19A.png", "./mrt/19-1.png", "./mrt/19C.png", "./mrt/19-2.png"], 
             horizontal: true,
             required: false,
             name: 'n19',
