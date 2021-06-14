@@ -125,7 +125,7 @@ var instr_aftermrt = {
 
 var instr_mrt = {
     type: 'html-button-response',
-    stimulus: `<p style="text-align: left;text-indent: 2em;"><b>指导语：</b>在所给的五个图形中，分割线左侧的图形（题干）与分割线右侧四个图形（选项）中的两个是同一个图形，由第一个图形旋转一定角度得到的，如选项图形中的第一个、第三个图形是由题干图形旋转而来，是同一个图形。请在下面的题目中选择与题干图形相同的<b style="color:#a70b0b;">两个图片，多选或少选均不得分</b>。</p><p style="text-align: left;text-indent: 2em;">此任务为限时测验，你只有7分钟来回答问题，请不要感到慌乱，尽力答题即可。</p><img src="mrt/mrt_instr11.png"></img>`,
+    stimulus: `<p style="text-align: left;text-indent: 2em;"><b>指导语：</b>在所给的五个图形中，分割线左侧的图形（题干）与分割线右侧四个图形（选项）中的两个是同一个图形，由第一个图形旋转一定角度得到的，如选项图形中的第一个、第三个图形是由题干图形旋转而来，是同一个图形。请在下面的题目中选择与题干图形相同的<b style="color:#a70b0b;">两个图片，多选或少选均不得分</b>。</p><p style="text-align: left;text-indent: 2em;">此任务为限时测验，你只有7分钟来回答问题，请不要感到慌乱，尽力答题即可。</p><img src="./mrt/mrt_instr11.png"></img>`,
     choices: ['<span id="timer">20</span>秒后继续'],
     button_html: btn_html_timer
 }
@@ -192,7 +192,7 @@ var instr_employ = {
         指导语：<br/>
         假设你现在是江西银行南昌分行的人事负责人，你行正在招聘一名新员工，详细招聘公告见下图。<br/>
         之后你将看到3份简历，请仔细考虑后，选出<b style="color:#a70b0b">一名</b>你觉得最适合这个岗位的员工。<br/><br/>
-        <img src="Recuit/wanted.PNG"></img>
+        <img src="./Recruit/wanted.PNG"></img>
         `,
     ],
     show_clickable_nav: true,
@@ -268,7 +268,7 @@ var control_mrt = {
 var emp_211 = {
     type: 'html-button-response',
     data: { varname: 'recruit' },
-    stimulus: '<img src="Recuit/00.png" id="imgShow"><div style="margin-bottom: -25px;margin-top: -25px;"><span style="font-size: small;">点击此处切换参看简历: </span><input type="button" value="A的简历" onclick="changersm(1)"/><input type="button" value="B的简历" onclick="changersm(2)"/><input type="button" value="C的简历" onclick="changersm(3)"/></div>',
+    stimulus: '<img src="./Recruit/00.png" id="imgShow"><div style="margin-bottom: -25px;margin-top: -25px;"><span style="font-size: small;">点击此处切换参看简历: </span><input type="button" value="A的简历" onclick="changersm(1)"/><input type="button" value="B的简历" onclick="changersm(2)"/><input type="button" value="C的简历" onclick="changersm(3)"/></div>',
     choices: ['A', 'B', 'C'],
     prompt: "<p>你心目中最合适的申请者是谁？</p>",
     nextbut:true
@@ -542,160 +542,160 @@ var mrt_test = {
         type: 'test-multi-select',
         questions: [
           {
-            prompt: "mrt/1.png", 
-            options: ["mrt/1A.png", "mrt/1-1.png", "mrt/1C.png", "mrt/1-2.png"], 
+            prompt: "./mrt/1.png", 
+            options: ["./mrt/1A.png", "./mrt/1-1.png", "./mrt/1C.png", "./mrt/1-2.png"], 
             horizontal: true,
             required: false,
             name: 'n1',
             rof:"02"
           }, 
           {
-            prompt: "mrt/2.png", 
-            options: ["mrt/2A.png", "mrt/2-1.png", "mrt/2-2.png", "mrt/2D.png"], 
+            prompt: "./mrt/2.png", 
+            options: ["./mrt/2A.png", "./mrt/2-1.png", "./mrt/2-2.png", "./mrt/2D.png"], 
             horizontal: true,
             required: false,
             name: 'n2',
             rof:"03"
           }, 
           {
-            prompt: "mrt/3.png", 
-            options: ["mrt/3-1.png", "mrt/3B.png", "mrt/3-2", "mrt/3D.png"], 
+            prompt: "./mrt/3.png", 
+            options: ["./mrt/3-1.png", "./mrt/3B.png", "./mrt/3-2", "./mrt/3D.png"], 
             horizontal: true,
             required: false,
             name: 'n3',
             rof:"13"
           }, 
           {
-            prompt: "mrt/4.png", 
-            options: ["mrt/4-1.png", "mrt/4B.png", "mrt/4C.png", "mrt/4-2.png"], 
+            prompt: "./mrt/4.png", 
+            options: ["./mrt/4-1.png", "./mrt/4B.png", "./mrt/4C.png", "./mrt/4-2.png"], 
             horizontal: true,
             required: false,
             name: 'n4',
             rof:"12"
           }, 
           {
-            prompt: "mrt/5.png", 
-            options: ["mrt/5A.png", "mrt/5-1.png", "mrt/5C.png", "mrt/5-2.png"], 
+            prompt: "./mrt/5.png", 
+            options: ["./mrt/5A.png", "./mrt/5-1.png", "./mrt/5C.png", "./mrt/5-2.png"], 
             horizontal: true,
             required: false,
             name: 'n5',
             rof:"02"
           }, 
           {
-            prompt: "mrt/6.png", 
-            options: ["mrt/6A.png", "mrt/6-1.png", "mrt/6-2.png", "mrt/6D.png"], 
+            prompt: "./mrt/6.png", 
+            options: ["./mrt/6A.png", "./mrt/6-1.png", "./mrt/6-2.png", "./mrt/6D.png"], 
             horizontal: true,
             required: false,
             name: 'n6',
             rof:"03"
           }, 
           {
-            prompt: "mrt/7.png", 
-            options: ["mrt/7-1.png", "mrt/7B.png", "mrt/7-2.png", "mrt/7D.png"], 
+            prompt: "./mrt/7.png", 
+            options: ["./mrt/7-1.png", "./mrt/7B.png", "./mrt/7-2.png", "./mrt/7D.png"], 
             horizontal: true,
             required: false,
             name: 'n7',
             rof:"13"
           }, 
           {
-            prompt: "mrt/8.png", 
-            options: ["mrt/8-1.png", "mrt/8B.png", "mrt/8C.png", "mrt/8-2.png"], 
+            prompt: "./mrt/8.png", 
+            options: ["./mrt/8-1.png", "./mrt/8B.png", "./mrt/8C.png", "./mrt/8-2.png"], 
             horizontal: true,
             required: false,
             name: 'n8',
             rof:"12"
           }, 
           {
-            prompt: "mrt/9.png", 
-            options: ["mrt/9-1.png", "mrt/9B.png", "mrt/9-2.png", "mrt/9D.png"], 
+            prompt: "./mrt/9.png", 
+            options: ["./mrt/9-1.png", "./mrt/9B.png", "./mrt/9-2.png", "./mrt/9D.png"], 
             horizontal: true,
             required: false,
             name: 'n9',
             rof:"13"
           }, 
           {
-            prompt: "mrt/10.png", 
-            options: ["mrt/10-1.png", "mrt/10-2.png", "mrt/10C.png", "mrt/10D.png"], 
+            prompt: "./mrt/10.png", 
+            options: ["./mrt/10-1.png", "./mrt/10-2.png", "./mrt/10C.png", "./mrt/10D.png"], 
             horizontal: true,
             required: false,
             name: 'n10',
             rof:"23"
           }, 
           {
-            prompt: "mrt/11.png", 
-            options: ["mrt/11-1.png", "mrt/11-2.png", "mrt/11C.png", "mrt/11D.png"], 
+            prompt: "./mrt/11.png", 
+            options: ["./mrt/11-1.png", "./mrt/11-2.png", "./mrt/11C.png", "./mrt/11D.png"], 
             horizontal: true,
             required: false,
             name: 'n11',
             rof:"23"
           }, 
           {
-            prompt: "mrt/12.png", 
-            options: ["mrt/12-1.png", "mrt/12B.png", "mrt/12C.png", "mrt/12-2.png"], 
+            prompt: "./mrt/12.png", 
+            options: ["./mrt/12-1.png", "./mrt/12B.png", "./mrt/12C.png", "./mrt/12-2.png"], 
             horizontal: true,
             required: false,
             name: 'n12',
             rof:"12"
           }, 
           {
-            prompt: "mrt/13.png", 
-            options: ["mrt/13-1.png", "mrt/13B.png", "mrt/13-2.png", "mrt/13D.png"], 
+            prompt: "./mrt/13.png", 
+            options: ["./mrt/13-1.png", "./mrt/13B.png", "./mrt/13-2.png", "./mrt/13D.png"], 
             horizontal: true,
             required: false,
             name: 'n13',
             rof:"13"
           }, 
           {
-            prompt: "mrt/14.png", 
-            options: ["mrt/14-1.png", "mrt/14B.png", "mrt/14-2.png", "mrt/14D.png"], 
+            prompt: "./mrt/14.png", 
+            options: ["./mrt/14-1.png", "./mrt/14B.png", "./mrt/14-2.png", "./mrt/14D.png"], 
             horizontal: true,
             required: false,
             name: 'n14',
             rof:"13"
           }, 
           {
-            prompt: "mrt/15.png", 
-            options: ["mrt/15-1.png", "mrt/15B.png", "mrt/15-3.png", "mrt/15-D.png"], 
+            prompt: "./mrt/15.png", 
+            options: ["./mrt/15-1.png", "./mrt/15B.png", "./mrt/15-3.png", "./mrt/15-D.png"], 
             horizontal: true,
             required: false,
             name: 'n15',
             rof:"13"
           }, 
           {
-            prompt: "mrt/16.png", 
-            options: ["mrt/16A.png", "mrt/16-1.png", "mrt/16-2.png", "mrt/16D.png"], 
+            prompt: "./mrt/16.png", 
+            options: ["./mrt/16A.png", "./mrt/16-1.png", "./mrt/16-2.png", "./mrt/16D.png"], 
             horizontal: true,
             required: false,
             name: 'n16',
             rof:"03"
           }, 
           {
-            prompt: "mrt/17.png", 
-            options: ["mrt/17-1.png", "mrt/17B.png", "mrt/17-2.png", "mrt/17D.png"], 
+            prompt: "./mrt/17.png", 
+            options: ["./mrt/17-1.png", "./mrt/17B.png", "./mrt/17-2.png", "./mrt/17D.png"], 
             horizontal: true,
             required: false,
             name: 'n17',
             rof:"13"
           }, 
           {
-            prompt: "mrt/18.png", 
-            options: ["mrt/18-1.png", "mrt/18B.png", "mrt/18C.png", "mrt/18-2.png"], 
+            prompt: "./mrt/18.png", 
+            options: ["./mrt/18-1.png", "./mrt/18B.png", "./mrt/18C.png", "./mrt/18-2.png"], 
             horizontal: true,
             required: false,
             name: 'n18',
             rof:"12"
           }, 
           {
-            prompt: "mrt/19.png", 
-            options: ["mrt/19A.png", "mrt/19-1.png", "mrt/19-C.png", "mrt/19-2.png"], 
+            prompt: "./mrt/19.png", 
+            options: ["./mrt/19A.png", "./mrt/19-1.png", "./mrt/19-C.png", "./mrt/19-2.png"], 
             horizontal: true,
             required: false,
             name: 'n19',
             rof:"02"
           }, 
           {
-            prompt: "mrt/20.png", 
-            options: ["mrt/20A.png", "mrt/20-1.png", "mrt/20-2.png", "mrt/20D.png"], 
+            prompt: "./mrt/20.png", 
+            options: ["./mrt/20A.png", "./mrt/20-1.png", "./mrt/20-2.png", "./mrt/20D.png"], 
             horizontal: true,
             required: false,
             name: 'n20',

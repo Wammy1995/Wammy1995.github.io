@@ -130,7 +130,7 @@ function MEAN(scale_name, rev = [0], likert = [1, 7], var_i = 'i', var_response 
 }
 
 function changersm(n){
-    var imgs=["Recuit/00.png","Recuit/211.png","Recuit/985.png"];
+    var imgs=["./Recruit/00.png","./Recruit/211.png","./Recruit/985.png"];
     document.getElementById("imgShow").src=imgs[n-1];
 }
 
