@@ -776,10 +776,14 @@ if (qianxun == 0) {
 /*instr_stex刻板印象危险检验指导语，STEX问卷内容。e_recall谦逊唤起任务。
 
 */
-
+var pre = {
+    type:'preload'
+    trials:h_friends,mrt_test
+}
 var main_timeline = [
     set_html_style,
     open_fullscreen,
+    pre,
     welcome,
     warmup,
     demographics,
