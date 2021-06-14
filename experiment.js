@@ -268,7 +268,7 @@ var control_mrt = {
 var emp_211 = {
     type: 'html-button-response',
     data: { varname: 'recruit' },
-    stimulus: '<img src="./Recruit/00.png" id="imgShow"><div style="margin-bottom: -25px;margin-top: -25px;"><span style="font-size: small;">点击此处切换参看简历: </span><input type="button" value="A的简历" onclick="changersm(1)" style="margin-left:10px;font-size:15px;"/><input style="margin-left:10px;font-size:15px; type="button" value="B的简历" onclick="changersm(2)"/><input style="margin-left:10px;font-size:15px; type="button" value="C的简历" onclick="changersm(3)"/></div>',
+    stimulus: '<img src="./Recruit/00.png" id="imgShow"><div style="margin-bottom: -25px;margin-top: -25px;"><span style="font-size: small;">点击此处切换参看简历: </span><input type="button" value="A的简历" onclick="changersm(1)" style="margin-left:10px;font-size:15px;"/><input style="margin-left:10px;font-size:15px;" type="button" value="B的简历" onclick="changersm(2)"/><input style="margin-left:10px;font-size:15px;" type="button" value="C的简历" onclick="changersm(3)"/></div>',
     choices: ['A', 'B', 'C'],
     prompt: "<p>你心目中最合适的申请者是谁？</p>",
     nextbut:true
