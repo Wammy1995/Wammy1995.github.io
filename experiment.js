@@ -777,8 +777,8 @@ if (qianxun == 0) {
 
 */
 var pre = {
-    type:'preload',
-    trials:h_friends,mrt_test,
+    type:'preload'
+    trials:h_friends,mrt_test
 }
 var main_timeline = [
     set_html_style,
