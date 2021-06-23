@@ -740,13 +740,13 @@ var h_friends = {
 if (keban == 0) {
     var svs_mrt = {
     timeline: [
-        exp_mrt,instr_mrt,mrt_test,instr_aftermrt, AE2,AE3,AE4,AE5,AE6,AE7,AE0,
+        exp_mrt,instr_mrt,mrt_test,instr_firm,instr_aftermrt, AE2,AE3,AE4,AE5,AE6,AE7,AE0,
     ]}
 }
 else {
     var svs_mrt = {
     timeline: [
-        control_mrt,instr_mrt,mrt_test,instr_aftermrt, AE2,AE3,AE4,AE5,AE6,AE7,AE0,
+        control_mrt,instr_mrt,mrt_test,instr_firm,instr_aftermrt, AE2,AE3,AE4,AE5,AE6,AE7,AE0,
     ]}
 }
 
@@ -764,12 +764,12 @@ var employ = {
 if (qianxun == 0) {
     var surveys = {
         timeline: [
-            e_recall,employ,svs_mrt,instr_stex, STEX,instr_firm,h_friends,instr_humility, humility,instr_hindsight,hindsight
+            e_recall,employ,svs_mrt,instr_stex, STEX,h_friends,instr_humility, humility,instr_hindsight,hindsight
         ]}
 }else {
     var surveys = {
         timeline: [
-            c_recall,employ,svs_mrt,instr_stex, STEX,instr_firm,h_friends,instr_humility, humility,instr_hindsight,hindsight
+            c_recall,employ,svs_mrt,instr_stex, STEX,h_friends,instr_humility, humility,instr_hindsight,hindsight
         ]}
 }
     
