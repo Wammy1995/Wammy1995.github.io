@@ -368,7 +368,7 @@ var chinese2 = {
 var instr_firm = {
     type: 'html-button-response',
     data: { varname: 'instr_firm' },
-    stimulus: '根据以往的研究结果，在刚才的空间认知任务中，男性与女性的表现是怎样的关系？',
+    stimulus: '指导语中曾提到，根据以往的研究结果，在刚才的空间认知任务中，男性与女性的表现是怎样的关系？',
     choices: ['男性优于女性', '两者接近', '女性优于男性'],
 }
 
