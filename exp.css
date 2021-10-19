@@ -9,51 +9,17 @@ body {
     /* Chrome/Safari/Opera */
 }
 
-#jspsych-survey-multi-select-form {
-    width: 80%;
-    margin: auto;
-}
-
-option{
-    cursor: pointer;
-}
-#preq{
-    margin-left: -280px;
-    position: absolute;
-}
-
-#nextq{
-    margin-left: 280px;
-    position: absolute;
-}
-
-.hidden {
-    display: none;
-}
-
-.jspsych-survey-text {
-    text-align: left;
-    margin-left: 20px;
-}
-
-
-#jspsych-html-button-response-stimulus p {
-    text-align: left;
-    font-weight: unset;
-    text-indent: 2em;
+.jspsych-btn {
+    font-size: 16pt;
+    font-family: 微软雅黑;
+    font-weight: normal;
+    margin: 1em 0em;
 }
 
 .jspsych-survey-text-question textarea {
     font-size: 20px;
     width: 95%;
     margin-left: 20px;
-}
-
-.jspsych-btn {
-    font-size: 16pt;
-    font-family: 微软雅黑;
-    font-weight: normal;
-    margin: 1em 0em;
 }
 
 .tag-left {
@@ -68,4 +34,76 @@ option{
     position: absolute;
     top: 15%;
     right: 20%;
+}
+.disable {
+    pointer-events: none;
+}
+#euro {
+    width: 150px;
+    height: 150px;
+    margin-left: 115px;transform-style: preserve-3d;
+    animation: spin 1s linear infinite;
+    animation-iteration-count: 3;
+    margin: 10px 40%;
+}
+.back {
+    background-image: url("images/backeuro.png");
+    width: 150px;
+    height: 150px;
+}
+.trans1 {
+    transform: rotateY(360deg);
+}
+.trans0 {
+    transform: rotateY(180deg);
+}
+.middle {
+    background-image: url("images/faceeuro.png");
+    width: 150px;
+    height: 150px;
+    transform: translateZ(1px);
+    position: absolute;
+    top: 0;
+}
+.front {
+    background-image: url("images/faceeuro.png");
+    height: 150px;
+    position: absolute;
+    top: 0;
+    transform: translateZ(10px);
+    width: 150px;
+}
+@keyframes spin {
+    0% {
+        transform: rotateY(0deg);
+    }
+    100% {
+        transform: rotateY(360deg);
+    }
+}
+
+//假排名表格
+#rank{
+    font-family: verdana,arial,sans-serif;
+    font-size:11px;
+    color:#333333;
+    border-width: 1px;
+    border-color: #999999;
+    border-collapse: collapse;
+}
+#rank th{
+    background-color:#c3dde0;
+    border-width: 1px;
+    padding: 8px;
+    border-style: solid;
+    border-color: #a9c6c9;
+}
+#rank tr{
+    background-color:#d4e3e5;
+}
+#rank td{
+    border-width: 1px;
+    padding: 8px;
+    border-style: solid;
+    border-color: #a9c6c9;
 }
