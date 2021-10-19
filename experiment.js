@@ -1,9 +1,9 @@
 
 
 /* Global Variables */
-// const btn_html_timer =
-//     `<style onload="tid=setInterval(timer, 1000)"></style>
-//      <button onclick="clearInterval(tid)" class="jspsych-btn" disabled=true>%choice%</button>`
+const btn_html_timer =
+    `<style onload="tid=setInterval(timer, 1000)"></style>
+     <button onclick="clearInterval(tid)" class="jspsych-btn" disabled=true>%choice%</button>`
 
 // const feedback_right = `<span style="position: absolute; top: 55%; left: 0; right: 0; color: green"> √ </span>`
 
@@ -108,8 +108,8 @@ var warmup = {
 var instr_trust = {
     type: 'instructions',
     pages: [
-        `<p style="text-align: left">
-        接下来，你讲与一名搭档共同完成一项投资游戏。现在你有100元初始资金，决定投资一些钱给你的搭档去完成某个项目。你投资的金额可以是0～100元(具体投资多少，由你自己决定) 。在你投资N元给你的搭档之后，对方会获得3N元的收益。你的搭档在得到收益之后，会选择返还一些钱给你作为分红(具体返 还多少，由你的搭档自己决定) 。<br/>例如: 如果你决定投资50元给你的搭档，对方将得到150元的收益。随后，他可以选择返还0～150的任何数量的人⺠币给你作为分红，具体返还多少钱由他决定!下 面将提供你的搭档资料，请你根据信息完成投资。`,
+        `<p style="text-align: left;text-indent:2em;">
+        接下来，你讲与一名搭档共同完成一项投资游戏。现在你有100元初始资金，决定投资一些钱给你的搭档去完成某个项目。你投资的金额可以是0～100元(具体投资多少，由你自己决定) 。在你投资N元给你的搭档之后，对方会获得3N元的收益。你的搭档在得到收益之后，会选择返还一些钱给你作为分红(具体返 还多少，由你的搭档自己决定) 。</p><p style="text-align: left;text-indent:2em;">例如: 如果你决定投资50元给你的搭档，对方将得到150元的收益。随后，他可以选择返还0～150的任何数量的人⺠币给你作为分红，具体返还多少钱由他决定!下面将提供你的搭档资料，请你根据信息完成投资。`,
     ],
     show_clickable_nav: true,
     allow_backward: false,
@@ -117,34 +117,46 @@ var instr_trust = {
     button_label_next: '继续'
 }
 
-var info_partner = {
-    type:'html-button-response',
-    stimulus:
-}
 
-var partner = [{ data: { i: 1 }, s: '我好想找个地洞钻进去，从这里消失' },
-        { data: { i: 2 }, s: '我觉得自己很渺小' },
-        { data: { i: 3 }, s: '我感觉自己是个糟糕的人' },
-        { data: { i: 4 }, s: '我感到难堪、丢脸' },
+var partner = [{ data: { i: 1 }, s: '橘子1' },
+        { data: { i: 2 }, s: '橘子二' },
+        { data: { i: 3 }, s: '橘子3' },
+        { data: { i: 4 }, s: '橘子四' },
         { data: { i: 5 }, s: '我觉得自己毫无价值，缺少力量' },
         { data: { i: 6 }, s: '我感到羞耻' }]
 
+var money = 0
+
 var trustgame = {
     timeline_variables: partner,
-    timeline[{
-        type: 'html-slider-response',
-        stimulus:function(){
-            var html = '<img src="'+jsPsych.timelineVariable("img")+'">';
-            return html;
+    timeline:[
+        {
+        type: 'survey-html-form',
+        html:`
+    <p><input name="Q0" type="number" placeholder="0~100" min=0 max=100
+    oninput="if(value.length>2) value=value.slice(0,2)" required style="font-size:20px;width:4em;" /></p>`,
+        button_label:'确定',
+        preamble:function(){
+            var ssstr = '<p>以下是你这次的搭档信息</p>'+jsPsych.timelineVariable("s")+'<p>请决定你的投资金额。</p>';
+            return ssstr;
         },
-    }]
-    
-    min:0,
-    max:100,
-    slider_start:50,
-    require_movement:true,
-    button_label:'确认',
-
+        on_finish: function(data) {data.value = data.response.Q0;money = 3*data.value;data.stimulus = jsPsych.timelineVariable("i")}
+        },
+        {
+        type: 'survey-html-form',
+        html:function(){
+            var str = '<p><input name="Q0" type="number" placeholder="0~'+money.toString()+'" min=0 max='+money.toString()+' oninput="if(value.length>2) value=value.slice(0,2)" required style="font-size:20px;width:4em;" /></p>'
+            return str;
+        },
+        button_label:'确定',
+        preamble:function(){
+            var sstr =  '你的搭档获得了' + money.toString() + '元的投资收益，你认为他会分给你多少。';
+            return sstr;
+            },
+        on_finish: function(data) {data.value = data.response.Q0;data.stimulus = jsPsych.timelineVariable("i")}
+        }
+    ],
+    randomize_order: true,
 }
 
 var close_fullscreen = {
@@ -184,7 +196,7 @@ var Age = {
     preamble: '你的年龄',
     html: `
     <p><input name="Q0" type="number" placeholder="15~99" min=15 max=99
-    oninput="if(value.length>2) value=value.slice(0,2)" required style="font-size:20px" /></p>`,
+    oninput="if(value.length>2) value=value.slice(0,2)" required style="font-size:20px;width:4em;" /></p>`,
     button_label: '继续',
     on_finish: function(data) { data.value = data.response.Q0 }
 }
@@ -241,25 +253,25 @@ var its = {
         { data: { i: 3 }, s: '除非我们吸引更多的人进入政界，否则这个国家的前途十分黯淡。' },
         { data: { i: 4 }, s: '阻止多数人触犯法律的是恐惧、社会廉耻或惩罚而不是良心。' },
         { data: { i: 5 }, s: '考试时老师不到场监考可能会导致更多的人作弊。' },
-        { data: { i: 6 }, s: '通常父母在遵守诺言方面是可以信赖的。' }
-        { data: { i: 7 }, s: '联合国永远也不会成为维持世界和平的有效力量。' }
-        { data: { i: 8 }, s: '法院是我们都能受到公正对待的场所。' }
-        { data: { i: 9 }, s: '如果得知公众听到和看到的新闻有多少已被歪曲，多数人会感到震惊的。' }
-        { data: { i: 10 }, s: '不管人们怎样表白，最好还是认为多数人主要关心其自身幸福。' }
-        { data: { i: 11 }, s: '尽管在报纸、收音机和电视中均可看到新闻，但我们很难得到关于公共事件的客观报道。' }
-        { data: { i: 12 }, s: '未来似乎很有希望。' }
-        { data: { i: 13 }, s: '如果真正了解到国际上正在发生的政治事件，那么公众有理由比现在更加担心。' }
-        { data: { i: 14 }, s: '多数获选官员在竞选中的许诺是诚恳的。' }
-        { data: { i: 15 }, s: '许多重大的全国性体育比赛均受到某种形式的操纵和利用。' }
-        { data: { i: 16 }, s: '多数专家有关其知识局限性的表白是可信的。' }
-        { data: { i: 17 }, s: '多数父母关于实施惩罚的威胁是可信的。' }
-        { data: { i: 18 }, s: '多数人如果说出自己的打算就一定会去实现。' }
-        { data: { i: 19 }, s: '在这个竞争的年代里，如果不保持警惕别人就可能占你的便宜。' }
-        { data: { i: 20 }, s: '多数理想主义者是诚恳的并按照他们自己所宣扬的信条行事。' }
-        { data: { i: 21 }, s: '多数推销人员在描述他们的产品时是诚实的。' }
-        { data: { i: 22 }, s: '多数学生即使在有把握不会被发现时也不作弊。' }
-        { data: { i: 23 }, s: '多数维修人员即使认为你不懂其专业知识也不会多收费。' }
-        { data: { i: 24 }, s: '对保险公司的控告有相当一部分是假的。' }
+        { data: { i: 6 }, s: '通常父母在遵守诺言方面是可以信赖的。' },
+        { data: { i: 7 }, s: '联合国永远也不会成为维持世界和平的有效力量。' },
+        { data: { i: 8 }, s: '法院是我们都能受到公正对待的场所。' },
+        { data: { i: 9 }, s: '如果得知公众听到和看到的新闻有多少已被歪曲，多数人会感到震惊的。' },
+        { data: { i: 10 }, s: '不管人们怎样表白，最好还是认为多数人主要关心其自身幸福。' },
+        { data: { i: 11 }, s: '尽管在报纸、收音机和电视中均可看到新闻，但我们很难得到关于公共事件的客观报道。' },
+        { data: { i: 12 }, s: '未来似乎很有希望。' },
+        { data: { i: 13 }, s: '如果真正了解到国际上正在发生的政治事件，那么公众有理由比现在更加担心。' },
+        { data: { i: 14 }, s: '多数获选官员在竞选中的许诺是诚恳的。' },
+        { data: { i: 15 }, s: '许多重大的全国性体育比赛均受到某种形式的操纵和利用。' },
+        { data: { i: 16 }, s: '多数专家有关其知识局限性的表白是可信的。' },
+        { data: { i: 17 }, s: '多数父母关于实施惩罚的威胁是可信的。' },
+        { data: { i: 18 }, s: '多数人如果说出自己的打算就一定会去实现。' },
+        { data: { i: 19 }, s: '在这个竞争的年代里，如果不保持警惕别人就可能占你的便宜。' },
+        { data: { i: 20 }, s: '多数理想主义者是诚恳的并按照他们自己所宣扬的信条行事。' },
+        { data: { i: 21 }, s: '多数推销人员在描述他们的产品时是诚实的。' },
+        { data: { i: 22 }, s: '多数学生即使在有把握不会被发现时也不作弊。' },
+        { data: { i: 23 }, s: '多数维修人员即使认为你不懂其专业知识也不会多收费。' },
+        { data: { i: 24 }, s: '对保险公司的控告有相当一部分是假的。' },
         { data: { i: 25 }, s: '多数人诚实地回答民意测验中的问题。' }
     ],
     randomize_order: false,
@@ -297,8 +309,8 @@ var main_timeline = [
     welcome,
     warmup,
     demographics,
-    instr_its,its,
-    instr_trust,info_partner,
+    // instr_its,its,
+    instr_trust,
     trustgame,
     OpenEnded,
     close_fullscreen,
@@ -312,7 +324,7 @@ jatos.onLoad(function() {
     on_finish: function() {
         var resultJson = jsPsych.data.get().json();
         document.getElementById('jspsych-content').innerHTML += '实验结束，感谢您的参与！'
-        // jatos.submitResultData(resultJson, jatos.startNextComponent);
+        jatos.submitResultData(resultJson, jatos.startNextComponent);
     }
 });
 });

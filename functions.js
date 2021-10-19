@@ -32,18 +32,18 @@
 //       }
 // }
 
-// function timer() {
-//     var second = document.getElementById('timer')
-//     var button = document.getElementsByClassName('jspsych-btn')[0]
-//     if (second != null) {
-//         if (second.innerHTML > 1) {
-//             second.innerHTML = second.innerHTML - 1
-//         } else {
-//             button.innerHTML = '继续'
-//             button.disabled = false
-//         }
-//     }
-// }
+function timer() {
+    var second = document.getElementById('timer')
+    var button = document.getElementsByClassName('jspsych-btn')[0]
+    if (second != null) {
+        if (second.innerHTML > 1) {
+            second.innerHTML = second.innerHTML - 1
+        } else {
+            button.innerHTML = '继续'
+            button.disabled = false
+        }
+    }
+}
 
 function addRespFromButton(data) {
     // compute variables from button-plugin response (for simple item)
