@@ -131,29 +131,35 @@ var trustgame = {
     timeline_variables: partner,
     timeline:[
         {
-        type: 'survey-html-form',
-        html:`
-    <p><input name="Q0" type="number" placeholder="0~100" min=0 max=100
-    oninput="if(value.length>2) value=value.slice(0,2)" required style="font-size:20px;width:4em;" /></p>`,
-        button_label:'确定',
-        preamble:function(){
+        type: 'html-range-response',
+        stimulus:function(){
             var ssstr = '<p>以下是你这次的搭档信息</p>'+jsPsych.timelineVariable("s")+'<p>请决定你的投资金额。</p>';
             return ssstr;
         },
-        on_finish: function(data) {data.value = data.response.Q0;money = 3*data.value;data.stimulus = jsPsych.timelineVariable("i")}
-        },
-        {
-        type: 'survey-html-form',
-        html:function(){
-            var str = '<p><input name="Q0" type="number" placeholder="0~'+money.toString()+'" min=0 max='+money.toString()+' oninput="if(value.length>2) value=value.slice(0,2)" required style="font-size:20px;width:4em;" /></p>'
-            return str;
-        },
+        min:0,
+        max:100,
+        step:1,
+        range_width: 300,
+        range_start:0,
         button_label:'确定',
-        preamble:function(){
+        on_finish: function(data) {data.value = data.response;money = 3*data.value;data.stimulus = jsPsych.timelineVariable("i")}
+        },
+
+        {
+        type: 'html-range-response',
+        button_label:'确定',
+        stimulus:function(){
             var sstr =  '你的搭档获得了' + money.toString() + '元的投资收益，你认为他会分给你多少。';
             return sstr;
             },
-        on_finish: function(data) {data.value = data.response.Q0;data.stimulus = jsPsych.timelineVariable("i")}
+        min:0,
+        max:function(){
+            return money;
+        },
+        range_width: 300,
+        range_start:0,
+        step:1,
+        on_finish: function(data) {data.value = data.response;data.stimulus = jsPsych.timelineVariable("i")}
         }
     ],
     randomize_order: true,
@@ -264,17 +270,6 @@ var its = {
 
 }
 
-var ange = {
-    type:'html-range-response',
-    stimulus:'ssstr',
-    min: 0,   
-    max: 100,
-    range_start: 0,
-    step:1,
-    prompt: '<b id="range-value">_</b><br/><br/>',
-    button_label: '继续',
-    require_movement: true,
-}
 
 
 var OpenEnded = {
@@ -303,7 +298,6 @@ var demographics = {
 var main_timeline = [
     set_html_style,
     open_fullscreen,
-    // ange,
     welcome,
     warmup,
     demographics,

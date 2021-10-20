@@ -74,7 +74,13 @@ function addSliderValue(element_id = 'slider-value') {
 
 function addRangeValue(){
   var sss = document.getElementById('jspsych-html-range-response-response').value
-  document.getElementById('range-value').innerHTML = sss
+  document.getElementById('range-value').value = sss
+  document.getElementById('jspsych-html-range-response-next').disabled = false
+}
+
+function setRangeValue(){
+  var sss = document.getElementById('range-value').value
+  document.getElementById('jspsych-html-range-response-response').value = sss
   document.getElementById('jspsych-html-range-response-next').disabled = false
 }
 

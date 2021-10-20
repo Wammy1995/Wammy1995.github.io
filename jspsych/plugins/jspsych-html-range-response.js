@@ -108,20 +108,9 @@ jsPsych.plugins['html-range-response'] = (function() {
     }
     html += '">';
     html += '<span>'+trial.min+'</span>'
-    html += '<input type="range" onchange="addRangeValue()" class="jspsych-range" value="'+trial.range_start+'" min="'+trial.min+'" max="'+trial.max+'" step="'+trial.step+'" id="jspsych-html-range-response-response"></input>';
+    html += '<input type="range" onchange="addRangeValue()" class="jspsych-range" value="'+trial.range_start+'" min="'+trial.min+'" max="'+trial.max+'" step="'+trial.step+'" id="jspsych-html-range-response-response" style="width:'+(trial.range_width-70)+'px;"></input>';
     html += '<span>'+trial.max+'</span>'
-    // html += '<div>'
-    // for(var j=0; j < trial.labels.length; j++){
-    //   var label_width_perc = 100/(trial.labels.length-1);
-    //   var percent_of_range = j * (100/(trial.labels.length - 1));
-    //   var percent_dist_from_center = ((percent_of_range-50)/50)*100;
-    //   var offset = (percent_dist_from_center * half_thumb_width)/100;
-    //   html += '<div style="border: 1px solid transparent; display: inline-block; position: absolute; '+
-    //   'left:calc('+percent_of_range+'% - ('+label_width_perc+'% / 2) - '+offset+'px); text-align: center; width: '+label_width_perc+'%;">';  
-    //   html += '<span style="text-align: center; font-size: 80%;" value="'+trial.labels[j]+'">'+(j+1)+'</span>';
-    //   html += '</div>'
-    // }
-    // html += '</div>';
+    html += '<input id="range-value" type="number" min="0" max="'+trial.max+'" required="true" style="font-size:20px;width:4em;" onchange="setRangeValue()">'
     html += '</div>';
     html += '</div>';
 
