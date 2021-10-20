@@ -221,11 +221,11 @@ var instr_its = {
         指导语：<br/>
         认真阅读之后的句子，<br/>
         并选择符合你内心感受的按钮。<br/><br/>
-        1 = 完全同意<br/>
-        2 = 部分同意<br/>
+        1 = 完全不同意<br/>
+        2 = 部分不同意<br/>
         3 = 既不同意也不反对<br/>
-        4 = 部分不同意<br/>
-        5 = 完全不同意<br/>`,
+        4 = 部分同意<br/>
+        5 = 完全同意<br/>`,
     ],
     show_clickable_nav: true,
     allow_backward: false,
@@ -293,7 +293,7 @@ var main_timeline = [
     welcome,
     warmup,
     demographics,
-    // instr_its,its,
+    instr_its,its,
     instr_trust,
     trustgame,
     OpenEnded,
@@ -302,7 +302,7 @@ var main_timeline = [
 
 
 /* Launch jsPsych */
-jatos.onLoad(function() {
+// jatos.onLoad(function() {
     jsPsych.init({
     timeline: main_timeline,
     on_finish: function() {
@@ -311,4 +311,4 @@ jatos.onLoad(function() {
         jatos.submitResultData(resultJson, jatos.startNextComponent);
     }
 });
-});
+// });

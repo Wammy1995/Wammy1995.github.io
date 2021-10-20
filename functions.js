@@ -62,7 +62,7 @@ function replaceComma(data, sep = '|') {
     data.response = String(JSON.parse(data.response).Q0).split(',').join(sep)
 }
 
-function setSliderAttr(event = 'onchange') {
+function setSliderAttr(event = 'onclick') {
     document.getElementById('jspsych-html-slider-response-response').setAttribute(event, 'addSliderValue()')
 }
 
