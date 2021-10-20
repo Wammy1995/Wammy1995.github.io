@@ -128,11 +128,10 @@ jsPsych.plugins['html-slider-response'] = (function() {
     }
     html += '</div>';
     html += '</div>';
+    html += '</div>';
     if (trial.prompt !== null){
       html += trial.prompt;
     }
-    html += '</div>';
-
     // add submit button
     html += '<button id="jspsych-html-slider-response-next" class="jspsych-btn" '+ (trial.require_movement ? "disabled" : "") + '>'+trial.button_label+'</button>';
 
@@ -162,7 +161,6 @@ jsPsych.plugins['html-slider-response'] = (function() {
       }
 
     });
-
     function end_trial(){
 
       jsPsych.pluginAPI.clearAllTimeouts();

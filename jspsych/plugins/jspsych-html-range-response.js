@@ -108,9 +108,9 @@ jsPsych.plugins['html-range-response'] = (function() {
     }
     html += '">';
     html += '<span>'+trial.min+'</span>'
-    html += '<input type="range" class="jspsych-range" value="'+trial.range_start+'" min="'+trial.min+'" max="'+trial.max+'" step="'+trial.step+'" id="jspsych-html-range-response-response"></input>';
+    html += '<input type="range" onchange="addRangeValue()" class="jspsych-range" value="'+trial.range_start+'" min="'+trial.min+'" max="'+trial.max+'" step="'+trial.step+'" id="jspsych-html-range-response-response"></input>';
     html += '<span>'+trial.max+'</span>'
-    html += '<div>'
+    // html += '<div>'
     // for(var j=0; j < trial.labels.length; j++){
     //   var label_width_perc = 100/(trial.labels.length-1);
     //   var percent_of_range = j * (100/(trial.labels.length - 1));
@@ -121,13 +121,13 @@ jsPsych.plugins['html-range-response'] = (function() {
     //   html += '<span style="text-align: center; font-size: 80%;" value="'+trial.labels[j]+'">'+(j+1)+'</span>';
     //   html += '</div>'
     // }
+    // html += '</div>';
     html += '</div>';
-    html += '</div>';
-    if (trial.prompt !== null){
-      html += trial.prompt;
-    }
     html += '</div>';
 
+    if (trial.prompt !== null){
+          html += trial.prompt;
+        }
     // add submit button
     html += '<button id="jspsych-html-range-response-next" class="jspsych-btn" '+ (trial.require_movement ? "disabled" : "") + '>'+trial.button_label+'</button>';
 
@@ -158,17 +158,7 @@ jsPsych.plugins['html-range-response'] = (function() {
 
     });
 
-    function setRangeAttr(event = 'onclick') {
-    document.getElementById('jspsych-html-range-response-response').setAttribute(event, 'addRangeValue()')
-    }
-
-    function addRangeValue(element_id = 'range-value') {
-      var sss = (parseInt(document.getElementById('jspsych-html-range-response-response').value)-1)
-      document.getElementById(element_id).innerHTML = document.getElementsByTagName('span')[sss].getAttribute('value')
-      document.getElementById('jspsych-html-range-response-next').disabled = false
-    }
-
-    function end_trial(){
+    function end_trial(){ 
 
       jsPsych.pluginAPI.clearAllTimeouts();
 

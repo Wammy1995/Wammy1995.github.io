@@ -72,6 +72,13 @@ function addSliderValue(element_id = 'slider-value') {
     document.getElementById('jspsych-html-slider-response-next').disabled = false
 }
 
+function addRangeValue(){
+  var sss = document.getElementById('jspsych-html-range-response-response').value
+  document.getElementById('range-value').innerHTML = sss
+  document.getElementById('jspsych-html-range-response-next').disabled = false
+}
+
+
 function MEAN(scale_name, rev = [0], likert = [1, 7], var_i = 'i', var_response = 'response') {
     var df = jsPsych.data.get().filter({ scale: scale_name }).values() // raw data array (modifiable)
     var sum = 0

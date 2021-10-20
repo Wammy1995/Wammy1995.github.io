@@ -264,6 +264,19 @@ var its = {
 
 }
 
+var ange = {
+    type:'html-range-response',
+    stimulus:'ssstr',
+    min: 0,   
+    max: 100,
+    range_start: 0,
+    step:1,
+    prompt: '<b id="range-value">_</b><br/><br/>',
+    button_label: '继续',
+    require_movement: true,
+}
+
+
 var OpenEnded = {
     type: 'survey-text',
     data: { varname: 'OpenEnded' },
@@ -290,6 +303,7 @@ var demographics = {
 var main_timeline = [
     set_html_style,
     open_fullscreen,
+    // ange,
     welcome,
     warmup,
     demographics,
@@ -300,7 +314,6 @@ var main_timeline = [
     close_fullscreen,
 ]
 
-
 /* Launch jsPsych */
 // jatos.onLoad(function() {
     jsPsych.init({
@@ -308,7 +321,7 @@ var main_timeline = [
     on_finish: function() {
         var resultJson = jsPsych.data.get().json();
         document.getElementById('jspsych-content').innerHTML += '实验结束，感谢您的参与！'
-        jatos.submitResultData(resultJson, jatos.startNextComponent);
+        // jatos.submitResultData(resultJson, jatos.startNextComponent);
     }
 });
 // });
