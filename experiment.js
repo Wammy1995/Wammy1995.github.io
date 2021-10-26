@@ -118,12 +118,19 @@ var instr_trust = {
 }
 
 
-var partner = [{ data: { i: 1 }, s: '橘子1' },
+var partner = [{ data: { i: 1 }, s: 'Ta与你素未谋面，是一名位于社会阶层梯子9层的企业高管，' },
         { data: { i: 2 }, s: '橘子二' },
         { data: { i: 3 }, s: '橘子3' },
         { data: { i: 4 }, s: '橘子四' },
         { data: { i: 5 }, s: '我觉得自己毫无价值，缺少力量' },
-        { data: { i: 6 }, s: '我感到羞耻' }]
+        { data: { i: 6 }, s: '我感到羞耻' },
+        { data: { i: 7 }, s: '我感到羞耻' },
+        { data: { i: 8 }, s: '我感到羞耻' },
+        { data: { i: 9 }, s: '我感到羞耻' },
+        { data: { i: 10 }, s: '我感到羞耻' },
+        { data: { i: 11 }, s: '我感到羞耻' },
+        { data: { i: 12 }, s: '我感到羞耻' },
+        ]
 
 var money = 0
 
@@ -133,7 +140,7 @@ var trustgame = {
         {
         type: 'html-range-response',
         stimulus:function(){
-            var ssstr = '<p>以下是你这次的搭档信息</p>'+jsPsych.timelineVariable("s")+'<p>请决定你的投资金额。</p>';
+            var ssstr = '<p>请你阅读下面的信息，想象一个符合的对象作为你投资的搭档:</p>'+jsPsych.timelineVariable("s")+'<p>请决定你的投资金额。</p>';
             return ssstr;
         },
         min:0,
@@ -142,6 +149,7 @@ var trustgame = {
         range_width: 300,
         range_start:0,
         button_label:'确定',
+
         on_finish: function(data) {data.value = data.response;money = 3*data.value;data.stimulus = jsPsych.timelineVariable("i")}
         },
 
@@ -205,6 +213,18 @@ var Age = {
     oninput="if(value.length>2) value=value.slice(0,2)" required style="font-size:20px;width:4em;" /></p>`,
     button_label: '继续',
     on_finish: function(data) { data.value = data.response.Q0 }
+}
+
+var Social_Rank = {
+    type:'html-slider-response',
+    stimulus:`<p>请看下图，请你想象梯子不同的层级代表不同人所处的社会阶层, 层级越高, 表示其社会阶层越高。你觉得自己当前位于1至10级的哪一层级</p><img src="images/ladder.png">`,
+    min:1,
+    max:10,
+    slider_start:1,
+    labels: ['1', '2', '3', '4', '5','6','7','8','9','10'],
+    require_movement:true,
+    button_label:'继续',
+    step:1,
 }
 
 
@@ -291,7 +311,7 @@ var OpenEnded = {
 
 var demographics = {
     timeline: [
-        Sex, Age,
+        Sex, Age,Social_Rank,
     ]
 }
 
@@ -309,13 +329,22 @@ var main_timeline = [
 ]
 
 /* Launch jsPsych */
-// jatos.onLoad(function() {
-    jsPsych.init({
+
+jsPsych.init({
     timeline: main_timeline,
     on_finish: function() {
         var resultJson = jsPsych.data.get().json();
         document.getElementById('jspsych-content').innerHTML += '实验结束，感谢您的参与！'
-        // jatos.submitResultData(resultJson, jatos.startNextComponent);
     }
 });
+
+// jatos.onLoad(function() {
+//     jsPsych.init({
+//     timeline: main_timeline,
+//     on_finish: function() {
+//         var resultJson = jsPsych.data.get().json();
+//         document.getElementById('jspsych-content').innerHTML += '实验结束，感谢您的参与！'
+//         jatos.submitResultData(resultJson, jatos.startNextComponent);
+//     }
+// });
 // });
