@@ -309,7 +309,7 @@ var main_timeline = [
 ]
 
 /* Launch jsPsych */
-jatos.onLoad(function() {
+// jatos.onLoad(function() {
     jsPsych.init({
     timeline: main_timeline,
     on_finish: function() {
@@ -318,4 +318,4 @@ jatos.onLoad(function() {
         // jatos.submitResultData(resultJson, jatos.startNextComponent);
     }
 });
-});
+// });
