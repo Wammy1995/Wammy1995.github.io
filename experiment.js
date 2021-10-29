@@ -118,7 +118,7 @@ var instr_trust = {
 }
 
 
-var partner = [{ data: { i: 1 }, s: 'Ta与你素未谋面，是一名位于社会阶层梯子9层的企业高管，' },
+var partner = [{ data: { i: 1 }, s: 'Ta与你素未谋面，处于位于社会阶层梯子9层' },
         { data: { i: 2 }, s: '橘子二' },
         { data: { i: 3 }, s: '橘子3' },
         { data: { i: 4 }, s: '橘子四' },
