@@ -66,12 +66,6 @@ jsPsych.plugins['html-range-response'] = (function() {
         default: false,
         description: 'If true, the participant will have to move the range before continuing.'
       },
-      prompt: {
-        type: jsPsych.plugins.parameterType.STRING,
-        pretty_name: 'Prompt',
-        default: null,
-        description: 'Any content here will be displayed above the range.'
-      },
       stimulus_duration: {
         type: jsPsych.plugins.parameterType.INT,
         pretty_name: 'Stimulus duration',
@@ -112,13 +106,10 @@ jsPsych.plugins['html-range-response'] = (function() {
     html += '<span>'+trial.max+'</span>'
     html += '<input id="range-value" type="number" min="0" max="'+trial.max+'" required="true" style="font-size:20px;width:4em;" onchange="setRangeValue()">'
     html += '</div>';
+    html += '<button id="jspsych-html-range-response-next" class="jspsych-btn" '+ (trial.require_movement ? "disabled" : "") + '>'+trial.button_label+'</button>';
     html += '</div>';
 
-    if (trial.prompt !== null){
-          html += trial.prompt;
-        }
     // add submit button
-    html += '<button id="jspsych-html-range-response-next" class="jspsych-btn" '+ (trial.require_movement ? "disabled" : "") + '>'+trial.button_label+'</button>';
 
     display_element.innerHTML = html;
 

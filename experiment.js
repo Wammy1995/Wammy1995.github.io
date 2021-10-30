@@ -13,6 +13,8 @@ const btn_html_timer =
 // const condition = Math.round(Math.random())
 /* Blocks: HTML DOM Settings */
 
+var level = 1
+
 var set_html_style = {
     type: 'call-function',
     func: function() {
@@ -118,21 +120,22 @@ var instr_trust = {
 }
 
 
-var partner = [{ data: { i: 1 }, s: 'Ta与你素未谋面，处于位于社会阶层梯子9层' },
-        { data: { i: 2 }, s: '橘子二' },
-        { data: { i: 3 }, s: '橘子3' },
-        { data: { i: 4 }, s: '橘子四' },
-        { data: { i: 5 }, s: '我觉得自己毫无价值，缺少力量' },
-        { data: { i: 6 }, s: '我感到羞耻' },
-        { data: { i: 7 }, s: '我感到羞耻' },
-        { data: { i: 8 }, s: '我感到羞耻' },
-        { data: { i: 9 }, s: '我感到羞耻' },
-        { data: { i: 10 }, s: '我感到羞耻' },
-        { data: { i: 11 }, s: '我感到羞耻' },
-        { data: { i: 12 }, s: '我感到羞耻' },
-        ]
 
 var money = 0
+//亲疏、善意、阶层
+var partner = [{ data: { i: 111 }, s: '他与你素未谋面，定期志愿献血，处于位于社会阶层梯子第' ,n:-2},
+    { data: { i: 113 }, s: '他与你素未谋面，定期参与社区义工，处于位于社会阶层梯子第',n:2 },
+    { data: { i: 121 }, s: '他与你素未谋面，定期志愿献血，处于位于社会阶层梯子第',n:-2 },
+    { data: { i: 123 }, s: '他与你素未谋面，定期志愿献血，处于位于社会阶层梯子第' ,n:2 },
+    { data: { i: 211 }, s: '他是你爸爸的亲兄弟，定期志愿献血5，处于位于社会阶层梯子第',n:-2 },
+    { data: { i: 213}, s: '他是你妈妈的亲兄弟，定期志愿献血，处于位于社会阶层梯子第',n:2 },
+    { data: { i: 221 }, s: '他是你爸爸的亲兄弟，定期志愿献血，处于位于社会阶层梯子第',n:-2 },
+    { data: { i: 223 }, s: '他是你妈妈的亲兄弟，定期志愿献血，处于位于社会阶层梯子第',n:2 },
+    { data: { i: 122 }, s: '他与你素未谋面，定期志愿献血，处于位于社会阶层梯子第',n:0 },
+    { data: { i: 212 }, s: '他是你爸爸的亲兄弟，定期志愿献血，处于位于社会阶层梯子第',n:0 },
+    { data: { i: 222 }, s: '他是你爸爸的亲兄弟，定期志愿献血，处于位于社会阶层梯子第',n:0 },
+    { data: { i: 112 }, s: '他与你素未谋面，定期志愿献血，处于位于社会阶层梯子第。',n:0 },
+    ]
 
 var trustgame = {
     timeline_variables: partner,
@@ -140,7 +143,7 @@ var trustgame = {
         {
         type: 'html-range-response',
         stimulus:function(){
-            var ssstr = '<p>请你阅读下面的信息，想象一个符合的对象作为你投资的搭档:</p>'+jsPsych.timelineVariable("s")+'<p>请决定你的投资金额。</p>';
+            var ssstr = '<p>请你阅读下面的信息，想象一个符合的对象作为你投资的搭档:<br>'+jsPsych.timelineVariable("s")+(level+jsPsych.timelineVariable("n"))+'层。</p><p>请决定你的投资金额。</p>';
             return ssstr;
         },
         min:0,
@@ -152,7 +155,6 @@ var trustgame = {
 
         on_finish: function(data) {data.value = data.response;money = 3*data.value;data.stimulus = jsPsych.timelineVariable("i")}
         },
-
         {
         type: 'html-range-response',
         button_label:'确定',
@@ -226,6 +228,9 @@ var Social_Rank = {
     require_movement:true,
     button_label:'继续',
     step:1,
+    on_finish: function(data) {
+        level = data.response;
+    }
 }
 
 
@@ -279,8 +284,8 @@ var its = {
         { data: { i: 1 }, s: '我们这个社会里虚伪的现象越来越多了。' },
         { data: { i: 2 }, s: '与陌生人打交道时，你最好小心，除非他们拿出可以证明其值得信任的证据。' },
         { data: { i: 3 }, s: '阻止多数人（做坏事）触犯法律的是恐惧、社会廉耻或惩罚而不是良心。' },
-        { data: { i: 4 }, s: '考试时老师不到场监考可能会导致更多的人作弊。' },
-        { data: { i: 5 }, s: '不管人们口头上怎么说，最好还是认为多数人主要关心其自身幸福。' },
+        { data: { i: 4 }, s: '考试时，老师不到场监考可能会导致更多的人作弊。' },
+        { data: { i: 5 }, s: '不管人们口头上怎么说，最终还是认为多数人主要关心其自身幸福。' },
         { data: { i: 6 }, s: '如果真正了解到国际上正在发生的事件，那么公众将比现在更加担心。' },
         { data: { i: 7 }, s: '多数领导（官员）上任前的许诺是诚恳的。' },
         { data: { i: 8 }, s: '多数人如果说出自己的打算就一定会去实现。' },
