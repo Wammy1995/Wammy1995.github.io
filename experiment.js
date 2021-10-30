@@ -20,7 +20,7 @@ var set_html_style = {
         document.body.style.color = 'black' // font color
         document.body.style.fontSize = '20pt'
         document.body.style.fontFamily = '微软雅黑'
-        document.body.style.fontWeight = 'bold' // 'normal', 'bold'
+        document.body.style.fontWeight = 'normal' // 'normal', 'bold'
         document.body.style.lineHeight = '1.6em' // line space
         document.body.style.cursor = 'default' // 'default', 'none', 'wait', ...
         document.body.onselectstart = function() { return false } // 禁止选中文字 <body oncontextmenu="return false">
@@ -100,7 +100,7 @@ var welcome = {
 
 var warmup = {
     type: 'html-button-response',
-    stimulus: `<p>在每一部分的问题前都有详细的指导语，请务必仔细阅读指导语后再进行作答。每个人的行为或想法都不一样，所以问题的答案没有好与坏之分，您只需要按照内心的直觉作答即可。如果不是理解错误导致的错选，您无需反复修改您的答案。</p>`,
+    stimulus: `<p style="text-align: left;text-indent: 2em;">在每一部分的问题前都有详细的指导语，请务必仔细阅读指导语后再进行作答。每个人的行为或想法都不一样，所以问题的答案没有好与坏之分，您只需要按照内心的直觉作答即可。如果不是理解错误导致的错选，您无需反复修改您的答案。</p>`,
     choices: ['<span id="timer">5</span>秒后继续'],
     button_html: btn_html_timer
 }
@@ -109,7 +109,7 @@ var instr_trust = {
     type: 'instructions',
     pages: [
         `<p style="text-align: left;text-indent:2em;">
-        接下来，你讲与一名搭档共同完成一项投资游戏。现在你有100元初始资金，决定投资一些钱给你的搭档去完成某个项目。你投资的金额可以是0～100元(具体投资多少，由你自己决定) 。在你投资N元给你的搭档之后，对方会获得3N元的收益。你的搭档在得到收益之后，会选择返还一些钱给你作为分红(具体返 还多少，由你的搭档自己决定) 。</p><p style="text-align: left;text-indent:2em;">例如: 如果你决定投资50元给你的搭档，对方将得到150元的收益。随后，他可以选择返还0～150的任何数量的人⺠币给你作为分红，具体返还多少钱由他决定!下面将提供你的搭档资料，请你根据信息完成投资。`,
+        接下来，你讲与一名搭档共同完成一项投资游戏。现在你有100元初始资金，决定投资一些钱给你的搭档去完成某个项目。你投资的金额可以是0～100元(具体投资多少，由你自己决定) 。在你投资N元给你的搭档之后，对方会获得<span style="color:red;font-weight:bold">3N</span>元的收益。你的搭档在得到收益之后，会选择返还一些钱给你作为分红(具体返还多少，由你的搭档自己决定) 。</p><p style="text-align: left;text-indent:2em;">例如: 如果你决定投资50元给你的搭档，对方将得到150元的收益。随后，他可以选择返还0～150的任何数量的人⺠币给你作为分红，具体返还多少钱由他决定!下面将提供你的搭档资料，请你根据信息完成投资。`,
     ],
     show_clickable_nav: true,
     allow_backward: false,
@@ -217,10 +217,11 @@ var Age = {
 
 var Social_Rank = {
     type:'html-slider-response',
-    stimulus:`<p>请看下图，请你想象梯子不同的层级代表不同人所处的社会阶层, 层级越高, 表示其社会阶层越高。你觉得自己当前位于1至10级的哪一层级</p><img src="images/ladder.png" style="height: 400px;">`,
+    stimulus:`<p style="text-align: left;text-indent:2em;">请看下图，请你想象梯子不同的层级代表不同人所处的社会阶层, 层级越高, 表示其社会阶层越高。你觉得自己当前位于1至10级的哪一层级</p><img src="images/ladder.png" style="height: 400px;">`,
     min:1,
     max:10,
     slider_start:1,
+    slider_width:600,
     labels: ['1', '2', '3', '4', '5','6','7','8','9','10'],
     require_movement:true,
     button_label:'继续',
@@ -269,6 +270,7 @@ var its = {
         min: 1,   
         max: 5,
         slider_start: 3,
+        slider_width:600,
         prompt: '<b id="slider-value">_</b><br/><br/>',
         button_label: '继续',
         require_movement: true,
