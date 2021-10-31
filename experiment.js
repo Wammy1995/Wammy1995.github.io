@@ -124,18 +124,18 @@ var instr_trust = {
 
 var money = 0
 //亲疏、善意、阶层
-var partner = [{ data: { i: 111 }, s: '他与你素未谋面，很少关心朋友的近况，处于位于社会阶层梯子第' ,n:-2},
-    { data: { i: 113 }, s: '他与你素未谋面，从不参加公益活动，处于位于社会阶层梯子第',n:2 },
-    { data: { i: 121 }, s: '他与你素未谋面，对于他人的求助尽力而为，处于位于社会阶层梯子第',n:-2 },
-    { data: { i: 123 }, s: '他与你素未谋面，定期志愿献血，处于位于社会阶层梯子第' ,n:2 },
-    { data: { i: 211 }, s: '他是你母亲的亲兄弟，很少关心家人的情况，处于位于社会阶层梯子第',n:-2 },
-    { data: { i: 213}, s: '他是你母亲的亲兄弟，对别人的求助敷衍了事，处于位于社会阶层梯子第',n:2 },
-    { data: { i: 221 }, s: '他是你父亲的亲兄弟，经常参加社区义工，处于位于社会阶层梯子第',n:-2 },
-    { data: { i: 223 }, s: '他是你母亲的亲兄弟，很重视他人的需求和愿望，处于位于社会阶层梯子第',n:2 },
-    { data: { i: 122 }, s: '他与你素未谋面，从不会让别人难堪，处于位于社会阶层梯子第',n:0 },
-    { data: { i: 212 }, s: '他是你父亲的亲兄弟，经常刁难别人，处于位于社会阶层梯子第',n:0 },
-    { data: { i: 222 }, s: '他是你父亲的亲兄弟，会用尽方法帮助别人，处于位于社会阶层梯子第',n:0 },
-    { data: { i: 112 }, s: '他与你素未谋面，对别人利益熟视无睹，处于位于社会阶层梯子第',n:0 },
+var partner = [{ data: { i: 1 }, s: '他与你素未谋面，很少关心朋友的近况，处于位于社会阶层梯子第' ,n:-2,f:111 },
+    { data: { i:2  }, s: '他与你素未谋面，从不参加公益活动，处于位于社会阶层梯子第',n:2,f:113 },
+    { data: { i: 3 }, s: '他与你素未谋面，对于他人的求助尽力而为，处于位于社会阶层梯子第',n:-2,f:121 },
+    { data: { i: 4 }, s: '他与你素未谋面，定期志愿献血，处于位于社会阶层梯子第' ,n:2,f:123 },
+    { data: { i: 5 }, s: '他是你母亲的亲兄弟，很少关心家人的情况，处于位于社会阶层梯子第',n:-2,f:211 },
+    { data: { i: 6}, s: '他是你母亲的亲兄弟，对别人的求助敷衍了事，处于位于社会阶层梯子第',n:2,f:213 },
+    { data: { i: 7 }, s: '他是你父亲的亲兄弟，经常参加社区义工，处于位于社会阶层梯子第',n:-2,f:221 },
+    { data: { i: 8 }, s: '他是你母亲的亲兄弟，很重视他人的需求和愿望，处于位于社会阶层梯子第',n:2,f:223 },
+    { data: { i: 9 }, s: '他与你素未谋面，从不会让别人难堪，处于位于社会阶层梯子第',n:0,f:122 },
+    { data: { i: 10 }, s: '他是你父亲的亲兄弟，经常刁难别人，处于位于社会阶层梯子第',n:0,f:212 },
+    { data: { i: 11 }, s: '他是你父亲的亲兄弟，会用尽方法帮助别人，处于位于社会阶层梯子第',n:0,f:222 },
+    { data: { i: 12 }, s: '他与你素未谋面，对别人利益熟视无睹，处于位于社会阶层梯子第',n:0,f:112 },
     ]
 
 var trustgame = {
@@ -153,7 +153,7 @@ var trustgame = {
         range_width: 300,
         range_start:0,
         button_label:'确定',
-        on_finish: function(data) {data.value = data.response;money = 3*data.value;data.stimulus = jsPsych.timelineVariable("i")}
+        on_finish: function(data) {data.value = data.response;money = 3*data.value;data.varname = jsPsych.timelineVariable("f")}
         },
         {
         type: 'html-range-response',
@@ -169,7 +169,7 @@ var trustgame = {
         range_width: 300,
         range_start:0,
         step:1,
-        on_finish: function(data) {data.value = data.response;data.stimulus = jsPsych.timelineVariable("i")}
+        on_finish: function(data) {data.value = data.response;data.varname = jsPsych.timelineVariable("f")}
         }
     ],
     randomize_order: true,
