@@ -153,7 +153,6 @@ var trustgame = {
         range_width: 300,
         range_start:0,
         button_label:'确定',
-
         on_finish: function(data) {data.value = data.response;money = 3*data.value;data.stimulus = jsPsych.timelineVariable("i")}
         },
         {
