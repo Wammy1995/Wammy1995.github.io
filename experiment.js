@@ -87,16 +87,6 @@ var open_fullscreen = {
 // }
 
 
-var AName = {
-    type: 'survey-html-form',
-    data: { varname: 'Name' },
-    preamble: '你的姓名',
-    html: `<p><input name="Q0" type="text
-    " required style="font-size: 20px;" placeholder="姓名"></p>`,
-    button_label: '继续',
-    on_finish: function(data) { data.value = data.responses.Q0 }
-}
-
 var welcome = {
     type: 'instructions',
     pages: [`
@@ -224,6 +214,15 @@ var Age = {
     html: `
     <p><input name="Q0" type="number" placeholder="15~99" min=15 max=99
     oninput="if(value.length>2) value=value.slice(0,2)" required style="font-size:20px;width:4em;" /></p>`,
+    button_label: '继续',
+    on_finish: function(data) { data.value = data.response.Q0 }
+}
+
+var AName = {
+    type: 'survey-html-form',
+    data: { varname: 'Name' },
+    preamble: '你的姓名',
+    html: `<p><input name="Q0" type="text" required style="font-size: 20px;" placeholder="姓名"></p>`,
     button_label: '继续',
     on_finish: function(data) { data.value = data.response.Q0 }
 }
