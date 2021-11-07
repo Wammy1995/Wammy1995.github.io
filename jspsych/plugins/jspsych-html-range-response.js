@@ -104,7 +104,7 @@ jsPsych.plugins['html-range-response'] = (function() {
     html += '<span>'+trial.min+'</span>'
     html += '<input type="range" onchange="addRangeValue()" class="jspsych-range" value="'+trial.range_start+'" min="'+trial.min+'" max="'+trial.max+'" step="'+trial.step+'" id="jspsych-html-range-response-response" style="width:'+(trial.range_width-70)+'px;"></input>';
     html += '<span>'+trial.max+'</span>'
-    html += '<input id="range-value" type="number" min="0" max="'+trial.max+'" required="true" style="font-size:20px;width:4em;" onkeyup="if(value>'+trial.max+')value='+trial.max+'setRangeValue()">'
+    html += '<input id="range-value" type="number" min="0" max="'+trial.max+'" required="true" style="font-size:20px;width:4em;" onkeyup="if(value>'+trial.max+')value='+trial.max+';setRangeValue()">'
     html += '</div>';
     html += '<button id="jspsych-html-range-response-next" class="jspsych-btn" '+ (trial.require_movement ? "disabled" : "") + '>'+trial.button_label+'</button>';
     html += '</div>';

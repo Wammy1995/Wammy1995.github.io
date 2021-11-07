@@ -153,6 +153,7 @@ var trustgame = {
         range_width: 300,
         range_start:0,
         button_label:'确定',
+        require_movement:true,
         on_finish: function(data) {data.value = data.response;money = 3*data.value;data.varname = jsPsych.timelineVariable("f")}
         },
         {
@@ -168,7 +169,8 @@ var trustgame = {
         },
         range_width: 300,
         range_start:0,
-        step:1,
+        step:1,        
+        require_movement:true,
         on_finish: function(data) {data.value = data.response;data.varname = jsPsych.timelineVariable("f")}
         }
     ],
