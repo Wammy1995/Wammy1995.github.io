@@ -337,7 +337,7 @@ var main_timeline = [
     welcome,
     warmup,
     demographics,
-    instr_its,its,
+    // instr_its,its,
     instr_trust,
     trustgame,
     OpenEnded,
@@ -346,21 +346,21 @@ var main_timeline = [
 
 /* Launch jsPsych */
 
-// jsPsych.init({
-//     timeline: main_timeline,
-//     on_finish: function() {
-//         var resultJson = jsPsych.data.get().json();
-//         document.getElementById('jspsych-content').innerHTML += '实验结束，感谢您的参与！'
-//     }
-// });
-
-jatos.onLoad(function() {
-    jsPsych.init({
+jsPsych.init({
     timeline: main_timeline,
     on_finish: function() {
         var resultJson = jsPsych.data.get().json();
         document.getElementById('jspsych-content').innerHTML += '实验结束，感谢您的参与！'
-        jatos.submitResultData(resultJson, jatos.startNextComponent);
     }
 });
-});
+
+// jatos.onLoad(function() {
+//     jsPsych.init({
+//     timeline: main_timeline,
+//     on_finish: function() {
+//         var resultJson = jsPsych.data.get().json();
+//         document.getElementById('jspsych-content').innerHTML += '实验结束，感谢您的参与！'
+//         jatos.submitResultData(resultJson, jatos.startNextComponent);
+//     }
+// });
+// });
