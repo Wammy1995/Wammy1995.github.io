@@ -230,7 +230,7 @@ var AName = {
 
 var Social_Rank = {
     type:'html-slider-response',
-    stimulus:`<p style="text-align: left;text-indent:2em;">请看下图，请你想象梯子不同的层级代表不同人所处的社会阶层, 层级越高, 表示其社会阶层越高。你觉得自己当前位于1至10级的哪一层级</p><img src="images/ladder.png" style="height: 400px;">`,
+    stimulus:`<img src="images/ladder.png" style="width: 600px;">`,
     min:1,
     max:10,
     slider_start:1,
