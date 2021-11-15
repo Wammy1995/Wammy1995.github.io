@@ -92,7 +92,8 @@ var welcome = {
     pages: [`
     <p style="font: bold 32pt 微软雅黑; color: #B22222">
     欢迎参与我们的实验</p>
-    <b>实验过程中请勿退出全屏</b><br/><br/></p>
+    <b>实验过程中请勿退出全屏</b><br/>
+    实验总时长约为15分钟，请耐心完成。<br/></p>
     <p style="font: 20pt 华文中宋; color: grey">
     浙江理工大学<br/>2021年</p>`],
     show_clickable_nav: true,
@@ -112,7 +113,7 @@ var instr_trust = {
     type: 'instructions',
     pages: [
         `<p style="text-align: left;text-indent:2em;">
-        接下来，你讲与一名搭档共同完成一项投资游戏。现在你有100元初始资金，决定投资一些钱给你的搭档去完成某个项目。你投资的金额可以是0～100元(具体投资多少，由你自己决定) 。在你投资N元给你的搭档之后，对方会获得<span style="color:red;font-weight:bold">3N</span>元的收益。你的搭档在得到收益之后，会选择返还一些钱给你作为分红(具体返还多少，由你的搭档自己决定) 。</p><p style="text-align: left;text-indent:2em;">例如: 如果你决定投资50元给你的搭档，对方将得到150元的收益。随后，他可以选择返还0～150的任何数量的金钱给你作为分红，具体返还多少钱由他决定!下面将提供你的搭档资料，请你根据信息完成投资。`,
+        接下来，你将与一名搭档共同完成一项投资游戏。你有100元初始资金，可以投资任意金额给你的搭档。在你投资N元给你的搭档之后，对方会获得<span style="color:red;font-weight:bold">3N</span>元的收益。你的搭档在得到收益之后，会选择返还一些钱给你作为分红(具体返还多少，由你的搭档自己决定) 。</p><p style="text-align: left;text-indent:2em;">例如: 你决定投资50元给你的搭档，他将得到150元的收益。随后，他可以自由选择返还0～150的任何数量的金钱给你作为分红!下面将提供你的搭档资料，请你根据信息完成投资。`,
     ],
     show_clickable_nav: true,
     allow_backward: false,
@@ -124,18 +125,18 @@ var instr_trust = {
 
 var money = 0
 //亲疏、善意、阶层
-var partner = [{ data: { i: 1 }, s: '他与你素未谋面，很少关心朋友的近况，处于位于社会阶层梯子第' ,n:-2,f:111 },
-    { data: { i:2  }, s: '他与你素未谋面，从不参加公益活动，处于位于社会阶层梯子第',n:2,f:113 },
-    { data: { i: 3 }, s: '他与你素未谋面，对于他人的求助尽力而为，处于位于社会阶层梯子第',n:-2,f:121 },
-    { data: { i: 4 }, s: '他与你素未谋面，定期志愿献血，处于位于社会阶层梯子第' ,n:2,f:123 },
-    { data: { i: 5 }, s: '他是你母亲的亲兄弟，很少关心家人的情况，处于位于社会阶层梯子第',n:-2,f:211 },
-    { data: { i: 6}, s: '他是你母亲的亲兄弟，对别人的求助敷衍了事，处于位于社会阶层梯子第',n:2,f:213 },
-    { data: { i: 7 }, s: '他是你父亲的亲兄弟，经常参加社区义工，处于位于社会阶层梯子第',n:-2,f:221 },
-    { data: { i: 8 }, s: '他是你母亲的亲兄弟，很重视他人的需求和愿望，处于位于社会阶层梯子第',n:2,f:223 },
-    { data: { i: 9 }, s: '他与你素未谋面，从不会让别人难堪，处于位于社会阶层梯子第',n:0,f:122 },
-    { data: { i: 10 }, s: '他是你父亲的亲兄弟，经常刁难别人，处于位于社会阶层梯子第',n:0,f:212 },
-    { data: { i: 11 }, s: '他是你父亲的亲兄弟，会用尽方法帮助别人，处于位于社会阶层梯子第',n:0,f:222 },
-    { data: { i: 12 }, s: '他与你素未谋面，对别人利益熟视无睹，处于位于社会阶层梯子第',n:0,f:112 },
+var partner = [{ data: { i: 1 }, s: '他与你素未谋面，很少关心朋友的近况，处于位于社会阶层梯子第' ,n:-2,f:111,tms:"低" },
+    { data: { i:2  }, s: '他与你素未谋面，从不参加公益活动，处于位于社会阶层梯子第',n:2,f:113,tms:"高" },
+    { data: { i: 3 }, s: '他与你素未谋面，对于他人的求助尽力而为，处于位于社会阶层梯子第',n:-2,f:121,tms:"低" },
+    { data: { i: 4 }, s: '他与你素未谋面，定期志愿献血，处于位于社会阶层梯子第' ,n:2,f:123,tms:"高" },
+    { data: { i: 5 }, s: '他是你母亲的表兄弟，很少关心家人的情况，处于位于社会阶层梯子第',n:-2,f:211,tms:"低" },
+    { data: { i: 6}, s: '他是你母亲的表兄弟，对别人的求助敷衍了事，处于位于社会阶层梯子第',n:2,f:213,tms:"高" },
+    { data: { i: 7 }, s: '他是你父亲的表兄弟，经常参加社区义工，处于位于社会阶层梯子第',n:-2,f:221,tms:"低" },
+    { data: { i: 8 }, s: '他是你母亲的表兄弟，很重视他人的需求和愿望，处于位于社会阶层梯子第',n:2,f:223,tms:"高" },
+    { data: { i: 9 }, s: '他与你素未谋面，从不会让别人难堪，处于位于社会阶层梯子第',n:0,f:122,tms:"平" },
+    { data: { i: 10 }, s: '他是你父亲的表兄弟，经常刁难别人，处于位于社会阶层梯子第',n:0,f:212,tms:"平" },
+    { data: { i: 11 }, s: '他是你父亲的表兄弟，会用尽方法帮助别人，处于位于社会阶层梯子第',n:0,f:222,tms:"平" },
+    { data: { i: 12 }, s: '他与你素未谋面，对别人利益熟视无睹，处于位于社会阶层梯子第',n:0,f:112,tms:"平" },
     ]
 
 var trustgame = {
@@ -144,7 +145,7 @@ var trustgame = {
         {
         type: 'html-range-response',
         stimulus:function(){
-            var ssstr = '<p>请你阅读下面的信息，想象一个符合的对象作为你投资的搭档:<br>'+jsPsych.timelineVariable("s")+(level+jsPsych.timelineVariable("n"))+'层。</p><p>请决定你的投资金额。</p>';
+            var ssstr = '<p>请你阅读下面的信息，想象一个符合的对象作为你投资的搭档:<br>'+jsPsych.timelineVariable("s")+(level+jsPsych.timelineVariable("n"))+'层，'+jsPsych.timelineVariable("tms")+'于你。</p><p>请决定你的投资金额。</p>';
             return ssstr;
         },
         min:0,
@@ -152,8 +153,8 @@ var trustgame = {
         step:1,
         range_width: 300,
         range_start:0,
-        button_label:'确定',
         require_movement:true,
+        button_label:'确定',
         on_finish: function(data) {data.value = data.response;money = 3*data.value;data.varname = jsPsych.timelineVariable("f")}
         },
         {
@@ -169,7 +170,7 @@ var trustgame = {
         },
         range_width: 300,
         range_start:0,
-        step:1,        
+        step:1,
         require_movement:true,
         on_finish: function(data) {data.value = data.response;data.varname = jsPsych.timelineVariable("f")}
         }
@@ -263,7 +264,7 @@ var instr_its = {
         `<p style="text-align: left">
         指导语：<br/>
         认真阅读之后的句子，<br/>
-        并选择符合你内心感受的按钮。<br/><br/>
+        并依据直觉知出反应。<br/><br/>
         1 = 完全不同意<br/>
         2 = 部分不同意<br/>
         3 = 既不同意也不反对<br/>
@@ -339,7 +340,7 @@ var main_timeline = [
     welcome,
     warmup,
     demographics,
-    // instr_its,its,
+    instr_its,its,
     instr_trust,
     trustgame,
     OpenEnded,
@@ -348,21 +349,21 @@ var main_timeline = [
 
 /* Launch jsPsych */
 
-jsPsych.init({
-    timeline: main_timeline,
-    on_finish: function() {
-        var resultJson = jsPsych.data.get().json();
-        document.getElementById('jspsych-content').innerHTML += '实验结束，感谢您的参与！'
-    }
-});
-
-// jatos.onLoad(function() {
-//     jsPsych.init({
+// jsPsych.init({
 //     timeline: main_timeline,
 //     on_finish: function() {
 //         var resultJson = jsPsych.data.get().json();
 //         document.getElementById('jspsych-content').innerHTML += '实验结束，感谢您的参与！'
-//         jatos.submitResultData(resultJson, jatos.startNextComponent);
 //     }
 // });
-// });
+
+jatos.onLoad(function() {
+    jsPsych.init({
+    timeline: main_timeline,
+    on_finish: function() {
+        var resultJson = jsPsych.data.get().json();
+        document.getElementById('jspsych-content').innerHTML += '实验结束，感谢您的参与！'
+        jatos.submitResultData(resultJson, jatos.startNextComponent);
+    }
+});
+});
