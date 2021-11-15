@@ -175,13 +175,12 @@ var exp_mrt = {
 
 var test = {
     type:'serial-reaction-time',
-    grid:[[1,2,H,4]],
-    target:[2,1],
+    grid:[[1,2,5,4]],
+    target:[1,1],
     choices:[[1,2,3,4]],
     grid_square_size:200,
-    target_color:red,
+    target_color:'red',
     trial_duration:400,
-
 }
 
 /* Blocks: Surveys */
@@ -294,13 +293,13 @@ var demographics = {
 */
 
 var main_timeline = [
-    set_html_style,
+    // set_html_style,
     open_fullscreen,
-    welcome,
-    warmup,
+    // welcome,
+    // warmup,
     test,
-    OpenEnded,
-    close_fullscreen,
+    // OpenEnded,
+    // close_fullscreen,
 ]
 
 
