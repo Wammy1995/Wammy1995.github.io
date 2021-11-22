@@ -145,7 +145,7 @@ var trustgame = {
         {
         type: 'html-range-response',
         stimulus:function(){
-            var ssstr = '<p>请你阅读下面的信息，想象一个符合的对象作为你投资的搭档:<br>'+jsPsych.timelineVariable("s")+(level+jsPsych.timelineVariable("n"))+'层，'+jsPsych.timelineVariable("tms")+'于你。</p><p>请决定你的投资金额。</p>';
+            var ssstr = '<p>请你阅读下面的信息，想象一个符合的对象作为你投资的搭档:<br>'+jsPsych.timelineVariable("s")+(level+jsPsych.timelineVariable("n"))+'层，'+jsPsych.timelineVariable("tms")+'于你。</p><p>请决定你的投入金额。</p>';
             return ssstr;
         },
         min:0,
@@ -161,13 +161,11 @@ var trustgame = {
         type: 'html-range-response',
         button_label:'确定',
         stimulus:function(){
-            var sstr =  '你的搭档获得了' + money.toString() + '元的投资收益，你认为他会分给你多少。';
+            var sstr =  '你认为你的搭档投入了多少钱？';
             return sstr;
             },
         min:0,
-        max:function(){
-            return money;
-        },
+        max:100,
         range_width: 300,
         range_start:0,
         step:1,
