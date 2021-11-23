@@ -76,22 +76,26 @@ function addRangeValue(){
   var sss = document.getElementById('jspsych-html-range-response-response').value
   document.getElementById('range-value').value = sss
   document.getElementById('jspsych-html-range-response-next').disabled = false
-  if (sss<50 & document.getElementById('prompt')) {
+  if (document.getElementById('prompt')) {
+    if (sss<50) {
     document.getElementById('prompt').textContent='对方需投入'+(70-sss)+'才能达成合作条件'
-  }else{
-    document.getElementById('prompt').textContent='已达成合作条件'
+    }else{
+        document.getElementById('prompt').textContent='已达成合作条件'
+    }
   }
-  }
+}
 
 function setRangeValue(){
   var sss = document.getElementById('range-value').value
   document.getElementById('jspsych-html-range-response-response').value = sss
   document.getElementById('jspsych-html-range-response-next').disabled = false
-  if (sss<50 & document.getElementById('prompt')) {
+  if (document.getElementById('prompt')) {
+    if (sss<50) {
     document.getElementById('prompt').textContent='对方需投入'+(70-sss)+'才能达成合作条件'
     }else{
         document.getElementById('prompt').textContent='已达成合作条件'
     }
+  }
 }
 
 
