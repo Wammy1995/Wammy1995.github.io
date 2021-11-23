@@ -60,6 +60,12 @@ jsPsych.plugins['html-range-response'] = (function() {
         array: false,
         description: 'Label of the button to advance.'
       },
+      prompt: {
+        type: jsPsych.plugins.parameterType.STRING,
+        pretty_name: 'Prompt',
+        default: null,
+        description: 'Any content here will be displayed above the slider.'
+      },
       require_movement: {
         type: jsPsych.plugins.parameterType.BOOL,
         pretty_name: 'Require movement',
@@ -94,22 +100,25 @@ jsPsych.plugins['html-range-response'] = (function() {
 
     var html = '<div id="jspsych-html-range-response-wrapper" style="margin: 100px 0px;">';
     html += '<div id="jspsych-html-range-response-stimulus">' + trial.stimulus + '</div>';
-    html += '<div class="jspsych-html-range-response-container" style="position:relative; margin: 0 auto 3em auto; ';
+    html += '<div class="jspsych-html-range-response-container" style="position:relative; margin: 0 auto 2em auto; ';
+        html += '">';
+    html += '<div style="display:inline;margin-right:30px;"';
     if(trial.range_width !== null){
-      html += 'width:'+trial.range_width+'px;';
+      html += 'width:'+trial.range_width+'px;><span>'+trial.min+'</span>';
     } else {
-      html += 'width:auto;';
+      html += 'width:auto;><span>'+trial.min+'</span>';
     }
-    html += '">';
-    html += '<span>'+trial.min+'</span>'
     html += '<input type="range" onchange="addRangeValue()" class="jspsych-range" value="'+trial.range_start+'" min="'+trial.min+'" max="'+trial.max+'" step="'+trial.step+'" id="jspsych-html-range-response-response" style="width:'+(trial.range_width-70)+'px;"></input>';
-    html += '<span>'+trial.max+'</span>'
-    html += '<input id="range-value" type="number" min="0" max="'+trial.max+'" required="true" style="font-size:20px;width:4em;" onkeyup="if(value>'+trial.max+')value='+trial.max+';setRangeValue()">'
+    html += '<span>'+trial.max+'</span></div>'
+    html += '<div style="display:inline"><input id="range-value" type="number" min="0" max="'+trial.max+'" required="true" style="font-size:20px;width:4em;" onkeyup="if(value>'+trial.max+')value='+trial.max+';setRangeValue()"></div>'
     html += '</div>';
+    if (trial.prompt !== null){
+      html += '<div id="prompt">'+trial.prompt+'</div>';
+    }
+
     html += '<button id="jspsych-html-range-response-next" class="jspsych-btn" '+ (trial.require_movement ? "disabled" : "") + '>'+trial.button_label+'</button>';
     html += '</div>';
-
-    // add submit button
+        // add submit button
 
     display_element.innerHTML = html;
 

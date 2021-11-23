@@ -113,7 +113,7 @@ var instr_trust = {
     type: 'instructions',
     pages: [
         `<p style="text-align: left;text-indent:2em;">
-        接下来，你将与一名搭档共同完成一项投资游戏。你有100元初始资金，可以投资任意金额给你的搭档。在你投资N元给你的搭档之后，对方会获得<span style="color:red;font-weight:bold">3N</span>元的收益。你的搭档在得到收益之后，会选择返还一些钱给你作为分红(具体返还多少，由你的搭档自己决定) 。</p><p style="text-align: left;text-indent:2em;">例如: 你决定投资50元给你的搭档，他将得到150元的收益。随后，他可以自由选择返还0～150的任何数量的金钱给你作为分红!下面将提供你的搭档资料，请你根据信息完成投资。`,
+        接下来，你将与一名搭档共同完成一项投资游戏。你们都有100元初始资金，可以投资任意金额进入公共箱。每轮结束时，如果公共箱内金额<span style="color:red;font-weight:bold">大于等于70</span>元，则将箱内金钱<span style="color:red;font-weight:bold">翻倍且平分</span>给你们俩人。但如果箱内金额<span style="color:red;font-weight:bold">小于70</span>，则箱内金额将<span style="color:red;font-weight:bold">清零</span>，双方将损失投入的金额。</p><p style="text-align: left;text-indent:2em;">下面将提供你的搭档资料，请你根据信息完成投资。</p>`,
     ],
     show_clickable_nav: true,
     allow_backward: false,
@@ -154,6 +154,7 @@ var trustgame = {
         range_width: 300,
         range_start:0,
         require_movement:true,
+        prompt:'对方需投入70才能达成合作条件。',
         button_label:'确定',
         on_finish: function(data) {data.value = data.response;money = 3*data.value;data.varname = jsPsych.timelineVariable("f")}
         },

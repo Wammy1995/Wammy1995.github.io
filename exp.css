@@ -82,7 +82,13 @@ body {
     }
 }
 
-//假排名表格
+/*range-slider prompt 样式*/
+#prompt{
+    font-size: 0.6em;
+    color: gray;
+}
+
+/*假排名表格*/
 #rank{
     font-family: verdana,arial,sans-serif;
     font-size:11px;
