@@ -255,7 +255,6 @@ var exp_mrt = {
     button_html: btn_html_timer
 }
 
-<<<<<<< HEAD
 var test = {
     type:'serial-reaction-time',
     grid:[[1,2,5,4]],
@@ -264,7 +263,6 @@ var test = {
     grid_square_size:200,
     target_color:'red',
     trial_duration:400,
-=======
 //空间旋转测验刻板印象无效组
 var control_mrt = {
     type: 'html-button-response',
@@ -282,7 +280,6 @@ var emp_211 = {
     choices: ['A', 'B', 'C'],
     prompt: "<p>你心目中最合适的申请者是谁？</p>",
     nextbut:true
->>>>>>> parent of 196b1bb (2)
 }
 
 
@@ -791,20 +788,17 @@ if (qianxun == 0) {
 var main_timeline = [
     // set_html_style,
     open_fullscreen,
-<<<<<<< HEAD
     // welcome,
     // warmup,
     test,
     // OpenEnded,
     // close_fullscreen,
-=======
     welcome,
     warmup,
     demographics,
     surveys,
     OpenEnded,
     close_fullscreen,
->>>>>>> parent of 196b1bb (2)
 ]
 
 
