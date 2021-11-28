@@ -793,10 +793,6 @@ var main_timeline = [
     test,
     // OpenEnded,
     // close_fullscreen,
-    welcome,
-    warmup,
-    demographics,
-    surveys,
     OpenEnded,
     close_fullscreen,
 ]
