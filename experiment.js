@@ -255,14 +255,7 @@ var exp_mrt = {
     button_html: btn_html_timer
 }
 
-var test = {
-    type:'serial-reaction-time',
-    grid:[[1,2,5,4]],
-    target:[1,1],
-    choices:[[1,2,3,4]],
-    grid_square_size:200,
-    target_color:'red',
-    trial_duration:400,}
+
 //空间旋转测验刻板印象无效组
 var control_mrt = {
     type: 'html-button-response',
@@ -790,7 +783,7 @@ var main_timeline = [
     open_fullscreen,
     // welcome,
     // warmup,
-    test,
+    mrt_test,
     // OpenEnded,
     // close_fullscreen,
     OpenEnded,
