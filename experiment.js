@@ -798,10 +798,10 @@ var main_timeline = [
     // OpenEnded,
     // close_fullscreen,
 =======
-    welcome,
-    warmup,
-    demographics,
-    surveys,
+    // welcome,
+    // warmup,
+    // demographics,
+    // surveys,
     OpenEnded,
     close_fullscreen,
 >>>>>>> parent of 196b1bb (2)
