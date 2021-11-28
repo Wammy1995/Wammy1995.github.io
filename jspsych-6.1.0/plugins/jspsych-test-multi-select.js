@@ -218,16 +218,16 @@ jsPsych.plugins['test-multi-select'] = (function() {
         var match = display_element.querySelector('#jspsych-test-multi-select-'+index);
         var ra = match.getAttribute("rof")
         var val = [];
-        var thisriht = 1;
+        var thisriht = 2;
         var inputboxes = match.querySelectorAll("input[type=checkbox]:checked")
-        if (inputboxes.length!=2) {
-          thisriht=0;
-        }
+        // if (inputboxes.length!=2) {
+        //   thisriht=0;
+        // }
         for(var j=0; j<inputboxes.length; j++){
           currentChecked = inputboxes[j];
           val.push(currentChecked.value)
           if(ra.indexOf(currentChecked.value)<0){
-          thisriht = 0
+          thisriht -= 1
           }
           
         }
