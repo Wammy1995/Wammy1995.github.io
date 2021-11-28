@@ -262,7 +262,7 @@ var test = {
     choices:[[1,2,3,4]],
     grid_square_size:200,
     target_color:'red',
-    trial_duration:400,
+    trial_duration:400,}
 //空间旋转测验刻板印象无效组
 var control_mrt = {
     type: 'html-button-response',
